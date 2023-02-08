@@ -29,9 +29,6 @@ from pyrogram import Client
 
 
 
-from aiohttp import web
-from web_s import web_server
-from config import PORT
 
 
 
@@ -95,12 +92,6 @@ class Mbot(Client):
                 "**Bot Started.**",
             )
         LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
-
-        #web-response
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"
-        await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
         await super().stop()
