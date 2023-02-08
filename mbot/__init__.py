@@ -27,6 +27,12 @@ from os import environ, mkdir, path, sys
 from dotenv import load_dotenv
 from pyrogram import Client
 
+
+from aiohttp import web
+from plugins import web_server
+
+from config import PORT
+
 load_dotenv("config.env")
 
 # Log
@@ -85,6 +91,12 @@ class Mbot(Client):
                 "**Bot Started.**",
             )
         LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
+
+        #web-response
+        app = web.AppRunner(await web_server())
+        await app.setup()
+        bind_address = "0.0.0.0"
+        await web.TCPSite(app, bind_address, PORT).start()
 
     async def stop(self, *args):
         await super().stop()
