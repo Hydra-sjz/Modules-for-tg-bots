@@ -29,7 +29,7 @@ from pyrogram import Client
 
 
 from aiohttp import web
-from plugins import web_server
+from mbot import web_server
 
 from config import PORT
 
