@@ -22,3 +22,6 @@ requests
 motor
 psutil
 future
+
+flask
+gunicorn
