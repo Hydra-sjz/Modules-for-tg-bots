@@ -1,9 +1,11 @@
-FROM python:3.8-slim-buster
-WORKDIR /app
+FROM python:3.10-slim-buster
 
-COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
-
-COPY . .
-
-CMD python3 mbot
+RUN apt update && apt upgrade -y
+RUN apt install git -y
+COPY requirements.txt /requirements.txt
+RUN cd /
+RUN pip3 install -U pip && pip3 install -U -r requirements.txt
+RUN mkdir /Spotify-dl-bot-tg
+WORKDIR /Spotify-dl-bot-tg
+COPY start.sh /start.sh
+CMD ["/bin/bash", "/start.sh"]
