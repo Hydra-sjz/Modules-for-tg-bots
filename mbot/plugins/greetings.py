@@ -79,8 +79,8 @@ async def send_log(_, message):
     await message.reply_document("bot.log")
 
 
-@Mbot.on_message(filters.command("ping"))
-async def ping(client, message):
+@Mbot.on_message(filters.command("p"))
+async def pijsh(client, message):
     start = datetime.now()
     await client.send(Ping(ping_id=0))
     ms = (datetime.now() - start).microseconds / 1000
