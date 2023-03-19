@@ -40,12 +40,12 @@ client = Client()
 
 
 
-A = """#DEEZR_START 🟣\n🟣<b>Bot user:</b> {}\n🟣<b>User name:</b> @{}\n🟣<b>User Id:</b> <code>{}</code>\n🟣<b>Used command:</b> /start\n\n🔽<b>Started Bot</b>🔽\n@spotifysavetgbot\n@spotifysavetgbot"""
+#A = """#DEEZR_START 🟣\n🟣<b>Bot user:</b> {}\n🟣<b>User name:</b> @{}\n🟣<b>User Id:</b> <code>{}</code>\n🟣<b>Used command:</b> /start\n\n🔽<b>Started Bot</b>🔽\n@spotifysavetgbot\n@spotifysavetgbot"""
 
 
 @Mbot.on_message(filters.regex(r'https?://.*deezer[^\s]+') & filters.incoming | filters.regex(r'https?://.*deezer[^\s]+') & filters.command("deezer") & filters.chat(AUTH_CHATS))
 async def link_handler(_, message):
-    gg = await message.reply_text(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.username, message.from_user.id))
+    #gg = await message.reply_text(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.username, message.from_user.id))
     link = message.matches[0].group(0)
     try:
         items = await parse_deezer_url(link)
