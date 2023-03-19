@@ -85,6 +85,7 @@ async def _reply_and_delete_later(message: Message, text: str, delay: int):
     reply = await message.reply_text(text, quote=True)
     await asyncio.sleep(delay)
     await reply.delete()
+    PForCopy = await message.reply_photo(photo="{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
 
 
 async def _upload_audio(message: Message, info_dict, audio_file):
@@ -107,7 +108,6 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     caption = f"<i>{title}</i>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    #PForCopy = await message.reply_photo(photo="{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     AForCopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
@@ -118,6 +118,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     for f in (audio_file, thumbnail_file, squarethumb_file):
         os.remove(f)
     if LOG_GROUP:
+        PForCopy.copy(LOG_GROUP)
         AForCopy.copy(LOG_GROUP)
 
 
