@@ -117,8 +117,8 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     for f in (audio_file, thumbnail_file, squarethumb_file):
         os.remove(f)
     if LOG_GROUP:
-            PForCopy.copy(LOG_GROUP)
-            #AForCopy.copy(LOG_GROUP)
+        PForCopy.copy(LOG_GROUP)
+        #AForCopy.copy(LOG_GROUP)
 
 
 def _get_file_extension_from_url(url):
