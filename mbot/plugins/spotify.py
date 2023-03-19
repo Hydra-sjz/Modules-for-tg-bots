@@ -92,7 +92,7 @@ async def spotify_dl(_, message):
                 await copy(PForCopy,AForCopy)
             return await m.delete()
         elif item_type == "playlist":
-            pForCopy = await message.reply_photo(photo="https://telegra.ph/file/477fbab1510586e2199ce.jpg", caption="🔽 SPOTIFY PLAYLIST 🔽")
+      #     #pForCopy = await message.reply_photo(photo="https://telegra.ph/file/477fbab1510586e2199ce.jpg", caption="🔽 SPOTIFY PLAYLIST 🔽")
             tracks = client.playlist_items(
                 playlist_id=item_id, additional_types=["track"]
             )
@@ -102,6 +102,10 @@ async def spotify_dl(_, message):
                 song = await fetch_spotify_track(
                     client, track.get("track").get("id")
                 )
+                PForCopy = await message.reply_photo(
+                    song.get("cover"),
+                    caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n🔢 Track No: `{track_no}`\n🔢 Total Track: `{total_tracks}`",
+                )
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
@@ -110,7 +114,7 @@ async def spotify_dl(_, message):
                     path,
                     performer=song.get("artist"),
                     title=f"{song.get('name')} - {song.get('artist')}",
-                    caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}\n\nTrack No: `{track_no}/{total_tracks}`",
+                    caption=f"[{song.get('name')}](https://open.spotify.com/track/{song.get('deezer_id')}) | {song.get('album')} - {song.get('artist')}",
                     thumb=thumbnail,
                 )
                 track_no += 1
@@ -119,11 +123,11 @@ async def spotify_dl(_, message):
                     await AForCopy.copy(LOG_GROUP)
             return await m.delete()
         elif item_type == "album":
-            pForCopy = await message.reply_photo(photo="https://telegra.ph/file/a2c32b680fc44df2244d7.jpg", caption="🔽 SPOTIFY ALBUM 🔽")
+            #pForCopy = await message.reply_photo(photo="https://telegra.ph/file/a2c32b680fc44df2244d7.jpg", caption="🔽 SPOTIFY ALBUM 🔽")
             tracks = client.album_tracks(album_id=item_id)
             for track in tracks["items"]:
                 song = await fetch_spotify_track(client, track.get("id"))
-                #pForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`")
+                pForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`")
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
