@@ -107,7 +107,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     caption = f"<a href=\"{webpage_url}\">{title}</a>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    PForCopy = await message.reply_photo(photo="{webpage_url}.jpg", caption=f"<b>Title:</b> {title}\n<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>")
+    PForCopy = await message.reply_photo(photo="{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     AForCopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
