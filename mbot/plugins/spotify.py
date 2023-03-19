@@ -78,7 +78,7 @@ async def spotify_dl(_, message):
             return await m.delete()
         elif item_type == "track":
             song = await fetch_spotify_track(client, item_id)
-            PForCopy = await message.reply_photo(photo=f"https://open.spotify.com/track/{song.get('deezer_id')}", caption=f"<b>Spotify</b>\n🎧 <b>Title:</b> `{song['name']}`\n🎤 <b>Artist:</b> `{song['artist']}`\n💽 <b>Album:</b> `{song['album']}`\n🗓 <b>Release Year:</b> `{song['year']}`")
+            PForCopy = await message.reply_photo(photo=f"https://open.spotify.com/track/{song.get('deezer_id')}", caption=f"🎧 <b>Title:</b> `{song['name']}`\n🎤 <b>Artist:</b> `{song['artist']}`\n💽 <b>Album:</b> `{song['album']}`\n🗓 <b>Release Year:</b> `{song['year']}`")
             path = await download_songs(song, randomdir)
             thumbnail = await thumb_down(song.get("cover"), song.get("name"))
             AForCopy = await message.reply_audio(
