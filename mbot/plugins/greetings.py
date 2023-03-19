@@ -36,16 +36,16 @@ async def start(client, message):
     reply_markup = [
         [
             InlineKeyboardButton(
-                text="Channel 📨", callback_data="http"
+                text="ᴄʜᴀɴɴᴇʟ 📨", callback_data="http"
             ),
             InlineKeyboardButton(
-                text="Help 🧑‍💻", callback_data="helphome"
+                text="ʜᴇʟᴘ 🦄", callback_data="helphome"
             ),
-            InlineKeyboardButton(text="Group 📨", url="https://t.me/songdownload_group"),
+            InlineKeyboardButton(text="ɢʀᴏᴜᴘ 📨", url="https://t.me/songdownload_group"),
         ],
         [
             InlineKeyboardButton(
-                text="🛸LOG CHANNEL🛸", url="https://t.me/music_database_tg",
+                text="🎵ʟᴏɢ ᴄʜᴀɴɴᴇʟ🎵", url="https://t.me/music_database_tg",
             ),
         ],
     ]
@@ -61,7 +61,7 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(reply_markup),
         )
     return await message.reply_text(
-        f"Hello {message.from_user.first_name},\nMy Name is <b>Sᴘᴏᴛɪғʏ✘Dʟ</b> Music Downloader Bot.\n\nI can download music from Spotify, Deezer, SoundCloud, Mix Cloud, Youtube Platforms.\n\nClick /help for more know me.",
+        f"ʜᴇʟʟᴏ {message.from_user.first_name},\nᴍʏ ɴᴀᴍᴇ ɪs <b>Sᴘᴏᴛɪғʏ✘Dʟ</b> Mᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ.\n\nI ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴜsɪᴄ ғʀᴏᴍ Sᴘᴏᴛɪғʏ, Dᴇᴇᴢᴇʀ, SᴏᴜɴᴅCʟᴏᴜᴅ, Mɪx Cʟᴏᴜᴅ ᴀɴᴅ Yᴏᴜᴛᴜʙᴇ Pʟᴀᴛғᴏʀᴍs.\n\nCʟɪᴄᴋ ʜᴇʟᴘ ғᴏʀ ᴍᴏʀᴇ ᴋɴᴏᴡ ᴍᴇ.",
         reply_markup=InlineKeyboardMarkup(reply_markup),
     )
 
@@ -88,12 +88,12 @@ async def pijsh(client, message):
 
 
 HELP = {
-    "Youtube": "Send **Youtube** Link in Chat to Download Song.",
-    "Spotify": "Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.",
-    "Deezer": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
-    "Mix Cloud": "Send **Mix Cloud** Track Link. I'll Download It For You.",
-    "SoundCloud": "Send **Sound Cloud** Track Link. I'll Download It For You.",
-    "Log Channel": "My Music Database @music_database_tg",
+    "ʏᴏᴜᴛᴜʙᴇ": "Send **Youtube** Link in Chat to Download Song.",
+    "sᴘᴏᴛɪғʏ": "Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.",
+    "ᴅᴇᴇᴢᴇʀ": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
+    "ᴍɪx ᴄʟᴏᴜᴅ": "Send **Mix Cloud** Track Link. I'll Download It For You.",
+    "sᴏᴜɴᴅ ᴄʟᴏᴜᴅ": "Send **Sound Cloud** Track Link. I'll Download It For You.",
+    "ʟᴏɢ ᴄʜᴀɴɴᴇʟ": "My Music Database @music_database_tg",
 }
 
 
