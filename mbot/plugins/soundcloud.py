@@ -8,6 +8,7 @@ from pyrogram.types import Message
 from youtube_dl import YoutubeDL
 from PIL import Image
 import ffmpeg
+from config import LOG_GROUP
 
 MUSIC_MAX_LENGTH = 10800
 DELAY_DELETE_INFORM = 10
@@ -103,10 +104,10 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     make_squarethumb(thumbnail_file, squarethumb_file)
     webpage_url = info_dict['webpage_url']
     title = info_dict['title']
-    caption = f"<b><a href=\"{webpage_url}\">{title}</a></b>"
+    caption = f"<a href=\"{webpage_url}\">{title}</a>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    await message.reply_audio(audio_file,
+    PForCopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
                               performer=performer,
@@ -115,6 +116,9 @@ async def _upload_audio(message: Message, info_dict, audio_file):
                               thumb=squarethumb_file)
     for f in (audio_file, thumbnail_file, squarethumb_file):
         os.remove(f)
+    if LOG_GROUP:
+            PForCopy.copy(LOG_GROUP)
+            #AForCopy.copy(LOG_GROUP)
 
 
 def _get_file_extension_from_url(url):
