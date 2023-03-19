@@ -91,9 +91,9 @@ HELP = {
     "Youtube": "Send **Youtube** Link in Chat to Download Song.",
     "Spotify": "Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.",
     "Deezer": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
-    "Jiosaavn": "Not Implemented yet",
-    "SoundCloud": "Not Implemented yet",
-    "Group": "Will add later.",
+    "Mix Cloud": "Send **Mix Cloud** Track Link. I'll Download It For You.",
+    "SoundCloud": "Send **Sound Cloud** Track Link. I'll Download It For You.",
+    "Log Channel": "My Music Database @music_database_tg",
 }
 
 
