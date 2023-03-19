@@ -107,7 +107,8 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     caption = f"<a href=\"{webpage_url}\">{title}</a>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    PForCopy = await message.reply_audio(audio_file,
+    PForCopy = await message.reply_photo(photo="{webpage_url}.jpg", caption=f"<b>Title:</b> {title}\n<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>")
+    AForCopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
                               performer=performer,
@@ -118,7 +119,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
         os.remove(f)
     if LOG_GROUP:
         PForCopy.copy(LOG_GROUP)
-        #AForCopy.copy(LOG_GROUP)
+        AForCopy.copy(LOG_GROUP)
 
 
 def _get_file_extension_from_url(url):
