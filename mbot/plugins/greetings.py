@@ -61,7 +61,6 @@ async def start(client, message):
             reply_markup=InlineKeyboardMarkup(reply_markup),
         )
     return await message.reply_photo(
-        photo="https://telegra.ph/file/26b37ce4a64c59b2db734.jpg",
         f"Hello {message.from_user.first_name},\nMy Name is <b>Sᴘᴏᴛɪғʏ✘Dʟ</b> Music Downloader Bot.\n\nI can download music from Spotify, Deezer, SoundCloud, Mix Cloud, Youtube Platforms.\n\nClick /help for more know me.",
         reply_markup=InlineKeyboardMarkup(reply_markup),
     )
