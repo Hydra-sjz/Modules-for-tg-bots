@@ -102,7 +102,7 @@ async def spotify_dl(_, message):
                 song = await fetch_spotify_track(
                     client, track.get("track").get("id")
                 )
-                PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n🔢 Track No: `{track_no}`\n🔢 Total Track: `{total_tracks}`")
+                PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n**❗️Is Local**: `False`\n\n🔢 Track No: `{track_no}`\n🔢 Total Track: `{total_tracks}`")
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
@@ -125,7 +125,7 @@ async def spotify_dl(_, message):
             tracks = client.album_tracks(album_id=item_id)
             for track in tracks["items"]:
                 song = await fetch_spotify_track(client, track.get("id"))
-                PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`")
+                PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`\n❗️**Is Local:** `False`")
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
