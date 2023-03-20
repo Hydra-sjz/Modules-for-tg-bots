@@ -103,12 +103,12 @@ async def _upload_audio(message: Message, info_dict, audio_file):
             _get_file_extension_from_url(thumbnail_url)
     squarethumb_file = basename + "_squarethumb.jpg"
     make_squarethumb(thumbnail_file, squarethumb_file)
+    PForCopy = message.reply_photo(photo=f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     webpage_url = info_dict['webpage_url']
     title = info_dict['title']
     caption = f"<i>{title}</i>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    PForCopy = await message.reply_photo(photo=f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     AForCopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
