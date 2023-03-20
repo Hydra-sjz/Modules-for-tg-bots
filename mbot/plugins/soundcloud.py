@@ -89,7 +89,6 @@ async def _reply_and_delete_later(message: Message, text: str, delay: int):
 
 
 async def _upload_audio(message: Message, info_dict, audio_file):
-    PForCopy = await message.reply_photo(photo=f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> {title}\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     basename = audio_file.rsplit(".", 1)[-2]
     if info_dict['ext'] == 'webm':
         audio_file_opus = basename + ".opus"
@@ -102,11 +101,12 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     else:
         thumbnail_file = basename + "." + \
             _get_file_extension_from_url(thumbnail_url)
+    PForCopy = await message.reply_photo(f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     squarethumb_file = basename + "_squarethumb.jpg"
     make_squarethumb(thumbnail_file, squarethumb_file)
     webpage_url = info_dict['webpage_url']
     title = info_dict['title']
-    caption = f"<i>{title}</i>"
+    caption = f"<i>{title}</i> | @spotifysavetgbot"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
     AForCopy = await message.reply_audio(audio_file,
