@@ -117,6 +117,7 @@ async def spotify_dl(_, message):
                 track_no += 1
                 if LOG_GROUP:
                     await sleep(2.5)
+                    await PForCopy.copy(LOG_GROUP)
                     await AForCopy.copy(LOG_GROUP)
             return await m.delete()
         elif item_type == "album":
@@ -124,7 +125,7 @@ async def spotify_dl(_, message):
             tracks = client.album_tracks(album_id=item_id)
             for track in tracks["items"]:
                 song = await fetch_spotify_track(client, track.get("id"))
-                pForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`")
+                PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 Title : `{song['name']}`\n🎤 Artist : `{song['artist']}`\n💽 Album : `{song['album']}`\n🗓 Release Year: `{song['year']}`")
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
@@ -138,6 +139,7 @@ async def spotify_dl(_, message):
                 )
                 if LOG_GROUP:
                     await sleep(2.5)
+                    await PForCopy.copy(LOG_GROUP)
                     await AForCopy.copy(LOG_GROUP)
             return await m.delete()
     except Exception as e:
