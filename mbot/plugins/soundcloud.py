@@ -101,7 +101,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     else:
         thumbnail_file = basename + "." + \
             _get_file_extension_from_url(thumbnail_url)
-    PForCopy = await message.reply_photo(f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
+    #PForCopy = await message.reply_photo(f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
     squarethumb_file = basename + "_squarethumb.jpg"
     make_squarethumb(thumbnail_file, squarethumb_file)
     webpage_url = info_dict['webpage_url']
@@ -119,7 +119,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     for f in (audio_file, thumbnail_file, squarethumb_file):
         os.remove(f)
     if LOG_GROUP:
-        await copy(PForCopy, AForCopy)
+        await copy(AForCopy)
 
 
 def _get_file_extension_from_url(url):
