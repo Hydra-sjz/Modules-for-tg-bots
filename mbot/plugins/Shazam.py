@@ -38,7 +38,7 @@ from pyrogram import Client
 #from mbot import OWNER_ID as ADMINS
 import time
 from apscheduler.schedulers.background import BackgroundScheduler
-from driver.shazam import humanbytes, edit_or_reply, fetch_audio
+from database.shazam import humanbytes, edit_or_reply, fetch_audio
 
 
 NOT_SUPPORT = [ ]
