@@ -1,14 +1,13 @@
-
 import os
 import asyncio
 from datetime import timedelta
 from urllib.parse import urlparse
-from pyrogram import Client as app, filters, idle
+from pyrogram import Client as app, filters, idle, enums
 from pyrogram.types import Message
 from youtube_dl import YoutubeDL
 from PIL import Image
 import ffmpeg
-from mbot import LOG_GROUP
+from config import LOG_GROUP
 
 MUSIC_MAX_LENGTH = 10800
 DELAY_DELETE_INFORM = 10
@@ -30,7 +29,7 @@ REGEX_EXCLUDE_URL = (
 
 @app.on_message(filters.regex(REGEX_SITES)& ~filters.regex(REGEX_EXCLUDE_URL))
 async def _fetch_and_send_music(_, message: Message):
-    await message.reply_chat_action("typing")
+    await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
         ydl_opts = {
             'format': 'bestaudio',
@@ -45,9 +44,9 @@ async def _fetch_and_send_music(_, message: Message):
             inform = ("This video is not under Music category, "
                       "you can resend the link as a reply "
                       "to force download it")
-            await _reply_and_delete_later(message, inform,
-                                          DELAY_DELETE_INFORM)
-            return
+            #await _reply_and_delete_later(message, inform,
+            #                              DELAY_DELETE_INFORM)
+            #return
         if info_dict['duration'] > MUSIC_MAX_LENGTH:
             readable_max_length = str(timedelta(seconds=MUSIC_MAX_LENGTH))
             inform = ("This won't be downloaded because its audio length is "
@@ -62,12 +61,12 @@ async def _fetch_and_send_music(_, message: Message):
         audio_file = ydl.prepare_filename(info_dict)
         task = asyncio.create_task(_upload_audio(message, info_dict,
                                                  audio_file))
-        await message.reply_chat_action("upload_document")
+        await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
         await d_status.delete()
         while not task.done():
             await asyncio.sleep(4)
-            await message.reply_chat_action("upload_document")
-        await message.reply_chat_action("cancel")
+            await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
+        #await message.reply_chat_action("cancel")
         if message.chat.type == "private":
             await message.delete()
     except Exception as e:
@@ -100,26 +99,28 @@ async def _upload_audio(message: Message, info_dict, audio_file):
         thumbnail_file = basename + ".jpg"
     else:
         thumbnail_file = basename + "." + \
-            _get_file_extension_from_url(thumbnail_url)
-    #PForCopy = await message.reply_photo(f"{webpage_url}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
+            _get_file_extension_from_url(thumbnail_url) 
     squarethumb_file = basename + "_squarethumb.jpg"
     make_squarethumb(thumbnail_file, squarethumb_file)
     webpage_url = info_dict['webpage_url']
     title = info_dict['title']
-    caption = f"<i>{title}</i> | @spotifysavetgbot"
+    caption = f"<i><a href=\"{webpage_url}\">{title}</a> | @spotifysavetgbot</i>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
-    AForCopy = await message.reply_audio(audio_file,
+    songcop = await message.reply_photo(photo=f"{squarethumb_file}", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
+    songcopy = await message.reply_audio(audio_file,
                               caption=caption,
                               duration=duration,
                               performer=performer,
-                              title=title,
-                              parse_mode='HTML',
+                              title=title, #parse_mode='HTML',
                               thumb=squarethumb_file)
     for f in (audio_file, thumbnail_file, squarethumb_file):
         os.remove(f)
+    
     if LOG_GROUP:
-        await copy(AForCopy)
+        await songcop.copy(LOG_GROUP)
+        await songcopy.copy(LOG_GROUP)
+       
 
 
 def _get_file_extension_from_url(url):
@@ -146,4 +147,3 @@ def _crop_to_square(img):
     right = (width + length) / 2
     bottom = (height + length) / 2
     return img.crop((left, top, right, bottom))
-
