@@ -93,6 +93,7 @@ HELP = {
     "ᴅᴇᴇᴢᴇʀ": "Send Deezer Playlist/Album/Track Link. I'll Download It For You.",
     "ᴍɪx ᴄʟᴏᴜᴅ": "Send **Mix Cloud** Track Link. I'll Download It For You.",
     "sᴏᴜɴᴅ ᴄʟᴏᴜᴅ": "Send **Sound Cloud** Track Link. I'll Download It For You.",
+    "sᴀᴀᴠɴ": "Send /saavn [song name] - To download song from Saavn.", 
     "ʟᴏɢ ᴄʜᴀɴɴᴇʟ": "My Music Database @music_database_tg",
 }
 
