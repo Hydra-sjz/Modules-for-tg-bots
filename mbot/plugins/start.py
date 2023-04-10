@@ -9,9 +9,9 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 from pyrogram.errors import UserNotParticipant
 from config import LOG_CHANNEL, AUTH_USERS, DB_URL, DB_NAME
 
-from handlers.broadcast import broadcast
-from handlers.check_user import handle_user_status
-from handlers.database import Database
+from database.broadcast import broadcast
+from database.check_user import handle_user_status
+from database.database1 import Database
 
 
 
