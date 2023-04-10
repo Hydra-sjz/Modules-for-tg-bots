@@ -153,11 +153,10 @@ START_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton('ɢʀᴏᴜᴘ 📨', url='https://t.me/songdownload_group'),
         InlineKeyboardButton('ʜᴇʟᴘ 🦄', callback_data='cmds'),
+        InlineKeyboardButton('ᴀʙᴏᴜᴛ 🐬', callback_data='about'), 
         InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ 📨', callback_data='hhd')
         ],[
-        InlineKeyboardButton('🎵ʟᴏɢ ᴄʜᴀɴɴᴇʟ🎵', url='https://t.me/music_database_tg'),
-        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
- 
+        InlineKeyboardButton('🎵ʟᴏɢ ᴄʜᴀɴɴᴇʟ🎵', url='https://t.me/music_database_tg')
         ]]
     )
 
