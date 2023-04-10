@@ -142,21 +142,22 @@ async def cb_handler(bot, update):
         await update.message.delete()
 #=========CALLBACK========
 
-START_TEXT = """ »━━━━━━«[𝗠ᴜsɪᴄ✘Dʟ]»━━━━━━«
-ʜᴇʏ ᴛʜᴇʀᴇ {}  ɪ ᴀᴍ [˹𝗠ᴜsɪᴄ✘Dʟ˼](t.me/Musicx_dlbot) ʙᴏᴛ༒!,
-➻ ᴀɴᴅ I'ᴍ ᴀ sɪᴍᴘʟᴇ ᴀɴᴅ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀᴜᴅɪᴏ & ᴠɪᴅᴇᴏ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ғᴏʀ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ,
-ᴏɴʟʏ ʜɪɢʜᴇʀ ǫᴜᴀʟɪᴛʏ ᴍᴜsɪᴄ⚝.
-»━━━━━━━━━━━━━━━━━━«"
+START_TEXT = """ 
+ʜᴇʟʟᴏ {},
+ᴍʏ ɴᴀᴍᴇ ɪs Sᴘᴏᴛɪғʏ✘Dʟ Mᴜsɪᴄ ᴅᴏᴡɴʟᴏᴀᴅᴇʀ ʙᴏᴛ
+
+I ᴄᴀɴ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴜsɪᴄ ғʀᴏᴍ Sᴘᴏᴛɪғʏ, Dᴇᴇᴢᴇʀ, SᴏᴜɴᴅCʟᴏᴜᴅ, Mɪx Cʟᴏᴜᴅ ᴀɴᴅ Yᴏᴜᴛᴜʙᴇ Pʟᴀᴛғᴏʀᴍs.
+Cʟɪᴄᴋ ʜᴇʟᴘ ғᴏʀ ᴍᴏʀᴇ ᴋɴᴏᴡ ᴍᴇ.
 """
 START_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('⎆ ɢʀᴏᴜᴘ ⎆', url='https://t.me/songdownload_group'),
-        InlineKeyboardButton('⎆ ʟᴏɢ ᴄʜᴀɴɴᴇʟ ⎆', url='https://t.me/music_database_tg')
+        InlineKeyboardButton('ɢʀᴏᴜᴘ 📨', url='https://t.me/songdownload_group'),
+        InlineKeyboardButton('ʜᴇʟᴘ 🦄', callback_data='cmds'),
+        InlineKeyboardButton('ᴄʜᴀɴɴᴇʟ 📨', callback_data='hhd')
         ],[
-        InlineKeyboardButton('⨳ ʜᴇʟᴘ ⨳', callback_data ='cmds'),
-        InlineKeyboardButton('瓮 ᴀʙᴏᴜᴛ 瓮', callback_data='about')
-        ],[
-        InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
+        InlineKeyboardButton('🎵ʟᴏɢ ᴄʜᴀɴɴᴇʟ🎵', url='https://t.me/music_database_tg'),
+        InlineKeyboardButton('ᴀʙᴏᴜᴛ', callback_data='about')
+ 
         ]]
     )
 
