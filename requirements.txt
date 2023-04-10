@@ -37,3 +37,8 @@ ffmpeg==1.4
 ffmpeg-python==0.2.0
 ffprobe==0.5
 lyricsgenius
+
+apscheduler
+mutagen
+bs4
+Shazamio
