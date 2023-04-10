@@ -89,53 +89,53 @@ async def cb_handler(bot, update):
             disable_web_page_preview=True
         )
 #=======
-    elif update.data == "cmd2":
+    elif update.data == "yt":
         await update.message.edit_text(
             text=YOUTUB_TEXT,
             reply_markup=YOUTUB_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "sp":
         await update.message.edit_text(
             text=SPOTY_TEXT,
             reply_markup=SPOTY_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "dz":
         await update.message.edit_text(
             text=DEEZER_TEXT,
             reply_markup=DEEZER_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "sv":
         await update.message.edit_text(
             text=SAAVN_TEXT,
             reply_markup=SAAVN_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "sc":
         await update.message.edit_text(
             text=SOUNDC_TEXT,
             reply_markup=SOUNDC_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "mx":
         await update.message.edit_text(
             text=MIXC_TEXT,
             reply_markup=MIXC_BUTTONS,
             disable_web_page_preview=True
         )
-    elif update.data == "cmd2":
+    elif update.data == "lg":
         await update.message.edit_text(
-            text=YOUTUB_TEXT,
-            reply_markup=YOUTUB_BUTTONS,
+            text=LOGC_TEXT,
+            reply_markup=LOGC_BUTTONS,
             disable_web_page_preview=True
         )
 #========
     elif update.data == "about":
         await update.message.edit_text(
-            text=LOGC_TEXT,
-            reply_markup=LOGC_BUTTONS,
+            text=ABOUT_TEXT,
+            reply_markup=ABOUT_BUTTONS,
             disable_web_page_preview=True
         )
     else:
@@ -169,15 +169,15 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton(text="么 sᴇᴀʀᴄʜ 么", switch_inline_query_current_chat="")
         ],[
-        InlineKeyboardButton('Youtube'), callback_data=''), 
-        InlineKeyboardButton('Spotify'), callback_data=''), 
-        InlineKeyboardButton('Deezer'), callback_data='') 
+        InlineKeyboardButton('Youtube'), callback_data='yt'), 
+        InlineKeyboardButton('Spotify'), callback_data='sp'), 
+        InlineKeyboardButton('Deezer'), callback_data='dz') 
         ],[
-        InlineKeyboardButton('Jio Saavn'), callback_data=''), 
-        InlineKeyboardButton('Sound Cloud'), callback_data=''), 
-        InlineKeyboardButton('Mix Cloud'), callback_data='') 
+        InlineKeyboardButton('Jio Saavn'), callback_data='sv'), 
+        InlineKeyboardButton('Sound Cloud'), callback_data='sc'), 
+        InlineKeyboardButton('Mix Cloud'), callback_data='mx') 
         ],[
-        InlineKeyboardButton('Log Channel'), callback_data='') 
+        InlineKeyboardButton('Log Channel'), callback_data='lg') 
         ],[
         InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start'),
         InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
@@ -185,7 +185,7 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
     )
 #=============Bottons==========
 YOUTUB_TEXT = """
-
+Send **Youtube** Link in Chat to Download Song.
 """
 YOUTUB_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -195,7 +195,7 @@ YOUTUB_BUTTONS = InlineKeyboardMarkup(
     ) 
 
 SPOTY_TEXT = """
-
+Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.
 """
 SPOTY_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -205,7 +205,7 @@ SPOTY_BUTTONS = InlineKeyboardMarkup(
     )
 
 DEEZER_TEXT = """
-
+Send Deezer Playlist/Album/Track Link. I'll Download It For You.
 """
 DEEZER_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -215,7 +215,7 @@ DEEZER_BUTTONS = InlineKeyboardMarkup(
     )
 
 SAAVN_TEXT = """
-
+Send /saavn [song name] - To download song from Saavn. 
 """
 SAAVN_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -225,7 +225,7 @@ SAAVN_BUTTONS = InlineKeyboardMarkup(
     )
 
 SOUNDC_TEXT = """
-
+Send **Sound Cloud** Track Link. I'll Download It For You.
 """
 SOUNDC_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -235,7 +235,7 @@ SOUNDC_BUTTONS = InlineKeyboardMarkup(
     )
 
 MIXC_TEXT = """
-
+Send **Mix Cloud** Track Link. I'll Download It For You.
 """
 MIXC_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -245,7 +245,7 @@ MIXC_BUTTONS = InlineKeyboardMarkup(
     )
 
 LOGC_TEXT = """
-
+My Music Database @music_database_tg
 """
 LOGC_BUTTONS = InlineKeyboardMarkup(
         [[
