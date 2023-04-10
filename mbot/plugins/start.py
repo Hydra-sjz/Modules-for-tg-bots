@@ -56,7 +56,7 @@ async def start_command(bot, message):
         if LOG_CHANNEL:
             await client.send_message(
                 LOG_CHANNEL,
-                f"🥳NEWUSER🥳 \n\n😼New User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) 😹started @Musicx_dlbot !!",
+                f"🥳NEWUSER🥳 \n\n😼New User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) 😹started @spotifysavetgbot !!",
             )
         else:
             logging.info(f"🥳NewUser🥳 :- 😼Name : {message.from_user.first_name} 😹ID : {message.from_user.id}")
@@ -70,7 +70,7 @@ async def start_command(bot, message):
     photo = f"https://telegra.ph/file/4edfd324d1279e3999054.jpg" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
     await message.reply_photo(photo, reply_markup=joinButton)
     #await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id))
-    await message.reply_sticker("CAACAgUAAxkDAAIboWQXGQ9Ac1P4-sR4Ziseg_2nmFyPAAJICQACSkC5VIdQpmAl9rr3HgQ")
+    await message.reply_sticker("CAACAgIAAxkBAAIi2mQzxmDS7HOit_NXQ-gK7e7G8hb4AAJtGQACrqe4SVSXPxVsGeioHgQ")
     raise StopPropagation
 
 #=======CALLBACK==================
@@ -88,16 +88,54 @@ async def cb_handler(bot, update):
             reply_markup=CMDS_BUTTONS,
             disable_web_page_preview=True
         )
+#=======
     elif update.data == "cmd2":
         await update.message.edit_text(
-            text=CMDS_TEXT2,
-            reply_markup=CMDS_BUTTONS2,
+            text=YOUTUB_TEXT,
+            reply_markup=YOUTUB_BUTTONS,
             disable_web_page_preview=True
         )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=SPOTY_TEXT,
+            reply_markup=SPOTY_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=DEEZER_TEXT,
+            reply_markup=DEEZER_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=SAAVN_TEXT,
+            reply_markup=SAAVN_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=SOUNDC_TEXT,
+            reply_markup=SOUNDC_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=MIXC_TEXT,
+            reply_markup=MIXC_BUTTONS,
+            disable_web_page_preview=True
+        )
+    elif update.data == "cmd2":
+        await update.message.edit_text(
+            text=YOUTUB_TEXT,
+            reply_markup=YOUTUB_BUTTONS,
+            disable_web_page_preview=True
+        )
+#========
     elif update.data == "about":
         await update.message.edit_text(
-            text=ABOUT_TEXT,
-            reply_markup=ABOUT_BUTTONS,
+            text=LOGC_TEXT,
+            reply_markup=LOGC_BUTTONS,
             disable_web_page_preview=True
         )
     else:
@@ -125,31 +163,97 @@ START_BUTTONS = InlineKeyboardMarkup(
 
 CMDS_TEXT = """
 ʜᴇʟʟᴏ {}
-
+ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴍᴜsɪᴄ.
 """
 CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start'),
-        InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
-        ]]
-    )
-
-CMDS_TEXT2 = """
-**Welcome to help commands two.**
-**Sticker tool**
-sticker to image - send sticker to make image.
-image to sticker - send image to make sticker.
-"""
-
-CMDS_BUTTONS2 = InlineKeyboardMarkup(
-        [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds')
+        InlineKeyboardButton(text="么 sᴇᴀʀᴄʜ 么", switch_inline_query_current_chat="")
+        ],[
+        InlineKeyboardButton('Youtube'), callback_data=''), 
+        InlineKeyboardButton('Spotify'), callback_data=''), 
+        InlineKeyboardButton('Deezer'), callback_data='') 
+        ],[
+        InlineKeyboardButton('Jio Saavn'), callback_data=''), 
+        InlineKeyboardButton('Sound Cloud'), callback_data=''), 
+        InlineKeyboardButton('Mix Cloud'), callback_data='') 
+        ],[
+        InlineKeyboardButton('Log Channel'), callback_data='') 
         ],[
         InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start'),
         InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
         ]]
     )
+#=============Bottons==========
+YOUTUB_TEXT = """
 
+"""
+YOUTUB_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    ) 
+
+SPOTY_TEXT = """
+
+"""
+SPOTY_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+DEEZER_TEXT = """
+
+"""
+DEEZER_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+SAAVN_TEXT = """
+
+"""
+SAAVN_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+SOUNDC_TEXT = """
+
+"""
+SOUNDC_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+MIXC_TEXT = """
+
+"""
+MIXC_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+LOGC_TEXT = """
+
+"""
+LOGC_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+#=================
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
 ➻ **ʙᴏᴛ : 𝗠ᴜsɪᴄ✘Dʟ**
