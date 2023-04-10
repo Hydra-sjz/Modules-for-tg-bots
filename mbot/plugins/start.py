@@ -67,8 +67,8 @@ async def start_command(bot, message):
             ]
         ]
     )
-    photo = f"https://telegra.ph/file/c764b2af3d5beea91dec7.mp4" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
-    await message.reply_animation(photo, reply_markup=joinButton)
+    photo = f"https://telegra.ph/file/4edfd324d1279e3999054.jpg" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
+    await message.reply_photo(photo, reply_markup=joinButton)
     #await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id))
     await message.reply_sticker("CAACAgUAAxkDAAIboWQXGQ9Ac1P4-sR4Ziseg_2nmFyPAAJICQACSkC5VIdQpmAl9rr3HgQ")
     raise StopPropagation
