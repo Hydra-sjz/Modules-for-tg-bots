@@ -22,7 +22,7 @@ gitpython
 aiofiles
 
 requests
-motor
+motor==2.5.1
 psutil
 future
 
