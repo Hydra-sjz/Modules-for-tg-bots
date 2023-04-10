@@ -4,10 +4,9 @@ import logging
 
 from pyrogram import Client, filters, StopPropagation
 
-from pyrogram import StopPropagation
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
-from config import LOG_CHANNEL, AUTH_USERS, 
+#from config import LOG_CHANNEL
 
 
 
