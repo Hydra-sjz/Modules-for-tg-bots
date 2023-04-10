@@ -88,8 +88,8 @@ class Mbot(Client):
         for chat in AUTH_CHATS:
             await self.send_photo(
                 chat,
-                "https://i.ibb.co/mtGCrzm/youNeedMusic.jpg",
-                "**Bot Started.**",
+                "https://telegra.ph/file/5791b80b0c4349c85c604.jpg",
+                "**Bot Was Started.** 🎵",
             )
         LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
 
