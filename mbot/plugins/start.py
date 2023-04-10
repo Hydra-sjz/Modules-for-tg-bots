@@ -44,7 +44,7 @@ async def start_command(bot, message):
                 reply_markup=InlineKeyboardMarkup( [[
                  InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{force_subhydra}")
                  ],[
-                 InlineKeyboardButton("Click start Botton", url="https://t.me/Musicx_dlbot?start")
+                 InlineKeyboardButton("Click start Botton", url="https://t.me/spotifysavetgbot?start")
                  ]]
                 )
             )
@@ -164,6 +164,7 @@ START_BUTTONS = InlineKeyboardMarkup(
 CMDS_TEXT = """
 ʜᴇʟʟᴏ {}
 ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴍᴜsɪᴄ.
+©️ @spotifysavetgbot
 """
 CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
