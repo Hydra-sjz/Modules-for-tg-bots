@@ -32,9 +32,9 @@ async def _(bot, cmd):
 
 @Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message: Message):
-    if force_subhydra:
+    if fmsg:
         try:
-            user = await message.get_chat_member(force_subhydra, message.from_user.id)
+            user = await message.get_chat_member(fmsg, message.from_user.id)
             if user.status == "kick out":
                 await message.reply_text("you are banned")
                 return
