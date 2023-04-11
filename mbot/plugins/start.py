@@ -2,7 +2,7 @@ import os
 import traceback
 import logging
 
-from pyrogram import Client, filters, StopPropagation
+from pyrogram import Client, filters, StopPropagation, Message
 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
@@ -31,10 +31,10 @@ async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
 @Client.on_message(filters.private & filters.command("st"))
-async def start_command(bot, message):
+async def start_command(bot, message: Message):
     if force_subhydra:
         try:
-            user = await bot.get_chat_member(force_subhydra, message.from_user.id)
+            user = await message.get_chat_member(force_subhydra, message.from_user.id)
             if user.status == "kick out":
                 await message.reply_text("you are banned")
                 return
@@ -68,7 +68,7 @@ async def start_command(bot, message):
         ]
     )
     
-    await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id, bot.from_user.user_name))
+    await message.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id, message.from_user.user_name))
     photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
     await message.reply_animation(photo, reply_markup=joinButton)
     await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
