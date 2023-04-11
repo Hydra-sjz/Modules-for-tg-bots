@@ -71,30 +71,22 @@ def song_gtr(_, message):
         m.edit(f"Nothing Found {message.from_user.first_name} :(\n\nPlease check, you using correct format or your spellings are correct and try again.\n Correct Format : /song song_name or /s song_name")
         print(str(e))
         return
-    m.edit("🔽 Downloading Audio...",
-      reply_markup=InlineKeyboardMarkup([[
-          InlineKeyboardButton("Downloading...", callback_data="feed")
-          ]]
-          )
-      )
+    m.edit("🔽 Downloading Audio...") 
+      
 
-    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🔗<b>Song link:</b> [Click here]({link})\n\n💌 <b>By:</b> [𝗠ᴜsɪᴄ✘Dʟ](t.me/Musicx_dlbot)")
+    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🔗<b>Song link:</b> [Click here]({link})")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f"[{title}]({link}) | {channel}"
+        rep = f"<i>{title} - {channel}</i>"
         secmul, dur, dur_arr = 1, 0, duration.split(":")
         for i in range(len(dur_arr) - 1, -1, -1):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
-        m.edit("🔼 Uploading to Telegram...\n<i>(this may take a while.)</i>",
-          reply_markup=InlineKeyboardMarkup([[
-          InlineKeyboardButton("Uploading...", callback_data="feed")
-          ]]
-          )
-      )
+        m.edit("🔼 Uploading to Telegram...\n<i>(this may take a while.)</i>") 
+          
         AForCopy = message.reply_audio(
             audio_file,
             caption=rep,
