@@ -20,9 +20,6 @@ force_subhydra = "songdownload_group"
 
 
 
-@Client.on_message(filters.private)
-async def _(bot, cmd):
-    await handle_user_status(bot, cmd)
 
 @Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message):
