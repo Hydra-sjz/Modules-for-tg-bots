@@ -17,7 +17,7 @@ db = Database(DB_URL, DB_NAME)
 
 
 
-A = """**USER INFO LOG**,\n**UserName:** {}\n**Userid:** `{}`\n**User name**: {}\n**used /start command in 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ BOT.**"""
+#A = """**USER INFO LOG**,\n**UserName:** {}\n**Userid:** `{}`\n**User name**: {}\n**used /start command in 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ BOT.**"""
 
 
 
