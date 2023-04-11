@@ -21,7 +21,7 @@ A = """**USER INFO LOG**,\n**UserName:** {}\n**Userid:** `{}`\n**User name**: {}
 
 force_subhydra = "songdownload_group"
 
-
+photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4"
 
 
 
@@ -69,7 +69,7 @@ async def start_command(bot, message: Message):
     )
     
     await message.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id, message.from_user.user_name))
-    photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
+
     await message.reply_animation(photo, reply_markup=joinButton)
     await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
     raise StopPropagation
