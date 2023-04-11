@@ -1,7 +1,7 @@
 import os
 import traceback
 import logging
-from mbot import fmsg
+from mbot import f_sub
 from pyrogram import Client, filters, StopPropagation
 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
@@ -32,9 +32,9 @@ async def _(bot, cmd):
 
 @Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message):
-    if fmsg:
+    if f_sub:
         try:
-            user = await bot.get_chat_member(fmsg, message.from_user.id)
+            user = await bot.get_chat_member(f_sub, message.from_user.id)
             if user.status == "kick out":
                 await message.reply_text("you are banned")
                 return
@@ -42,7 +42,7 @@ async def start_command(bot, message):
             await message.reply_text(
                 text="🙄ʏᴏᴜʀ ɴᴏᴛ jᴏɪɴᴇᴅ ᴍʏ ɢʀᴏᴜᴘ🧐\n😿ᴘʟᴇᴀsᴇ jᴏɪɴ ᴍʏ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ!😽",
                 reply_markup=InlineKeyboardMarkup( [[
-                 InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{fmsg}")
+                 InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{f_sub}")
                  ],[
                  InlineKeyboardButton("Click start Botton", url="https://t.me/spotifysavetgbot?start")
                  ]]
