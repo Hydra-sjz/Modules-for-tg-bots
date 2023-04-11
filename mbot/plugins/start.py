@@ -30,7 +30,7 @@ photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4"
 async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
-@Client.on_message(filters.private & filters.command("st"))
+@Client.on_message(filters.private & filters.command("start"))
 async def start_command(bot, message):
     chat_id = message.from_user.id
     if not await db.is_user_exist(chat_id):
@@ -71,7 +71,7 @@ async def start_command(bot, message):
     #await message.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id, message.from_user.user_name))
 
     await message.reply_animation(photo, reply_markup=joinButton)
-    await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
+    await message.reply_sticker("CAACAgUAAxkBAAIkDWQ1sOrPkvP3VvCH-axr93qlWw8tAAIHCQAC86GwVWNwaaggU79AHgQ")
     raise StopPropagation
 
 #=======CALLBACK==================
@@ -227,7 +227,9 @@ SAAVN_BUTTONS = InlineKeyboardMarkup(
     )
 
 SOUNDC_TEXT = """
-Send **Sound Cloud** Track Link. I'll Download It For You.
+Send **Sound Cloud** Track Link. I'll Download It For You. 
+
+**Example like this:** `https://soundcloud.com/djalvaro/aya-nakamura-djadja-alvaro-x-trobi-rmx?si=8fc58b6906d14a629d77db2b4dc80e9b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing`
 """
 SOUNDC_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -261,7 +263,6 @@ ABOUT_TEXT = """
 ➻ **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
 ➻ **ᴏᴡɴᴇʀ: [X:D](t.me/Kelvin_calumbot)**
 ➻ **ɢʀᴏᴜᴘ : [CLICK HERE](https://t.me/songdownload_group)**
-➻ **sᴏᴜʀᴄᴇ : [CLICK HERE](https://t.me/NOKIERUNNOIPPKITTUM/3)**
 ➻ **ʟᴀɴɢᴜᴀɢᴇ : [Python3](https://python.org)**
 ➻ **ʟɪʙʀᴀʀʏ : [Pyrogram](https://pyrogram.org)**
 ➻ **sᴇʀᴠᴇʀ : [Heroku](https://heroku.com)**
