@@ -7,7 +7,7 @@ from pyrogram import Client, filters, StopPropagation
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
 from config import LOG_CHANNEL, AUTH_USERS, DB_URL, DB_NAME
-from pyrogram.types import Message
+#from pyrogram.types import Message
 from handlers.broadcast import broadcast
 from handlers.check_user import handle_user_status
 from handlers.database import Database
