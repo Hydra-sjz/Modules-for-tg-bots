@@ -230,7 +230,7 @@ LOGC_BUTTONS = InlineKeyboardMarkup(
 #=================
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
-➻ **ʙᴏᴛ : 𝗠ᴜsɪᴄ✘Dʟ**
+➻ **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
 ➻ **ᴏᴡɴᴇʀ: [X:D](t.me/Kelvin_calumbot)**
 ➻ **ɢʀᴏᴜᴘ : [CLICK HERE](https://t.me/songdownload_group)**
 ➻ **sᴏᴜʀᴄᴇ : [CLICK HERE](https://t.me/NOKIERUNNOIPPKITTUM/3)**
