@@ -78,7 +78,7 @@ def song_gtr(_, message):
           )
       )
 
-    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n<b>👀Views:</b> <code>{views}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n🔗<b>Song link:</b> [Click here]({link})\n\n💌 <b>By:</b> [𝗠ᴜsɪᴄ✘Dʟ](t.me/Musicx_dlbot)")
+    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n🔗<b>Song link:</b> [Click here]({link})\n\n💌 <b>By:</b> [𝗠ᴜsɪᴄ✘Dʟ](t.me/Musicx_dlbot)")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
