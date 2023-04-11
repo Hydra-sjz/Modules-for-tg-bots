@@ -146,18 +146,18 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton(text="么 sᴇᴀʀᴄʜ 么", switch_inline_query_current_chat="")
         ],[
-        InlineKeyboardButton('Youtube'), callback_data='yt'), 
-        InlineKeyboardButton('Spotify'), callback_data='sp'), 
-        InlineKeyboardButton('Deezer'), callback_data='dz') 
+        InlineKeyboardButton("Youtube", callback_data="yt"), 
+        InlineKeyboardButton("Spotify", callback_data="sp"), 
+        InlineKeyboardButton("Deezer", callback_data="dz") 
         ],[
-        InlineKeyboardButton('Jio Saavn'), callback_data='sv'), 
-        InlineKeyboardButton('Sound Cloud'), callback_data='sc'), 
-        InlineKeyboardButton('Mix Cloud'), callback_data='mx') 
+        InlineKeyboardButton("Jio Saavn", callback_data="sv"), 
+        InlineKeyboardButton("Sound Cloud", callback_data="sc"), 
+        InlineKeyboardButton("Mix Cloud", callback_data="mx") 
         ],[
-        InlineKeyboardButton('Log Channel'), callback_data='lg') 
+        InlineKeyboardButton("Log Channel", callback_data="lg") 
         ],[
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start'),
-        InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
+        InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start"),
+        InlineKeyboardButton("×««ᴄʟᴏsᴇ»»×", callback_data="close")
         ]]
     )
 #=============Bottons==========
@@ -166,8 +166,8 @@ Send **Youtube** Link in Chat to Download Song.
 """
 YOUTUB_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton("«==ʙᴀᴄᴋ", callback_data="cmds"), 
+        InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start")
         ]]
     ) 
 
