@@ -1,7 +1,7 @@
 import os
 import traceback
 import logging
-
+from mbot import fmsg
 from pyrogram import Client, filters, StopPropagation, Message
 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
@@ -19,7 +19,7 @@ db = Database(DB_URL, DB_NAME)
 
 A = """**USER INFO LOG**,\n**UserName:** {}\n**Userid:** `{}`\n**User name**: {}\n**used /start command in 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ BOT.**"""
 
-force_subhydra = "songdownload_group"
+
 
 photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4"
 
@@ -42,7 +42,7 @@ async def start_command(bot, message: Message):
             await message.reply_text(
                 text="🙄ʏᴏᴜʀ ɴᴏᴛ jᴏɪɴᴇᴅ ᴍʏ ɢʀᴏᴜᴘ🧐\n😿ᴘʟᴇᴀsᴇ jᴏɪɴ ᴍʏ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ!😽",
                 reply_markup=InlineKeyboardMarkup( [[
-                 InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{force_subhydra}")
+                 InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{fmsg}")
                  ],[
                  InlineKeyboardButton("Click start Botton", url="https://t.me/spotifysavetgbot?start")
                  ]]
