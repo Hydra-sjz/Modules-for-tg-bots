@@ -24,7 +24,7 @@ force_subhydra = "songdownload_group"
 async def _(bot, cmd):
     await handle_user_status(bot, cmd)
 
-@Client.on_message(filters.private & filters.command("start"))
+@Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message):
     if force_subhydra:
         try:
