@@ -6,20 +6,29 @@ from pyrogram import Client, filters, StopPropagation
 
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
 from pyrogram.errors import UserNotParticipant
-#from config import LOG_CHANNEL
+from config import LOG_CHANNEL, AUTH_USERS, DB_URL, DB_NAME
+
+from handlers.broadcast import broadcast
+from handlers.check_user import handle_user_status
+from handlers.database import Database
+
+db = Database(DB_URL, DB_NAME)
 
 
 
 
-
-
-
-#A = """Hi, {} with user id:- {} used /start command."""
+A = """**USER INFO LOG**,\n**UserName:** {}\n**Userid:** `{}`\n**User name**: {}\n**used /start command in 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ BOT.**"""
 
 force_subhydra = "songdownload_group"
 
 
 
+
+
+
+@Client.on_message(filters.private)
+async def _(bot, cmd):
+    await handle_user_status(bot, cmd)
 
 @Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message):
@@ -40,9 +49,28 @@ async def start_command(bot, message):
                 )
             )
             return
+    chat_id = message.from_user.id
+    if not await db.is_user_exist(chat_id):
+        data = await client.get_me()
+        await db.add_user(chat_id)
+        if LOG_CHANNEL:
+            await client.send_message(
+                LOG_CHANNEL,
+                f"🥳NEWUSER🥳 \n\n😼New User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) 😹started @spotifysavetgbot !!",
+            )
+        else:
+            logging.info(f"🥳NewUser🥳 :- 😼Name : {message.from_user.first_name} 😹ID : {message.from_user.id}")
+    joinButton = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("💿 sᴛᴀʀᴛ ᴍᴇ ʙʀᴏ 💿", callback_data='start')
+            ]
+        ]
+    )
+    
+    await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id, bot.from_user.user_name))
     photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
     await message.reply_animation(photo, reply_markup=joinButton)
-    #await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id))
     await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
     raise StopPropagation
 
