@@ -40,10 +40,10 @@ async def start_command(bot, message):
                 )
             )
             return
-    photo = f"https://telegra.ph/file/4edfd324d1279e3999054.jpg" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
-    await message.reply_photo(photo, reply_markup=joinButton)
+    photo = f"https://telegra.ph/file/edb207dec790713be03b3.mp4" #https://telegra.ph/file/ceeca2da01f5d39550111.jpg
+    await message.reply_animation(photo, reply_markup=joinButton)
     #await message.send_message(LOG_CHANNEL, A.format(bot.from_user.mention, bot.from_user.id))
-    await message.reply_sticker("CAACAgIAAxkBAAIi2mQzxmDS7HOit_NXQ-gK7e7G8hb4AAJtGQACrqe4SVSXPxVsGeioHgQ")
+    await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
     raise StopPropagation
 
 #=======CALLBACK==================
