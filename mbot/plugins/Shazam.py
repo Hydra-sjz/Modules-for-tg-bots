@@ -21,7 +21,7 @@ import time
 import os
 #from asgiref.sync import sync_to_async
 from requests import get
-from driver.util import run_cmd as runcmd
+from database.util import run_cmd as runcmd
 import datetime
 from json import JSONDecodeError
 import requests
