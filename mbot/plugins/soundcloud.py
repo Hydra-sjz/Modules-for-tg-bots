@@ -104,7 +104,7 @@ async def _upload_audio(message: Message, info_dict, audio_file):
     make_squarethumb(thumbnail_file, squarethumb_file)
     webpage_url = info_dict['webpage_url']
     title = info_dict['title']
-    caption = f"<i><a href=\"{webpage_url}\">{title}</a> | @spotifysavetgbot</i>"
+    caption = f"<i>{title} | @spotifysavetgbot</i>"
     duration = int(float(info_dict['duration']))
     performer = info_dict['uploader']
     songcop = await message.reply_photo(photo=f"{squarethumb_file}", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🔗<b>Link:</b> <a href=\"{webpage_url}\">Click here</a>\n❗️<b>Is Local:</b> <code>False</code>\n🌐<b>ISRC:</b> <code>NLA321600031</code>")
