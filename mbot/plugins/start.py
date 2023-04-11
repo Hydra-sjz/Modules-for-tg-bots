@@ -68,7 +68,7 @@ async def start_command(bot, message):
         ]
     )
     
-    await message.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id, message.from_user.user_name))
+    #await message.send_message(LOG_CHANNEL, A.format(message.from_user.mention, message.from_user.id, message.from_user.user_name))
 
     await message.reply_animation(photo, reply_markup=joinButton)
     await message.reply_sticker("CAACAgUAAxkBAAIkBWQ1bqqHVW-gWo6ZI8JQ57hckzTAAALnAwACuYbZV_YX-PS370ywHgQ")
