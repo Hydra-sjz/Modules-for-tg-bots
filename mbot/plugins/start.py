@@ -171,15 +171,15 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
         InlineKeyboardButton(text="么 sᴇᴀʀᴄʜ 么", switch_inline_query_current_chat="")
         ],[
-        InlineKeyboardButton("Youtube", callback_data="yt"), 
-        InlineKeyboardButton("Spotify", callback_data="sp"), 
-        InlineKeyboardButton("Deezer", callback_data="dz") 
+        InlineKeyboardButton("ʏᴏᴜᴛᴜʙᴇ", callback_data="yt"), 
+        InlineKeyboardButton("sᴘᴏᴛɪғʏ", callback_data="sp"), 
+        InlineKeyboardButton("ᴅᴇᴇᴢᴇʀ", callback_data="dz") 
         ],[
-        InlineKeyboardButton("Jio Saavn", callback_data="sv"), 
-        InlineKeyboardButton("Sound Cloud", callback_data="sc"), 
-        InlineKeyboardButton("Mix Cloud", callback_data="mx") 
+        InlineKeyboardButton("ᴊɪᴏ sᴀᴀᴠɴ", callback_data="sv"), 
+        InlineKeyboardButton("sᴏᴜɴᴅ ᴄʟᴏᴜᴅ", callback_data="sc"), 
+        InlineKeyboardButton("ᴍɪx ᴄʟᴏᴜᴅ", callback_data="mx") 
         ],[
-        InlineKeyboardButton("Log Channel", callback_data="lg") 
+        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg") 
         ],[
         InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start"),
         InlineKeyboardButton("×««ᴄʟᴏsᴇ»»×", callback_data="close")
@@ -187,6 +187,8 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
     )
 #=============Bottons==========
 YOUTUB_TEXT = """
+Help for **ʏᴏᴜᴛᴜʙᴇ**
+
 Send **Youtube** Link in Chat to Download Song.
 """
 YOUTUB_BUTTONS = InlineKeyboardMarkup(
@@ -197,6 +199,8 @@ YOUTUB_BUTTONS = InlineKeyboardMarkup(
     ) 
 
 SPOTY_TEXT = """
+Help for **sᴘᴏᴛɪғʏ**
+
 Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.
 """
 SPOTY_BUTTONS = InlineKeyboardMarkup(
@@ -207,6 +211,8 @@ SPOTY_BUTTONS = InlineKeyboardMarkup(
     )
 
 DEEZER_TEXT = """
+Help for **ᴅᴇᴇᴢᴇʀ**
+
 Send Deezer Playlist/Album/Track Link. I'll Download It For You.
 """
 DEEZER_BUTTONS = InlineKeyboardMarkup(
@@ -217,6 +223,8 @@ DEEZER_BUTTONS = InlineKeyboardMarkup(
     )
 
 SAAVN_TEXT = """
+Help for **sᴀᴀᴠɴ**
+
 Send /saavn [song name] - To download song from Saavn. 
 """
 SAAVN_BUTTONS = InlineKeyboardMarkup(
@@ -227,8 +235,9 @@ SAAVN_BUTTONS = InlineKeyboardMarkup(
     )
 
 SOUNDC_TEXT = """
-Send **Sound Cloud** Track Link. I'll Download It For You. 
+Help fro **sᴏᴜɴᴅ ᴄʟᴏᴜᴅ**
 
+Send **Sound Cloud** Track Link. I'll Download It For You. 
 **Example like this:** `https://soundcloud.com/djalvaro/aya-nakamura-djadja-alvaro-x-trobi-rmx?si=8fc58b6906d14a629d77db2b4dc80e9b&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing`
 """
 SOUNDC_BUTTONS = InlineKeyboardMarkup(
@@ -239,6 +248,8 @@ SOUNDC_BUTTONS = InlineKeyboardMarkup(
     )
 
 MIXC_TEXT = """
+Help for **ᴍɪx ᴄʟᴏᴜᴅ**
+
 Send **Mix Cloud** Track Link. I'll Download It For You.
 """
 MIXC_BUTTONS = InlineKeyboardMarkup(
@@ -249,6 +260,8 @@ MIXC_BUTTONS = InlineKeyboardMarkup(
     )
 
 LOGC_TEXT = """
+**ʟᴏɢ ɢʀᴏᴜᴘ**
+
 My Music Database @music_database_tg
 """
 LOGC_BUTTONS = InlineKeyboardMarkup(
@@ -261,11 +274,11 @@ LOGC_BUTTONS = InlineKeyboardMarkup(
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
 ➻ **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
-➻ **ᴏᴡɴᴇʀ: [X:D](t.me/Kelvin_calumbot)**
-➻ **ɢʀᴏᴜᴘ : [CLICK HERE](https://t.me/songdownload_group)**
-➻ **ʟᴀɴɢᴜᴀɢᴇ : [Python3](https://python.org)**
-➻ **ʟɪʙʀᴀʀʏ : [Pyrogram](https://pyrogram.org)**
-➻ **sᴇʀᴠᴇʀ : [Heroku](https://heroku.com)**
+➻ **ᴏᴡɴᴇʀ: [x:ᴅ](t.me/Kelvin_calumbot)**
+➻ **ɢʀᴏᴜᴘ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/songdownload_group)**
+➻ **ʟᴀɴɢᴜᴀɢᴇ : [ᴘʏᴛʜᴏɴ𝟹](https://python.org)**
+➻ **ʟɪʙʀᴀʀʏ : [ᴘʏʀᴏɢʀᴀᴍ](https://pyrogram.org)**
+➻ **sᴇʀᴠᴇʀ : [ʜᴇʀᴏᴋᴜ](https://heroku.com)**
 """
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
