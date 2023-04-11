@@ -32,6 +32,17 @@ async def _(bot, cmd):
 
 @Client.on_message(filters.private & filters.command("st"))
 async def start_command(bot, message):
+    chat_id = message.from_user.id
+    if not await db.is_user_exist(chat_id):
+        data = await client.get_me()
+        await db.add_user(chat_id)
+        if LOG_CHANNEL:
+            await client.send_message(
+                LOG_CHANNEL,
+                f"🥳NEWUSER🥳 \n\n😼New User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) 😹started @spotifysavetgbot !!",
+            )
+        else:
+            logging.info(f"🥳NewUser🥳 :- 😼Name : {message.from_user.first_name} 😹ID : {message.from_user.id}")
     if f_sub:
         try:
             user = await bot.get_chat_member(f_sub, message.from_user.id)
@@ -49,17 +60,6 @@ async def start_command(bot, message):
                 )
             )
             return
-    chat_id = message.from_user.id
-    if not await db.is_user_exist(chat_id):
-        data = await client.get_me()
-        await db.add_user(chat_id)
-        if LOG_CHANNEL:
-            await client.send_message(
-                LOG_CHANNEL,
-                f"🥳NEWUSER🥳 \n\n😼New User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) 😹started @spotifysavetgbot !!",
-            )
-        else:
-            logging.info(f"🥳NewUser🥳 :- 😼Name : {message.from_user.first_name} 😹ID : {message.from_user.id}")
     joinButton = InlineKeyboardMarkup(
         [
             [
