@@ -31,7 +31,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from mbot import AUTH_CHATS, OWNER_ID, SUDO_USERS, Mbot
 
 
-@Mbot.on_message(filters.private & filters.command("start"))
+@Mbot.on_message(filters.private & filters.command("st"))
 async def start(client, message):
     reply_markup = [
         [
@@ -98,7 +98,7 @@ HELP = {
 }
 
 
-@Mbot.on_message(filters.command("help"))
+@Mbot.on_message(filters.command("hp"))
 async def help(_, message):
     button = [
         [InlineKeyboardButton(text=i, callback_data=f"help_{i}")] for i in HELP
