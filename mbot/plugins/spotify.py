@@ -48,6 +48,7 @@ client = spotipy.Spotify(
 async def spotify_dl(_, message):
     link = message.matches[0].group(0)
     m = await message.reply_text(f"🔎")
+    n = await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
         parsed_item = await parse_spotify_url(link)
         item_type, item_id = parsed_item[0], parsed_item[1]
