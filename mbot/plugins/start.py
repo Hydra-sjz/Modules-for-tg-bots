@@ -190,7 +190,7 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton("sᴏᴜɴᴅ ᴄʟᴏᴜᴅ", callback_data="sc"), 
         InlineKeyboardButton("ᴍɪx ᴄʟᴏᴜᴅ", callback_data="mx") 
         ],[
-        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg")
+        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg"), 
         InlineKeyboardButton("ᴇxᴛʀᴀ ᴍᴏᴅ", callback_data="ex") 
         ],[
         InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start"),
