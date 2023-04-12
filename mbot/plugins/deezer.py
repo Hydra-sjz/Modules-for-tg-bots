@@ -25,7 +25,7 @@ from os import mkdir
 from random import randint
 
 from deezer import Client
-from pyrogram import filters
+from pyrogram import filters, enums
 #from config import LOG_CHANNEL
 
 from mbot import AUTH_CHATS, LOG_GROUP, Mbot
@@ -52,6 +52,7 @@ async def link_handler(_, message):
         item_type = items[0]
         item_id = items[1]
         m = await message.reply_text("🔎")
+        n = await message.reply_chat_action(enums.ChatAction.TYPING)
         songs = await fetch_tracks(client, item_type, item_id)
         if item_type in ["playlist", "album", "track"]:
             randomdir = f"/tmp/{str(randint(1,100000000))}"
@@ -60,6 +61,7 @@ async def link_handler(_, message):
                 PForCopy = await message.reply_photo(song.get("cover"), caption=f"🎧 <b>Title:</b> `{song['name']}`\n🎤 <b>Artist:</b> `{song['artist']}`\n💽 <b>Album:</b> `{song['album']}`\n💽 <b>Song Number:</b> `{song['playlist_num']}`")
                 path = await download_songs(song, randomdir)
                 thumbnail = await thumb_down(song.get("thumb"), song.get("name"))
+                dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
                 AForCopy = await message.reply_audio(
                     path,
                     performer=song.get("artist"),
