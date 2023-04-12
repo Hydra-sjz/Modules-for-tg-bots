@@ -132,6 +132,12 @@ async def cb_handler(bot, update):
             reply_markup=LOGC_BUTTONS,
             disable_web_page_preview=True
         )
+    elif update.data == "ex":
+        await update.message.edit_text(
+            text=EX_TEXT,
+            reply_markup=EX_BUTTONS,
+            disable_web_page_preview=True
+        )
 #========
     elif update.data == "about":
         await update.message.edit_text(
@@ -169,7 +175,7 @@ CMDS_TEXT = """
 """
 CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="么 sᴇᴀʀᴄʜ 么", switch_inline_query_current_chat="")
+        InlineKeyboardButton(text="sᴇᴀʀᴄʜ", switch_inline_query_current_chat="")
         ],[
         InlineKeyboardButton("ʏᴏᴜᴛᴜʙᴇ", callback_data="yt"), 
         InlineKeyboardButton("sᴘᴏᴛɪғʏ", callback_data="sp"), 
@@ -179,7 +185,8 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton("sᴏᴜɴᴅ ᴄʟᴏᴜᴅ", callback_data="sc"), 
         InlineKeyboardButton("ᴍɪx ᴄʟᴏᴜᴅ", callback_data="mx") 
         ],[
-        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg") 
+        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg")
+        InlineKeyboardButton("ᴇxᴛʀᴀ ᴍᴏᴅ", callback_data="ex") 
         ],[
         InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start"),
         InlineKeyboardButton("×««ᴄʟᴏsᴇ»»×", callback_data="close")
@@ -270,6 +277,36 @@ LOGC_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
         ]]
     )
+
+EX_TEXT = """
+**Here is Some Extra Commands:**
+
+`/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
+Ex: /lyrics [song_name]
+
+`/ping` - Use to ping me whether i am alive or no
+
+`/preview` - Use to download preview of 30s of tracks
+
+`/info` - Use to get information about me
+eg:/info
+
+`/shazam` - Use to requnize or identity a song
+eg: /shazam [with replying to a audio file]
+
+`/mp3` - Use to download songs from YouTube
+eg: /mp3 [alone marshmallow]
+
+`/mp4` - Use to download songs from YouTube
+eg: /mp4 [alone marshmallow]
+"""
+EX_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
 #=================
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
