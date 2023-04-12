@@ -22,7 +22,7 @@ async def jsonify(_, message):
                 ]
             ]
         )
-        await message.reply_text(f"<code>{the_real_message}</code>\n\nPowerd by: @Musicx_dlbot", reply_markup=pk, quote=True)
+        await message.reply_text(f"<code>{the_real_message}</code>\n\n**Powerd by:** @spotifysavetgbot", reply_markup=pk, quote=True)
     except Exception as e:
         with open("json.text", "w+", encoding="utf8") as out_file:
             out_file.write(str(the_real_message))
