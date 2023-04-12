@@ -42,3 +42,4 @@ apscheduler
 mutagen
 bs4
 Shazamio
+pytz~=2021.1
