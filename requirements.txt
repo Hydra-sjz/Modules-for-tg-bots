@@ -10,7 +10,6 @@ spotipy
 #Pillow
 Pillow>=4.2.0
 #ffmpeg-python
-
 wget
 
 yt-dlp
@@ -47,3 +46,5 @@ Shazamio
 pytz~=2021.1
 
 Wikipedia
+countryinfo
+pymongo[srv]==3.12.3
