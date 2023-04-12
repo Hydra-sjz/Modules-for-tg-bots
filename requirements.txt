@@ -1,7 +1,8 @@
 pyrogram==2.0.38
-tgcrypto
+tgcrypto==1.2.2
 telegraph
 python-dotenv
+dnspython
 requests
 asgiref
 deezer-python
@@ -16,7 +17,6 @@ yt-dlp
 youtube-dl
 youtube-search-python==1.4.9
 youtube-search
-dnspython
 gitpython
 aiofiles
 
