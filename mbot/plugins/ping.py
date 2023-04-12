@@ -1,7 +1,7 @@
 import time
 from datetime import datetime
 from pyrogram.types import Message
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 
 StartTime = time.time()
 
@@ -28,8 +28,9 @@ def get_readable_time(seconds: int) -> str:
 @Client.on_message(filters.command("ping"))
 async def ping_bot(_, message):
     start_time = time.time()
-    m = await message.reply_text("Pinging...")
+    m = await message.reply_text("ᴘɪɴɢɪɴɢ...")
+    n = await message.reply_chat_action(enums.ChatAction.TYPING)
     end_time = time.time()
     ping_time = round((end_time - start_time) * 1000, 3)
     uptime = get_readable_time((time.time() - StartTime))
-    await m.edit_text(f"**🏓 PONG!!:** `{ping_time} ms`\n**🆙 UPTIME:** `{uptime}`")
+    await m.edit_text(f"**🏓 ᴘᴏɴɢ!!:** `{ping_time} ms`\n**🆙 ᴜᴘᴛɪᴍᴇ:** `{uptime}`")
