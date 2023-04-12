@@ -290,25 +290,19 @@ LOGC_BUTTONS = InlineKeyboardMarkup(
     )
 
 EX_TEXT = """
-**Here is Some Extra Commands: 1**
+**ʜᴇʀᴇ ɪs sᴏᴍᴇ ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅs: 1**
 
-`/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
-Ex: `/lyrics` [song_name]
-
-`/ping` `/alive`- Use to ping me whether i am alive or not. 
-
-`/info` - Use to get information about me. 
-eg: `/info` just send Or user_name or user_id
-
-`/shazam` `/find`- Use to requnize or identity a song. 
-eg: `/shazam` [with replying to a audio file]
-
-`/mp3` - Use to download songs from YouTube. 
-eg: `/mp3` [alone marshmallow]
-
-`/mp4` - Use to download songs from YouTube. 
-eg: `/mp4` [alone marshmallow]
-
+× `/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
+ᴇx: `/lyrics` [song_name]
+× `/ping` `/alive`- ᴜsᴇ ᴛᴏ ᴘɪɴɢ ᴍᴇ ᴡʜᴇᴛʜᴇʀ ɪ ᴀᴍ ᴀʟɪᴠᴇ ᴏʀ ɴᴏᴛ. 
+× `/info` - ᴜsᴇ ᴛᴏ ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍᴇ. 
+ᴇɢ: `/info` ᴊᴜsᴛ sᴇɴᴅ ᴏʀ ᴜsᴇʀ_ɴᴀᴍᴇ ᴏʀ ᴜsᴇʀ_ɪᴅ
+× `/shazam` `/find`- ᴜsᴇ ᴛᴏ ʀᴇǫᴜɴɪᴢᴇ ᴏʀ ɪᴅᴇɴᴛɪᴛʏ ᴀ sᴏɴɢ. 
+ᴇɢ: `/shazam` [ᴡɪᴛʜ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴀ ᴀᴜᴅɪᴏ ғɪʟᴇ]
+× `/mp3` - ᴜsᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ sᴏɴɢs ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ. 
+ᴇɢ: `/mp3` [ᴀʟᴏɴᴇ ᴍᴀʀsʜᴍᴀʟʟᴏᴡ]
+× `/mp4` - ᴜsᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ sᴏɴɢs ғʀᴏᴍ ʏᴏᴜᴛᴜʙᴇ. 
+ᴇɢ: `/mp4` [ᴀʟᴏɴᴇ ᴍᴀʀsʜᴍᴀʟʟᴏᴡ]
 
 ©️ @spotifysavetgbot
 """
@@ -322,25 +316,20 @@ EX_BUTTONS = InlineKeyboardMarkup(
     )
 
 EX2_TEXT = """
-**Here is Some Extra Commands: 𝟸**
+**ʜᴇʀᴇ ɪs sᴏᴍᴇ ᴇxᴛʀᴀ ᴄᴏᴍᴍᴀɴᴅs: 𝟸**
 
-`/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
-Eg: `/telegraph` [reply to photo gif]
-
-`/js` - ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴊᴀsᴏɴ.
-Ex: `/js` [reply to any message]
-
-`/time` - [your time zone]- ᴛᴏ ғɪɴᴅ ʏᴏᴜʀ ᴄᴏʀʀᴇɴᴛ ᴛɪᴍᴇ & ɪɴғᴏʀᴍᴀᴛɪᴏɴ,  ɢᴇᴛ ᴛʜᴇ ᴇxᴀᴄᴛ ɴᴀᴍᴇ ᴏғ ʏᴏᴜʀ ᴛɪᴍᴇᴢᴏɴᴇ ғʀᴏᴍ <a href="https://gist.githubusercontent.com/GauthamramRavichandran/5037a453c2efb44f7453d0993b0a2b4d/raw/daacf0e4496ccc60a36e493f0252b7988bceb143/pytz-time-zones.py">here</a>
-Ex: `/time` [America/New_York]
-
-`/ai` - will use the OpenAI API to generate a response from Chat Gpt.
-Ex: `/ai hello world` write anything
-
-`/wiki` - To find and share links to Wikipedia articles.
-Ex: `/wiki en dog`
-
-Rank up - here is the rank up mod, this only work in my group. 
-Check your Level : `/rank`
+× `/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
+ᴇɢ: `/telegraph` [ʀᴇᴘʟʏ ᴛᴏ ᴘʜᴏᴛᴏ ɢɪғ]
+× `/js` - ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴊᴀsᴏɴ.
+ᴇx: `/js` [ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ]
+× `/time` - ᴛᴏ ғɪɴᴅ ʏᴏᴜʀ ᴄᴏʀʀᴇɴᴛ ᴛɪᴍᴇ & ɪɴғᴏʀᴍᴀᴛɪᴏɴ,  ɢᴇᴛ ᴛʜᴇ ᴇxᴀᴄᴛ ɴᴀᴍᴇ ᴏғ ʏᴏᴜʀ ᴛɪᴍᴇᴢᴏɴᴇ ғʀᴏᴍ <a href="https://gist.githubusercontent.com/GauthamramRavichandran/5037a453c2efb44f7453d0993b0a2b4d/raw/daacf0e4496ccc60a36e493f0252b7988bceb143/pytz-time-zones.py">here</a>
+ᴇx: `/time` [America/New_York]
+× `/ai` - ᴡɪʟʟ ᴜsᴇ ᴛʜᴇ ᴏᴘᴇɴᴀɪ ᴀᴘɪ ᴛᴏ ɢᴇɴᴇʀᴀᴛᴇ ᴀ ʀᴇsᴘᴏɴsᴇ ғʀᴏᴍ ᴄʜᴀᴛ ɢᴘᴛ.
+ᴇx: `/ai hello world` ᴡʀɪᴛᴇ ᴀɴʏᴛʜɪɴɢ
+× `/wiki` - ᴛᴏ ғɪɴᴅ ᴀɴᴅ sʜᴀʀᴇ ʟɪɴᴋs ᴛᴏ ᴡɪᴋɪᴘᴇᴅɪᴀ ᴀʀᴛɪᴄʟᴇs.
+ᴇx: `/wiki en dog`
+× ʀᴀɴᴋ ᴜᴘ - ʜᴇʀᴇ ɪs ᴛʜᴇ ʀᴀɴᴋ ᴜᴘ ᴍᴏᴅ, ᴛʜɪs ᴏɴʟʏ ᴡᴏʀᴋ ɪɴ ᴍʏ ɢʀᴏᴜᴘ. 
+ᴄʜᴇᴄᴋ ʏᴏᴜʀ Level : `/rank`
 
 ©️ @spotifysavetgbot
 """
