@@ -45,7 +45,7 @@ def time_to_seconds(time):
 
 
 
-@Client.on_message(filters.private & filters.command(["song"]))
+@Client.on_message(filters.command(["song@spotifysavetgbot", "song", "mp3", "mp3@spotifysavetgbot", "s"]))
 def song_gtr(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎")
