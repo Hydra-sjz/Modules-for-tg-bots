@@ -18,6 +18,6 @@ DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
 
-
+OPENAI_API = getenv("OPENAI_API", "")
 #Port
 PORT = os.environ.get("PORT", "8080")
