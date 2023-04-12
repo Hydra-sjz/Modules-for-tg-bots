@@ -1,6 +1,6 @@
 pyrogram==2.0.38
 tgcrypto
-
+telegraph
 python-dotenv
 requests
 asgiref
