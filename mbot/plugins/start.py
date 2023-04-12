@@ -143,6 +143,12 @@ async def cb_handler(bot, update):
             reply_markup=EX_BUTTONS,
             disable_web_page_preview=True
         )
+    elif update.data == "ex2":
+        await update.message.edit_text(
+            text=EX2_TEXT,
+            reply_markup=EX2_BUTTONS,
+            disable_web_page_preview=True
+        )
 #========
     elif update.data == "about":
         await update.message.edit_text(
@@ -284,7 +290,7 @@ LOGC_BUTTONS = InlineKeyboardMarkup(
     )
 
 EX_TEXT = """
-**Here is Some Extra Commands:**
+**Here is Some Extra Commands: 1**
 
 `/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
 Ex: `/lyrics` [song_name]
@@ -303,6 +309,21 @@ eg: `/mp3` [alone marshmallow]
 `/mp4` - Use to download songs from YouTube. 
 eg: `/mp4` [alone marshmallow]
 
+
+©️ @spotifysavetgbot
+"""
+EX_BUTTONS = InlineKeyboardMarkup(
+        [[
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('ɴᴇxᴛ ==»', callback_data='ex2')
+        ],[
+        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        ]]
+    )
+
+EX2_TEXT = """
+**Here is Some Extra Commands: 𝟸**
+
 `/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
 Eg: `/telegraph` [reply to photo gif]
 
@@ -320,10 +341,12 @@ Ex: `/wiki en dog`
 
 Rank up - here is the rank up mod, this only work in my group. 
 Check your Level : `/rank`
+
+©️ @spotifysavetgbot
 """
-EX_BUTTONS = InlineKeyboardMarkup(
+EX2_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='ex'), 
         InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
         ]]
     )
