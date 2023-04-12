@@ -282,32 +282,33 @@ EX_TEXT = """
 **Here is Some Extra Commands:**
 
 `/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
-Ex: /lyrics [song_name]
+Ex: `/lyrics` [song_name]
 
 `/ping` - Use to ping me whether i am alive or not. 
 
 `/info` - Use to get information about me. 
-eg:/info
+eg: `/info` just send Or user_name or user_id
 
 `/shazam` `/find`- Use to requnize or identity a song. 
-eg: /shazam [with replying to a audio file]
+eg: `/shazam` [with replying to a audio file]
 
 `/mp3` - Use to download songs from YouTube. 
-eg: /mp3 [alone marshmallow]
+eg: `/mp3` [alone marshmallow]
 
 `/mp4` - Use to download songs from YouTube. 
-eg: /mp4 [alone marshmallow]
+eg: `/mp4` [alone marshmallow]
 
 `/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
-Eg: /telegraph [reply to photo gif]
+Eg: `/telegraph` [reply to photo gif]
 
 `/js` - ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴊᴀsᴏɴ.
-Ex: /js [reply to any message]
+Ex: `/js` [reply to any message]
 
 `/time` - [your time zone]- ᴛᴏ ғɪɴᴅ ʏᴏᴜʀ ᴄᴏʀʀᴇɴᴛ ᴛɪᴍᴇ & ɪɴғᴏʀᴍᴀᴛɪᴏɴ,  ɢᴇᴛ ᴛʜᴇ ᴇxᴀᴄᴛ ɴᴀᴍᴇ ᴏғ ʏᴏᴜʀ ᴛɪᴍᴇᴢᴏɴᴇ ғʀᴏᴍ <a href="https://gist.githubusercontent.com/GauthamramRavichandran/5037a453c2efb44f7453d0993b0a2b4d/raw/daacf0e4496ccc60a36e493f0252b7988bceb143/pytz-time-zones.py">here</a>
-Ex: /time [America/New_York]
+Ex: `/time` [America/New_York]
 
-
+`/ai` : will use the OpenAI API to generate a response from Chat Gpt.
+Ex: `/ask hello world` write anything
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
