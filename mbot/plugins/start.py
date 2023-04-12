@@ -289,7 +289,7 @@ EX_TEXT = """
 `/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
 Ex: `/lyrics` [song_name]
 
-`/ping` - Use to ping me whether i am alive or not. 
+`/ping` `/alive`- Use to ping me whether i am alive or not. 
 
 `/info` - Use to get information about me. 
 eg: `/info` just send Or user_name or user_id
@@ -312,8 +312,11 @@ Ex: `/js` [reply to any message]
 `/time` - [your time zone]- ᴛᴏ ғɪɴᴅ ʏᴏᴜʀ ᴄᴏʀʀᴇɴᴛ ᴛɪᴍᴇ & ɪɴғᴏʀᴍᴀᴛɪᴏɴ,  ɢᴇᴛ ᴛʜᴇ ᴇxᴀᴄᴛ ɴᴀᴍᴇ ᴏғ ʏᴏᴜʀ ᴛɪᴍᴇᴢᴏɴᴇ ғʀᴏᴍ <a href="https://gist.githubusercontent.com/GauthamramRavichandran/5037a453c2efb44f7453d0993b0a2b4d/raw/daacf0e4496ccc60a36e493f0252b7988bceb143/pytz-time-zones.py">here</a>
 Ex: `/time` [America/New_York]
 
-`/ai` : will use the OpenAI API to generate a response from Chat Gpt.
-Ex: `/ask hello world` write anything
+`/ai` - will use the OpenAI API to generate a response from Chat Gpt.
+Ex: `/ai hello world` write anything
+
+`/wiki` - To find and share links to Wikipedia articles.
+Ex: `/wiki en dog`
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
