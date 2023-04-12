@@ -24,7 +24,7 @@ SOFTWARE.
 from os import mkdir
 from random import randint
 
-from pyrogram import filters
+from pyrogram import filters, enums
 
 from mbot import AUTH_CHATS, LOG_GROUP, LOGGER, Mbot
 from mbot.utils.ytdl import audio_opt, getIds, thumb_down, ytdl_down
@@ -34,6 +34,7 @@ from mbot.utils.ytdl import audio_opt, getIds, thumb_down, ytdl_down
 @Mbot.on_message(filters.regex(r'(https?://)?.*you[^\s]+') & filters.incoming | filters.command(["yt","ytd","ytmusic"]) & filters.regex(r'https?://.*you[^\s]+') & filters.chat(AUTH_CHATS))
 async def _(_, message):
     m = await message.reply_text("🔎")
+    n = await message.reply_chat_action(enums.ChatAction.TYPING)
     link = message.matches[0].group(0)
     if link in [
         "https://youtube.com/",
@@ -56,6 +57,7 @@ async def _(_, message):
             )
             fileLink = await ytdl_down(audio_opt(randomdir, id[2]), id[0])
             thumnail = await thumb_down(id[0])
+            dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             AForCopy = await message.reply_audio(
                 fileLink,
                 caption=f"<i>{id[3]} | @spotifysavetgbot</i>",
