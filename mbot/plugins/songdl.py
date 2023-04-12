@@ -14,7 +14,7 @@ import aiohttp
 import requests
 import wget
 import yt_dlp
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message
 from youtube_search import YoutubeSearch
@@ -49,6 +49,7 @@ def time_to_seconds(time):
 def song_gtr(_, message):
     query = " ".join(message.command[1:])
     m = message.reply("🔎")
+    n = await message.reply_chat_action(enums.ChatAction.TYPING)
     ydl_ops = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -72,7 +73,7 @@ def song_gtr(_, message):
         print(str(e))
         return
     m.edit("🔽 Downloading Audio...") 
-      
+    dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
 
     PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🔗<b>Song link:</b> [Click here]({link})")
     try:
@@ -86,7 +87,7 @@ def song_gtr(_, message):
             dur += int(float(dur_arr[i])) * secmul
             secmul *= 60
         m.edit("🔼 Uploading to Telegram...\n<i>(this may take a while.)</i>") 
-          
+        dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
         AForCopy = message.reply_audio(
             audio_file,
             caption=rep,
@@ -96,10 +97,6 @@ def song_gtr(_, message):
             title=title,
             duration=dur,
         )
-        if message.chat.type != ChatType.PRIVATE:
-            m = message.reply_text(
-                "ᴘʟᴇᴀsᴇ ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴘᴍ, sᴇɴᴛ ᴛʜᴇ ʀᴇǫᴜᴇsᴛᴇᴅ sᴏɴɢ ᴛʜᴇʀᴇ."
-            )
 
         message.reply_text(f"Done✅",   
           reply_markup=InlineKeyboardMarkup([[
