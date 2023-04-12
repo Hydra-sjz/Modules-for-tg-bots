@@ -8,7 +8,7 @@ import requests
 
 
 #  Lyrics--------------------
-@Client.on_message(filters.command("lyrics", "lyrics@spotifysavetgbot"))
+@Client.on_message(filters.command("lyrics"))
 async def lrsearch(_, message: Message):  
     m = await message.reply_text("Sᴇᴀʀᴄʜɪɴɢ ʟʏʀɪᴄs...")
     n = await message.reply_chat_action(enums.ChatAction.TYPING)
