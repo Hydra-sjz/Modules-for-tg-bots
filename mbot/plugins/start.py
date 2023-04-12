@@ -317,6 +317,9 @@ Ex: `/ai hello world` write anything
 
 `/wiki` - To find and share links to Wikipedia articles.
 Ex: `/wiki en dog`
+
+Rank up - here is the rank up mod, this only work in my group. 
+Check your Level : `/rank`
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
