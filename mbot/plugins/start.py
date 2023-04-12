@@ -299,6 +299,9 @@ eg: /mp3 [alone marshmallow]
 
 `/mp4` - Use to download songs from YouTube
 eg: /mp4 [alone marshmallow]
+
+`/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
+Eg: /telegraph [reply to photo gif]
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
