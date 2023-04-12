@@ -81,6 +81,7 @@ async def spotify_dl(_, message):
             PForCopy = await message.reply_photo(photo=f"https://open.spotify.com/track/{song.get('deezer_id')}", caption=f"🎧 <b>Title:</b> `{song['name']} | {song.get('album')}`\n🎤 <b>Artist:</b> `{song['artist']}`\n💽 <b>Album:</b> `{song['album']}`\n🗓 <b>Release Year:</b> `{song['year']}`\n🔗 **Source url:** [Click here](https://open.spotify.com/track/{song.get('deezer_id')})\n**❗️Is Local**: `False`")
             path = await download_songs(song, randomdir)
             thumbnail = await thumb_down(song.get("cover"), song.get("name"))
+            dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             AForCopy = await message.reply_audio(
                 path,
                 performer=song.get("artist"),
@@ -107,6 +108,7 @@ async def spotify_dl(_, message):
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
                 )
+                dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
                 AForCopy = await message.reply_audio(
                     path,
                     performer=song.get("artist"),
@@ -130,6 +132,7 @@ async def spotify_dl(_, message):
                 thumbnail = await thumb_down(
                     song.get("cover"), song.get("name")
                 )
+                dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
                 AForCopy = await message.reply_audio(
                     path,
                     performer=song.get("artist"),
