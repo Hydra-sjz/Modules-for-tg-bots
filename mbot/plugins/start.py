@@ -284,24 +284,30 @@ EX_TEXT = """
 `/lyrics` - ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ɪs ғᴏʀ sᴄʀᴀᴘᴘɪɴɢ ʟʏʀɪᴄs ᴏғ ᴀ sᴏɴɢ.
 Ex: /lyrics [song_name]
 
-`/ping` - Use to ping me whether i am alive or no
+`/ping` - Use to ping me whether i am alive or not. 
 
-`/preview` - Use to download preview of 30s of tracks
-
-`/info` - Use to get information about me
+`/info` - Use to get information about me. 
 eg:/info
 
-`/shazam` - Use to requnize or identity a song
+`/shazam` `/find`- Use to requnize or identity a song. 
 eg: /shazam [with replying to a audio file]
 
-`/mp3` - Use to download songs from YouTube
+`/mp3` - Use to download songs from YouTube. 
 eg: /mp3 [alone marshmallow]
 
-`/mp4` - Use to download songs from YouTube
+`/mp4` - Use to download songs from YouTube. 
 eg: /mp4 [alone marshmallow]
 
 `/telegraph` - sᴇɴᴅɪɴɢ ᴍᴇ ᴀ ᴍᴇᴅɪᴀ (ᴘʜᴏᴛᴏs, ɢɪғ, ᴠɪᴅᴇᴏ) ᴀɴᴅ ɪ ᴡɪʟʟ ᴜᴘʟᴏᴀᴅ ɪᴛ ᴛᴏ telegra.ph
 Eg: /telegraph [reply to photo gif]
+
+`/js` - ʀᴇᴘʟʏ ᴛᴏ ᴀɴʏ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴇᴛ ᴊᴀsᴏɴ.
+Ex: /js [reply to any message]
+
+`/time` - [your time zone]- ᴛᴏ ғɪɴᴅ ʏᴏᴜʀ ᴄᴏʀʀᴇɴᴛ ᴛɪᴍᴇ & ɪɴғᴏʀᴍᴀᴛɪᴏɴ,  ɢᴇᴛ ᴛʜᴇ ᴇxᴀᴄᴛ ɴᴀᴍᴇ ᴏғ ʏᴏᴜʀ ᴛɪᴍᴇᴢᴏɴᴇ ғʀᴏᴍ <a href="https://gist.githubusercontent.com/GauthamramRavichandran/5037a453c2efb44f7453d0993b0a2b4d/raw/daacf0e4496ccc60a36e493f0252b7988bceb143/pytz-time-zones.py">here</a>
+Ex: /time [America/New_York]
+
+
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
