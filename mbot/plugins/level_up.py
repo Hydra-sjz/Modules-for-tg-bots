@@ -53,7 +53,7 @@ async def level(client, message):
                     l += 1
                 xp -= ((50*((l-1)**2))+(50*(l-1)))
                 if xp == 0:
-                    await message.reply_text(f"🎉 **GG {message.from_user.mention}**, `you just advanced to level {l}!.`")
+                    await message.reply_text(f"🎉 **GG {message.from_user.mention}**, `you just advanced to level` **{l}!**")
     
                     for lv in range(len(levelname)) and range(len(levellink)):
                             if l == levelnum[lv]:            
