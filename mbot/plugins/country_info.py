@@ -26,7 +26,7 @@ Population : <code>{country.population()}</code>
       InlineKeyboardButton("ᴡɪᴋɪᴘᴇᴅɪᴀ", url=f"{country.wiki()}"),
       InlineKeyboardButton("ɢᴏᴏɢʟᴇ", url=f"https://www.google.com/search?q={country_name}")
     ],[
-       InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close_data')
+       InlineKeyboardButton('ᴄʟᴏsᴇ', callback_data='close')
     ]]
     try:
         await update.reply_photo(
