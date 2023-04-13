@@ -1,7 +1,10 @@
-from pyrogram import Client, filters
+from pyrogram import filters
 from pymongo import MongoClient
 import os
 from config import DB_URL
+
+from mbot import Mbot
+#Client
 
 Chat_Group = [-1001671054664]
 
@@ -16,7 +19,7 @@ levelnum = [2,5,15,25,35,50,70,100]
 
 
 
-@Client.on_message(
+@Mbot.on_message(
     (filters.document
      | filters.text
      | filters.photo
@@ -62,7 +65,7 @@ async def level(client, message):
                   
 
                                
-@Client.on_message(
+@Mbot.on_message(
     filters.command("rank", prefixes=["/", ".", "?", "-"])
     & ~filters.private)
 async def rank(client, message):
