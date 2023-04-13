@@ -1,5 +1,6 @@
 pyrogram==2.0.38
 tgcrypto==1.2.2
+pyromod==1.5
 telegraph
 python-dotenv
 dnspython
