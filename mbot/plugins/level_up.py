@@ -61,7 +61,7 @@ async def level(client, message):
                     for lv in range(len(levelname)) and range(len(levellink)):
                             if l == levelnum[lv]:            
                                 Link = f"{levellink[lv]}"
-                                await message.reply_video(video=Link, caption=f"{message.from_user.mention}, You have reached Rank Name **{levelname[lv]}**")
+                                await message.reply_video(video=Link, caption=f"{message.from_user.mention}, You have reached Rank Name **{levelname[lv]}**\n\nsee your rank `/rank`")
                   
 
                                
