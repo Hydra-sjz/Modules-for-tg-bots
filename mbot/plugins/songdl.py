@@ -91,8 +91,7 @@ def song_gtr(_, message):
         AForCopy = message.reply_audio(
             audio_file,
             caption=rep,
-            thumb=thumb_name,
-            parse_mode="md",
+            thumb=thumb_name
             performer=performer,
             title=title,
             duration=dur,
