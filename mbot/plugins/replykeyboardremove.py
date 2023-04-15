@@ -12,7 +12,7 @@ async def reply_rmv(client, message):
             ],[
                 "➡️➡️➡️", "❌ CLOSE ❌", "⬅️⬅️⬅️"
             ]]
-            resize_keyboard=True, 
+            resize_keyboard=True
         ) 
     ) 
 
