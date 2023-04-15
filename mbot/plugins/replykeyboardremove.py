@@ -23,7 +23,7 @@ async def mg_myr(client, message):
         text="https://t.me/songdownload_group", 
     ) 
 
-@Client.on_message(filter.reggex("Close ❌"))
+@Client.on_message(filter.reggex("❌ CLOSE ❌"))
 async def close_myr(client, message):
     await message.reply_text(
         text="Botton Close", 
