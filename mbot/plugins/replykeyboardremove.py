@@ -7,7 +7,7 @@ async def reply_rmv(client, message):
     await message.reply_text(
         text="Click Down Botton to KeyboardRemove", 
         reply_markup=ReplyKeyboardMarkup(
-            ]]
+            [[
                 "♣️Music🎵Galaxy♣️" 
             ],[
                 "➡️➡️➡️", "❌ CLOSE ❌", "⬅️⬅️⬅️"
