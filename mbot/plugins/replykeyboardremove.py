@@ -17,13 +17,13 @@ async def reply_rmv(client, message):
     ) 
 
 
-@Client.on_message(filter.reggex("♣️Music🎵Galaxy♣️"))
+@Client.on_message(filters.reggex("♣️Music🎵Galaxy♣️"))
 async def mg_myr(client, message):
     await message.reply_text(
         text="https://t.me/songdownload_group", 
     ) 
 
-@Client.on_message(filter.reggex("❌ CLOSE ❌"))
+@Client.on_message(filters.reggex("❌ CLOSE ❌"))
 async def close_myr(client, message):
     await message.reply_text(
         text="Botton Close", 
