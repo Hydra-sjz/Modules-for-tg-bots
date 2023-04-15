@@ -5,7 +5,7 @@ from pyrogram import Client, filters
 @Client.on_message(filters.command("replyremov")) 
 async def reply_rmv(client, message):
     await message.reply_text(
-        text="Hi Bro how are U", 
+        text="Click Down Botton to KeyboardRemove", 
         reply_markup=ReplyKeyboardMarkup(
             ]]
                 "♣️Music🎵Galaxy♣️" 
