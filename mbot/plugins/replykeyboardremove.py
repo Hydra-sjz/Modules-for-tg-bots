@@ -11,7 +11,7 @@ async def reply_rmv(client, message):
                 "♣️Music🎵Galaxy♣️" 
             ],[
                 "➡️➡️➡️", "❌ CLOSE ❌", "⬅️⬅️⬅️"
-            ]]
+            ]], 
             resize_keyboard=True
         ) 
     ) 
