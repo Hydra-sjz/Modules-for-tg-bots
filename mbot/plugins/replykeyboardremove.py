@@ -2,8 +2,8 @@ from pyrogram.types import ReplyKeyboardMarkup, ReplyKeyboardRemove
 from pyrogram import Client, filters
 
 
-@Client.on_message(filters.command("start")) 
-async def start_txt(client, message):
+@Client.on_message(filters.command("replyremov")) 
+async def reply_rmv(client, message):
     await message.reply_text(
         text="Hi Bro how are U", 
         reply_markup=ReplyKeyboardMarkup(
@@ -18,7 +18,7 @@ async def start_txt(client, message):
 
 
 @Client.on_message(filter.reggex("♣️Music🎵Galaxy♣️"))
-async def start_myr(client, message):
+async def mg_myr(client, message):
     await message.reply_text(
         text="https://t.me/songdownload_group", 
     ) 
