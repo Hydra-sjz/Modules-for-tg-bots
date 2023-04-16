@@ -71,7 +71,7 @@ async def start_command(bot, message):
                 return
         except UserNotParticipant:
             await message.reply_text(
-                text="Hey bro\nYou must join my group for using me.\nPress this button to join now 👇",
+                text=ғ"Hey {message.from_user.first_name}\nYou must join my group for using me.\nPress this button to join now 👇",
                 reply_markup=InlineKeyboardMarkup( [[
                  InlineKeyboardButton("Join here", url=f"t.me/{f_sub}")
                  ],[
