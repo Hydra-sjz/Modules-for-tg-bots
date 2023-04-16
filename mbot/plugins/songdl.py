@@ -63,6 +63,7 @@ def song_gtr(_, message):
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
+        idt = results[0]['id']
 
         if time_to_seconds(duration) >= 1000:  # duration limit
             m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 10 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 10 minutes")
@@ -75,7 +76,7 @@ def song_gtr(_, message):
     m.edit("🔽 Downloading Audio...") 
     dForChat = message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
 
-    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🔗<b>Song link:</b> [Click here]({link})")
+    PForCopy = message.reply_photo(photo=f"{link}.jpg", caption=f"🎧<b>Title:</b> <code>{title}</code>\n🎤<b>Artist:</b> <code>{channel}</code>\n<b>⏱️Duration:</b> <code>{duration}</code>\n🆔<b>Song Id:</b> <code>{idt}</code>\n🔗<b>Song link:</b> [Click here]({link})")
     try:
         with yt_dlp.YoutubeDL(ydl_ops) as ydl:
             info_dict = ydl.extract_info(link, download=False)
