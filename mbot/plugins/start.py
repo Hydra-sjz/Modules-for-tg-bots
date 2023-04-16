@@ -32,6 +32,7 @@ async def check_alive(_, message):
 
 @Client.on_message(filters.command("settings"))
 async def settig_cmd(bot, message):
+    caption = "Choose:"
     settigButton = InlineKeyboardMarkup(
         [
             [
@@ -42,7 +43,7 @@ async def settig_cmd(bot, message):
             ]
         ]
     )
-    await message.reply_text(caption="Choose:", reply_markup=settigButton)
+    await message.reply_text(caption, reply_markup=settigButton)
 
 
 
