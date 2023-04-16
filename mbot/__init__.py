@@ -21,6 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+import os
 import logging
 from os import environ, mkdir, path, sys
 
@@ -29,11 +30,42 @@ from pyrogram import Client
 
 
 
+import time
+import deethon
+from dotenv import load_dotenv
+from telethon import TelegramClient, events, functions, types
+
+
+formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
+
+fh = logging.FileHandler(f'{__name__}.log', 'w')
+fh.setFormatter(formatter)
+fh.setLevel(logging.DEBUG)
+
+ch = logging.StreamHandler()
+ch.setFormatter(formatter)
+ch.setLevel(logging.INFO)
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+logger.addHandler(fh)
+logger.addHandler(ch)
+
+telethon_logger = logging.getLogger("telethon")
+telethon_logger.setLevel(logging.WARNING)
+telethon_logger.addHandler(ch)
+telethon_logger.addHandler(fh)
+
+botStartTime = time.time()
+
+load_dotenv()
 
 
 
+# Saving user preferences locally
+users = {}
 
-f_sub = "songdownload_group"
+#=========================
 load_dotenv("config.env")
 
 # Log
@@ -50,20 +82,30 @@ try:
     API_ID = int(environ["API_ID"])
     API_HASH = environ["API_HASH"]
     BOT_TOKEN = environ["BOT_TOKEN"]
+    DEEZER_TOKEN = os.environ["DEEZER_TOKEN"]
     OWNER_ID = int(environ["OWNER_ID"])
 except KeyError:
     LOGGER.debug("One or More ENV variable not found.")
     sys.exit(1)
+
 # Optional Variable
 SUDO_USERS = environ.get("SUDO_USERS", str(OWNER_ID)).split()
 SUDO_USERS = [int(_x) for _x in SUDO_USERS]
 if OWNER_ID not in SUDO_USERS:
     SUDO_USERS.append(OWNER_ID)
-AUTH_CHATS = environ.get("AUTH_CHATS", "").split()
+AUTH_CHATS = environ.get("AUTH_CHATS", "-1001576243355").split()
 AUTH_CHATS = [int(_x) for _x in AUTH_CHATS]
 LOG_GROUP = environ.get("LOG_GROUP", None)
 if LOG_GROUP:
     LOG_GROUP = int(LOG_GROUP)
+
+
+deezer = deethon.Session(DEEZER_TOKEN)
+logger.debug(f'Using deethon v{deethon.__version__}')
+
+bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).start(bot_token=BOT_TOKEN)
+logger.info("DEEZER BOT STARTED BROOO")
+
 
 
 class Mbot(Client):
@@ -88,11 +130,11 @@ class Mbot(Client):
         for chat in AUTH_CHATS:
             await self.send_photo(
                 chat,
-                "https://telegra.ph/file/5791b80b0c4349c85c604.jpg",
-                "**Bot Was Started.** 🎵",
+                "https://i.ibb.co/mtGCrzm/youNeedMusic.jpg",
+                "**Bot Started.**",
             )
-        LOGGER.info(f"Bot Started As {BOT_INFO.username}\n")
+        LOGGER.info(f"SPOTIFY BOT STARTED AS {BOT_INFO.username}\n")
 
     async def stop(self, *args):
         await super().stop()
-        LOGGER.info("Bot Stopped, Bye.")
+        LOGGER.info("BOT STOPPED, BYE BRO.")
