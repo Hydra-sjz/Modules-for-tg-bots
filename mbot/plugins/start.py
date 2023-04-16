@@ -30,6 +30,21 @@ async def check_alive(_, message):
     await message.reply_text("ചത്തിട്ടില്ല മുത്തേ ഇവിടെ തന്നെ ഉണ്ട്.. നിനക്ക് ഇപ്പൊ എന്നോട് ഒരു സ്നേഹവും ഇല്ല. കൊള്ളാം.. നീ പാഴെ പോലെയേ അല്ല മാറിപോയി..😔 ഇടക്ക് എങ്കിലും ചുമ്മാ ഒന്ന് /start ചെയ്തു നോക്ക്..🙂")
 
 
+@Client.on_message(filters.command("settings"))
+async def settig_cmd(bot, message):
+    settigButton = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("sᴇᴀʀᴄʜ ᴛʀᴀᴄᴋ 🎧", switch_inline_query_current_chat=""), 
+                InlineKeyboardButton("sᴇᴀʀᴄʜ ᴀʟʙᴜᴍ 💽", switch_inline_query_current_chat=".a ") 
+                ],[
+                InlineKeyboardButton("❌ ᴄʟᴏsᴇ ❌", callback_data="close")
+            ]
+        ]
+    )
+    await message.reply_text(caption="Choose:", reply_markup=settigButton)
+
+
 
 @Client.on_message(filters.private)
 async def _(bot, cmd):
@@ -199,8 +214,8 @@ CMDS_BUTTONS = InlineKeyboardMarkup(
         InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg"), 
         InlineKeyboardButton("ᴇxᴛʀᴀ ᴍᴏᴅ", callback_data="ex") 
         ],[
-        InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start"),
-        InlineKeyboardButton("×««ᴄʟᴏsᴇ»»×", callback_data="close")
+        InlineKeyboardButton("ʜᴏᴍᴇ", callback_data="start"),
+        InlineKeyboardButton("× ᴄʟᴏsᴇ ×", callback_data="close")
         ]]
     )
 #=============Bottons==========
