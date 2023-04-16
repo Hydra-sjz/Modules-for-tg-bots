@@ -71,9 +71,9 @@ async def start_command(bot, message):
                 return
         except UserNotParticipant:
             await message.reply_text(
-                text="🙄ʏᴏᴜʀ ɴᴏᴛ jᴏɪɴᴇᴅ ᴍʏ ɢʀᴏᴜᴘ🧐\n😿ᴘʟᴇᴀsᴇ jᴏɪɴ ᴍʏ ɢʀᴏᴜᴘ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴏᴛ!😽",
+                text="Hey bro\nYou must join my group for using me.\nPress this button to join now 👇",
                 reply_markup=InlineKeyboardMarkup( [[
-                 InlineKeyboardButton("🥺 Join here 🥺", url=f"t.me/{f_sub}")
+                 InlineKeyboardButton("Join here", url=f"t.me/{f_sub}")
                  ],[
                  InlineKeyboardButton("Click start Botton", url="https://t.me/spotifysavetgbot?start")
                  ]]
@@ -201,21 +201,19 @@ CMDS_TEXT = """
 """
 CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="sᴇᴀʀᴄʜ", switch_inline_query_current_chat="")
+        InlineKeyboardButton("❤‍🩹 ʏᴏᴜᴛᴜʙᴇ", callback_data="yt"), 
+        InlineKeyboardButton("💚 sᴘᴏᴛɪғʏ", callback_data="sp"), 
+        InlineKeyboardButton("💜 ᴅᴇᴇᴢᴇʀ", callback_data="dz") 
         ],[
-        InlineKeyboardButton("ʏᴏᴜᴛᴜʙᴇ", callback_data="yt"), 
-        InlineKeyboardButton("sᴘᴏᴛɪғʏ", callback_data="sp"), 
-        InlineKeyboardButton("ᴅᴇᴇᴢᴇʀ", callback_data="dz") 
+        InlineKeyboardButton("💙 ᴊɪᴏ sᴀᴀᴠɴ", callback_data="sv"), 
+        InlineKeyboardButton("🧡 sᴏᴜɴᴅ ᴄʟᴏᴜᴅ", callback_data="sc"), 
+        InlineKeyboardButton("🤍 ᴍɪx ᴄʟᴏᴜᴅ", callback_data="mx") 
         ],[
-        InlineKeyboardButton("ᴊɪᴏ sᴀᴀᴠɴ", callback_data="sv"), 
-        InlineKeyboardButton("sᴏᴜɴᴅ ᴄʟᴏᴜᴅ", callback_data="sc"), 
-        InlineKeyboardButton("ᴍɪx ᴄʟᴏᴜᴅ", callback_data="mx") 
+        InlineKeyboardButton("Ⓜ️ ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg"), 
+        InlineKeyboardButton("➕ ᴇxᴛʀᴀ ᴍᴏᴅ", callback_data="ex") 
         ],[
-        InlineKeyboardButton("ʟᴏɢ ᴄʜᴀɴɴᴇʟ", callback_data="lg"), 
-        InlineKeyboardButton("ᴇxᴛʀᴀ ᴍᴏᴅ", callback_data="ex") 
-        ],[
-        InlineKeyboardButton("ʜᴏᴍᴇ", callback_data="start"),
-        InlineKeyboardButton("× ᴄʟᴏsᴇ ×", callback_data="close")
+        InlineKeyboardButton("🏕 ʜᴏᴍᴇ", callback_data="start"),
+        InlineKeyboardButton("❌ ᴄʟᴏsᴇ ❌", callback_data="close")
         ]]
     )
 #=============Bottons==========
@@ -226,8 +224,8 @@ Send **Youtube** Link in Chat to Download Song.
 """
 YOUTUB_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton("«==ʙᴀᴄᴋ", callback_data="cmds"), 
-        InlineKeyboardButton("«» ʜᴏᴍᴇ «»", callback_data="start")
+        InlineKeyboardButton("⬅️ ʙᴀᴄᴋ", callback_data="cmds"), 
+        InlineKeyboardButton("🏕 ʜᴏᴍᴇ", callback_data="start")
         ]]
     ) 
 
@@ -238,8 +236,8 @@ Send **Spotify** Track/Playlist/Album Link. I'll Download It For You.
 """
 SPOTY_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -247,11 +245,17 @@ DEEZER_TEXT = """
 Help for **ᴅᴇᴇᴢᴇʀ**
 
 Send Deezer Playlist/Album/Track Link. I'll Download It For You.
+
+**Search Deezer:**
+Now you can search Deezer Tracks and albums
+Just type /settings
 """
 DEEZER_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton(text="sᴇᴀʀᴄʜ", switch_inline_query_current_chat="")
+        ],[
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -262,8 +266,8 @@ Send /saavn [song name] - To download song from Saavn.
 """
 SAAVN_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -275,8 +279,8 @@ Send **Sound Cloud** Track Link. I'll Download It For You.
 """
 SOUNDC_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -287,8 +291,8 @@ Send **Mix Cloud** Track Link. I'll Download It For You.
 """
 MIXC_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -299,8 +303,8 @@ My Music Database @music_database_tg
 """
 LOGC_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -325,10 +329,10 @@ Ex: `/country India`
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='cmds'), 
-        InlineKeyboardButton('ɴᴇxᴛ ==»', callback_data='ex2')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
+        InlineKeyboardButton('ɴᴇxᴛ ➡️', callback_data='ex2')
         ],[
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -352,8 +356,8 @@ EX2_TEXT = """
 """
 EX2_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«==ʙᴀᴄᴋ', callback_data='ex'), 
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='ex'), 
+        InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
     )
 
@@ -361,16 +365,17 @@ EX2_BUTTONS = InlineKeyboardMarkup(
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
 ➻ **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
-➻ **ᴏᴡɴᴇʀ: [x:ᴅ](t.me/Kelvin_calumbot)**
+➻ ** ʙᴏᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ: [x:ᴅ](t.me/Kelvin_calumbot)**
 ➻ **ɢʀᴏᴜᴘ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/songdownload_group)**
+➻ **sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : [Click here](https://github.com/rozari0/NeedMusicRobot)**
 ➻ **ʟᴀɴɢᴜᴀɢᴇ : [ᴘʏᴛʜᴏɴ𝟹](https://python.org)**
 ➻ **ʟɪʙʀᴀʀʏ : [ᴘʏʀᴏɢʀᴀᴍ](https://pyrogram.org)**
 ➻ **sᴇʀᴠᴇʀ : [ʜᴇʀᴏᴋᴜ](https://heroku.com)**
 """
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton('«» ʜᴏᴍᴇ «»', callback_data='start'),
-        InlineKeyboardButton('×««ᴄʟᴏsᴇ»»×', callback_data='close')
+        InlineKeyboardButton('⬅️ ʙᴀᴄᴋ ', callback_data='start'),
+        InlineKeyboardButton('❌ ᴄʟᴏsᴇ ❌', callback_data='close')
         ]]
     )
 
