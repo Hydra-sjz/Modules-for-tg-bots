@@ -65,6 +65,44 @@ def song_gtr(_, message):
         duration = results[0]["duration"]
         idt = results[0]['id']
 
+        spoti_url = "https://open.spotify.com/search/"
+        surl = spoti_url + title.replace(' ', '+')
+        print(surl)
+        google_url = "https://www.google.com/search?q="
+        goglurl = google_url + title.replace(' ', '+')
+        print(goglurl) 
+        soundc_url = "https://soundcloud.com/search?q="
+        sdcurl = soundc_url + title.replace(' ', '+')
+        print(sdcurl)
+        ytmusic_url = "https://music.youtube.com/search?q="
+        ytmurl = ytmusic_url + title.replace(' ', '+')
+        print(ytmurl) 
+        #applem_url = "https://music.apple.com/search?q="
+        #appmurl = applem_url + title.replace(' ', '+')
+        #print(appmurl)   
+        #deezer_url = "https://www.deezer.com/search/"
+        #dezurl = deezer_url + title.replace(' ', '+')
+        #print(dezurl)
+        #tidal_url = "https://tidal.com/search/"
+        #tidaurl = tidal_url + title.replace(' ', '+')
+        #print(tidaurl)
+        #pandora_url = "https://www.pandora.com/search/"
+        #pandrurl = pandora_url + title.replace(' ', '+')
+        #print(pandrurl)
+        hungama_url = "https://www.hungama.com/search/"
+        hungurl = hungama_url + title.replace(' ', '+')
+        print(hungurl)
+        iheart_url = "https://www.iheart.com/podcast/?q="
+        iheturl = iheart_url + title.replace(' ', '+')
+        print(iheturl)
+        jiosaavn_url = "https://www.jiosaavn.com/search?q="
+        jiosvurl = jiosaavn_url + title.replace(' ', '+')
+        print(jiosvurl)
+        gaana_url = "https://gaana.com/search/"
+        gaanurl = gaana_url + title.replace(' ', '+')
+        print(gaanurl)
+
+
         if time_to_seconds(duration) >= 1000:  # duration limit
             m.edit(f"**Duration Limit Exceeded:**\n\n**Allowed Duration:** 10 minute(s)\n**Received Duration:** {duration} hour(s)\nSend songs less than 10 minutes")
             return
@@ -97,13 +135,23 @@ def song_gtr(_, message):
             title=title,
             duration=dur,
         )
-
-        message.reply_text(f"Done✅",   
+        message.reply_text(f"**Done** ✅\n@spotifysavetgbot | @songdownload_group",   
           reply_markup=InlineKeyboardMarkup([[
-          InlineKeyboardButton("Done ✅", callback_data="feed")
+          InlineKeyboardButton("YouTube", url=f"{link}"), 
+          InlineKeyboardButton("YouTube Music", url=f"{ytmurl}"), 
+          InlineKeyboardButton("Spotify", url=f"{surl}")
+          ],[ 
+          InlineKeyboardButton("Sound Cloud", url=f"{sdcurl}"), 
+          InlineKeyboardButton("Hungama", url=f"{hungurl}"), 
+          InlineKeyboardButton("Jio Saavn", url=f"{jiosvurl}")
+          ],[
+          InlineKeyboardButton("Google", url=f"{goglurl}"), 
+          InlineKeyboardButton("Gaana", url=f"{gaanurl}"), 
+          InlineKeyboardButton("iHeart", url=f"{iheturl}")
           ]]
           )
       )
+        
         if LOG_GROUP:
             PForCopy.copy(LOG_GROUP)
             AForCopy.copy(LOG_GROUP)
