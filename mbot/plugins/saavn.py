@@ -6,7 +6,7 @@ from mbot import LOG_GROUP
 
 
 @Client.on_message(filters.command("saavn", "saavn@spotifysavetgbot")) #filters.text
-async def song(client, message):
+async def saavn_song(client, message):
     await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
        args = message.text.split(None, 1)[1]
