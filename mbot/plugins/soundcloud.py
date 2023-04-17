@@ -2,12 +2,12 @@ import os
 import asyncio
 from datetime import timedelta
 from urllib.parse import urlparse
-from pyrogram import Client as app, filters, idle, enums
+from pyrogram import filters, idle, enums
 from pyrogram.types import Message
 from youtube_dl import YoutubeDL
 from PIL import Image
 import ffmpeg
-from mbot import LOG_GROUP
+from mbot import LOG_GROUP, Mbot
 
 MUSIC_MAX_LENGTH = 10800
 DELAY_DELETE_INFORM = 10
@@ -27,7 +27,7 @@ REGEX_EXCLUDE_URL = (
 #    await _fetch_and_send_music(message)
 
 
-@app.on_message(filters.regex(REGEX_SITES)& ~filters.regex(REGEX_EXCLUDE_URL))
+@Mbot.on_message(filters.regex(REGEX_SITES)& ~filters.regex(REGEX_EXCLUDE_URL))
 async def _fetch_and_send_music(_, message: Message):
     await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
