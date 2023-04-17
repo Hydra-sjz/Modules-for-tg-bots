@@ -198,7 +198,7 @@ START_BUTTONS = InlineKeyboardMarkup(
 CMDS_TEXT = """
 ʜᴇʟʟᴏ {}
 ɪ'ᴍ ʜᴇʀᴇ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ʏᴏᴜʀ ᴍᴜsɪᴄ.
-©️ @spotifysavetgbot
+©️ @Spotifyx_dlbot
 """
 CMDS_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -253,8 +253,6 @@ Just type /settings
 """
 DEEZER_BUTTONS = InlineKeyboardMarkup(
         [[
-        InlineKeyboardButton(text="sᴇᴀʀᴄʜ", switch_inline_query_current_chat="")
-        ],[
         InlineKeyboardButton('⬅️ ʙᴀᴄᴋ', callback_data='cmds'), 
         InlineKeyboardButton('🏕 ʜᴏᴍᴇ', callback_data='start')
         ]]
@@ -326,7 +324,7 @@ EX_TEXT = """
 × `/country` - ᴛᴏ ғɪɴᴅ ᴄᴏᴜɴᴛʀʏ ɪɴғᴏʀᴍᴀᴛɪᴏɴ. 
 Ex: `/country India`
 
-©️ @spotifysavetgbot
+©️ @Spotifyx_dlbot
 """
 EX_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -353,7 +351,7 @@ EX2_TEXT = """
 × ʀᴀɴᴋ ᴜᴘ - ʜᴇʀᴇ ɪs ᴛʜᴇ ʀᴀɴᴋ ᴜᴘ ᴍᴏᴅ, ᴛʜɪs ᴏɴʟʏ ᴡᴏʀᴋ ɪɴ ᴍʏ ɢʀᴏᴜᴘ. 
 ᴄʜᴇᴄᴋ ʏᴏᴜʀ Level : `/rank`
 
-©️ @spotifysavetgbot
+©️ @Spotifyx_dlbot
 """
 EX2_BUTTONS = InlineKeyboardMarkup(
         [[
@@ -365,13 +363,15 @@ EX2_BUTTONS = InlineKeyboardMarkup(
 #=================
 ABOUT_TEXT = """
  **ᴀʙᴏᴜᴛ ᴍᴇ** 
-➻ **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
-➻ ** ʙᴏᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ: [x:ᴅ](t.me/Kelvin_calumbot)**
-➻ **ɢʀᴏᴜᴘ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/songdownload_group)**
-➻ **sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : [Click here](https://github.com/rozari0/NeedMusicRobot)**
-➻ **ʟᴀɴɢᴜᴀɢᴇ : [ᴘʏᴛʜᴏɴ𝟹](https://python.org)**
-➻ **ʟɪʙʀᴀʀʏ : [ᴘʏʀᴏɢʀᴀᴍ](https://pyrogram.org)**
-➻ **sᴇʀᴠᴇʀ : [ʜᴇʀᴏᴋᴜ](https://heroku.com)**
+🎵 **ʙᴏᴛ : 𝗦ᴘᴏᴛɪғʏ•✘•Dʟ**
+👨‍💻 ** ʙᴏᴛ ᴍᴀɪɴᴛᴀɪɴᴇᴅ ʙʏ: [x:ᴅ](t.me/Kelvin_calumbot)**
+🦄 **ɢʀᴏᴜᴘ : [ᴄʟɪᴄᴋ ʜᴇʀᴇ](https://t.me/songdownload_group)**
+⛅ **sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : [Click here](https://github.com/rozari0/NeedMusicRobot)**
+🅿️ **ʟᴀɴɢᴜᴀɢᴇ : [ᴘʏᴛʜᴏɴ𝟹](https://python.org)**
+♿ **ʟɪʙʀᴀʀʏ : [ᴘʏʀᴏɢʀᴀᴍ](https://pyrogram.org)**
+🔞 **sᴇʀᴠᴇʀ : [ʜᴇʀᴏᴋᴜ](https://heroku.com)**
+
+©️ @Spotifyx_dlbot
 """
 ABOUT_BUTTONS = InlineKeyboardMarkup(
         [[
