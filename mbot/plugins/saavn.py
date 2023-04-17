@@ -5,7 +5,7 @@ import requests,os,wget
 from mbot import LOG_GROUP, Mbot
 
 
-@Mbot.on_message(filters.command("saavn", "saavn@spotifysavetgbot")) #filters.text
+@Mbot.on_message(filters.command("saavn")) #filters.text
 async def saavn_song(client, message):
     await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
