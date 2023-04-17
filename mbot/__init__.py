@@ -109,6 +109,55 @@ bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).st
 logger.info("DEEZER BOT STARTED BROOO")
 
 
+bot.loop.run_until_complete(
+    bot(functions.bots.SetBotCommandsRequest(
+        commands=[
+            types.BotCommand(
+                command='settings',
+                description='🎧Search Tracks'),
+            types.BotCommand(
+                command='ping',
+                description='💡Ping pong'),
+            types.BotCommand(
+                command='rank',
+                description='🏆To See Your Rank'),
+            types.BotCommand(
+                command='find',
+                description='🏝Reply to Audio File to Find Music'),
+            types.BotCommand(
+                command='lyrics',
+                description='🌟To Get Lyrics from genius Api'),
+            types.BotCommand(
+                command='mp3',
+                description='🎧To Download Music'),
+            types.BotCommand(
+                command='mp4',
+                description='📹To Download Video'),
+            types.BotCommand(
+                command='country',
+                description='🗺To Get Your Country Info'),
+            types.BotCommand(
+                command='info',
+                description='🧸To Get The User's Info'),
+            types.BotCommand(
+                command='telegraph',
+                description='📱Reply to Photo, Gif To make telegra.ph'),
+            types.BotCommand(
+                command='js',
+                description='🦄Reply to Any User, Bots To get Jason'),
+            types.BotCommand(
+                command='time',
+                description='✨To find Your Time&Date Info'),
+            types.BotCommand(
+                command='ai',
+                description='🌈Write your Question or Request '),
+            types.BotCommand(
+                command='wiki',
+                description='🎭Search Wikimedia'),
+        ]
+    ))
+)
+
 
 class Mbot(Client):
     def __init__(self):
