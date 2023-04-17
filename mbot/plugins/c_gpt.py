@@ -5,15 +5,15 @@ import random
 import asyncio
 from pyrogram import *
 from pyrogram.types import *
-from pyrogram import Client as ren 
+#from pyrogram import Client as ren 
 from pyrogram.errors import MessageNotModified
 
 from handlers.what import *
 from config import OPENAI_API 
+from mbot import Mbot
 
 
-
-@ren.on_message(filters.private & filters.command("ai"))
+@Mbot.on_message(filters.private & filters.command("ai"))
 async def chat_gpt(c: Client, m: Message):
     randydev = (
         m.text.split(None, 1)[1]
