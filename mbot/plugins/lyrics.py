@@ -10,7 +10,7 @@ import requests
 #  Lyrics--------------------
 @Client.on_message(filters.command("lyrics"))
 async def lrsearch(_, message: Message):  
-    m = await message.reply_text("Sᴇᴀʀᴄʜɪɴɢ ʟʏʀɪᴄs...")
+    m = await message.reply_text("🔎")
     query = query = message.text.split(None, 1)[1]
     x = "Vd9FvPMOKWfsKJNG9RbZnItaTNIRFzVyyXFdrGHONVsGqHcHBoj3AI3sIlNuqzuf0ZNG8uLcF9wAd5DXBBnUzA"
     y = lyricsgenius.Genius(x)
@@ -28,5 +28,5 @@ async def lrsearch(_, message: Message):
 **Lyrics:**
 `{S.lyrics}`
 
-©️ **Lyrics Search Powered By @spotifysavetgbot**"""
+©️ **Lyrics Search Powered By @Spotifyx_dlbot**"""
     await m.edit(xxx)
