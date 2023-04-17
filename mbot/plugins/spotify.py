@@ -87,7 +87,7 @@ async def spotify_dl(_, message):
                 path,
                 performer=song.get("artist"),
                 title=f"{song.get('name')} - {song.get('artist')}",
-                caption=f"{song.get('name')} | @spotifysavetgbot",
+                caption=f"{song.get('name')} | @Spotifyx_dlbot",
                 thumb=thumbnail,
             )
             if LOG_GROUP:
@@ -114,7 +114,7 @@ async def spotify_dl(_, message):
                     path,
                     performer=song.get("artist"),
                     title=f"{song.get('name')} - {song.get('artist')}",
-                    caption=f"{song.get('name')} | @spotifysavetgbot",
+                    caption=f"{song.get('name')} | @Spotifyx_dlbot",
                     thumb=thumbnail,
                 )
                 track_no += 1
@@ -138,7 +138,7 @@ async def spotify_dl(_, message):
                     path,
                     performer=song.get("artist"),
                     title=f"{song.get('name')} - {song.get('artist')}",
-                    caption=f"<i>{song.get('name')}</i> | @spotifysavetgbot",
+                    caption=f"<i>{song.get('name')}</i> | @Spotifyx_dlbot",
                     thumb=thumbnail,
                 )
                 if LOG_GROUP:
