@@ -1,9 +1,9 @@
 from countryinfo import CountryInfo
-from pyrogram import filters, Client 
+from pyrogram import filters 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
+from mbot import Mbot
 
-
-@Client.on_message(filters.command(["country"]))
+@Mbot.on_message(filters.command(["country"]))
 async def country_info(bot, update):
     country = update.text.split(" ", 1)[1]
     country = CountryInfo(country)
