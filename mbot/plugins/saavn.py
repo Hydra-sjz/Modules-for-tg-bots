@@ -33,7 +33,7 @@ async def saavn_song(client, message):
     await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
     await pak.edit('» ᴜᴘʟᴏᴀᴅɪɴɢ\nsᴏɴɢ ғʀᴏᴍ sᴀᴀᴠɴ...')
     PForCopy = await message.reply_photo(photo=f"{thumbnail}", caption=f"🎧<b>Title:</b> <code>{sname}</code>\n<b>👨‍🎤 Singers:</b> <code>{ssingers}</code>\n🔗<b>Source Link:</b> [Click here]({r['data']['results'][0]['url']})\n❗️<b>Is Local:</b> <code>False</code>") #\n<b>Album:</b> <code>{album_id}</code>    
-    AForCopy = await message.reply_audio(audio=ffile, title=sname, performer=ssingers, caption=f"<i>[song.link]({r['data']['results'][0]['url']}) | [via](https://telegram.me/Musicx_dlbot?start=abcde)</i>", thumb=thumbnail) #caption=f"[{sname}]() - from saavn
+    AForCopy = await message.reply_audio(audio=ffile, title=sname, performer=ssingers, caption=f"<i>[song.link]({r['data']['results'][0]['url']}) | @Spotifyx_dlbot</i>", thumb=thumbnail) #caption=f"[{sname}]() - from saavn
     await message.reply_text("Done ✅") 
      
     if LOG_GROUP:
