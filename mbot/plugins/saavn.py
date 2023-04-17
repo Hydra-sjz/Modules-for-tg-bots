@@ -2,10 +2,10 @@
 from pyrogram import Client, filters, enums
 import requests,os,wget 
 
-from mbot import LOG_GROUP
+from mbot import LOG_GROUP, Mbot
 
 
-@Client.on_message(filters.command("saavn", "saavn@spotifysavetgbot")) #filters.text
+@Mbot.on_message(filters.command("saavn", "saavn@spotifysavetgbot")) #filters.text
 async def saavn_song(client, message):
     await message.reply_chat_action(enums.ChatAction.TYPING)
     try:
