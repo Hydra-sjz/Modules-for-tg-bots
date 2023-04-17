@@ -135,7 +135,7 @@ def song_gtr(_, message):
             title=title,
             duration=dur,
         )
-        message.reply_text(f"**Done** ✅\n@spotifysavetgbot | @songdownload_group",   
+        message.reply_text(f"**Done** ✅\n@Spotifyx_dlbot | @songdownload_group",   
           reply_markup=InlineKeyboardMarkup([[
           InlineKeyboardButton("YouTube", url=f"{link}"), 
           InlineKeyboardButton("YouTube Music", url=f"{ytmurl}"), 
