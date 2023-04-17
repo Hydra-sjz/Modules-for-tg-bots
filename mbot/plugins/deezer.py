@@ -66,7 +66,7 @@ async def link_handler(_, message):
                     path,
                     performer=song.get("artist"),
                     title=f"{song.get('name')} - {song.get('artist')}",
-                    caption=f"[{song['name']}](https://www.deezer.com/track/{song['deezer_id']}) | {song['album']} - {song['artist']}",
+                    caption=f"[{song['name']}](https://www.deezer.com/track/{song['deezer_id']}) | {song['album']} - @Spotifyx_dlbot",
                     thumb=thumbnail,
                     duration=song["duration"],
                 )
