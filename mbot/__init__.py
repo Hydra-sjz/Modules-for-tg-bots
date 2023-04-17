@@ -138,7 +138,7 @@ bot.loop.run_until_complete(
                 description='🗺To Get Your Country Info'),
             types.BotCommand(
                 command='info',
-                description='🧸To Get The User's Info'),
+                description='🧸To Get The Users Info'),
             types.BotCommand(
                 command='telegraph',
                 description='📱Reply to Photo, Gif To make telegra.ph'),
