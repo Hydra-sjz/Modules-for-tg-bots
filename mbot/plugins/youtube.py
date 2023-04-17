@@ -60,7 +60,7 @@ async def _(_, message):
             dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             AForCopy = await message.reply_audio(
                 fileLink,
-                caption=f"<i>{id[3]} | @spotifysavetgbot</i>",
+                caption=f"<i>{id[3]} | @Spotifyx_dlbot</i>",
                 title=id[3].replace("_", " "),
                 performer=id[2],
                 thumb=thumnail,
