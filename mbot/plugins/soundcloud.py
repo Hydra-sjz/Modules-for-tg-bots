@@ -55,7 +55,7 @@ async def _fetch_and_send_music(_, message: Message):
             await _reply_and_delete_later(message, inform,
                                           DELAY_DELETE_INFORM)
             return
-        d_status = await message.reply_text("ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ...", quote=True,
+        d_status = await message.reply_text("🔎", quote=True,
                                             disable_notification=True)
         ydl.process_info(info_dict)
         audio_file = ydl.prepare_filename(info_dict)
