@@ -56,11 +56,10 @@ async def vsong(client, message):
         results[0]["duration"]
         results[0]["url_suffix"]
         results[0]["views"]
-        duration2 = results[0]["duration"]
         message.from_user.mention
       
         if time_to_seconds(duration) >= 3600:  # duration limit
-            m.reply_photo(photo="https://telegra.ph/file/2d165d91b82dcab56d058.jpg", caption=f"❗**DURATION LIMIT EXCEEDE:**❗\n\n🛂 **Allowed Duration:** <code>less than 1 hours(s)</code>\n📵 **Received Duration:** <code>{duration2}</code>\n☕ <b>Received video URL</b>: [click here]({link})\n\nThis won't be downloaded because its audio length is {duration2} hours longer than the limit\nSend songs less than 1 hours")
+            m.reply_photo(photo="https://telegra.ph/file/2d165d91b82dcab56d058.jpg", caption=f"❗**DURATION LIMIT EXCEEDE:**❗\n\n🛂 **Allowed Duration:** <code>less than 1 hours(s)</code>\n📵 **Received Duration:** <code>{duration}</code>\n☕ <b>Received video URL</b>: [click here]({link})\n\nThis won't be downloaded because its audio length is {duration} hours longer than the limit\nSend songs less than 1 hours")
             return
        
     except Exception as e:
