@@ -24,10 +24,8 @@ from config import DB_URL
 TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
 
 
-bot = TelegramClient("pinterestbot", APP_ID, APP_HASH).start(bot_token=BOT_TOKEN)
 
-
-loop = asyncio.get_event_loop()
+#loop = asyncio.get_event_loop()
 
 msg = """
 &£&
