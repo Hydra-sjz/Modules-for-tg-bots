@@ -7,7 +7,6 @@ dnspython
 requests
 asgiref
 deezer-python
-spotipy
 
 #Pillow
 Pillow>=4.2.0
@@ -29,25 +28,22 @@ future
 #gunicorn
 gunicorn==20.1.0
 
-#====chatgpt
-httpx[http2]
-Flask==2.2.2
+
 gunicorn==20.1.0
 aiohttp==3.8.1 
 
 ffmpeg==1.4
 ffmpeg-python==0.2.0
 ffprobe==0.5
-lyricsgenius
+
 
 apscheduler
 mutagen
 bs4
-Shazamio
+
 pytz~=2021.1
 
-Wikipedia
-countryinfo
+
 pymongo[srv]==3.12.3
 
 #======telethon
