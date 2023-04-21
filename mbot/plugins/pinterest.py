@@ -78,16 +78,7 @@ class pinterest_db:
         return list(self.ara({"uye_id": {"$exists": True}}).keys())
 
 
-async def log_yolla(event):
-    j = await event.client(GetFullUserRequest(event.chat_id))
-    uye_id = j.user.id
-    uye_nick = f"@{j.user.username}" if j.user.username else None
-    uye_adi = f"{j.user.first_name or ''} {j.user.last_name or ''}".strip()
-    komut = event.text
 
-    # Kullanıcı Kaydet
-    db = pinterest_db()
-    db.ekle(uye_id, uye_nick, uye_adi)
 
 
 @bot.on(events.NewMessage(pattern="/pvid ?(.*)", func=lambda e: e.is_private))
