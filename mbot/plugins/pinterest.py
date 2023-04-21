@@ -19,10 +19,10 @@ from telethon.tl.custom import Button
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import DocumentAttributeVideo
 from mbot import bot
+from config import DB_URL
 
 TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", "./DOWNLOADS/")
-MONGO_DB = os.environ.get("MONGO_DB", None)
-BOT_ADMIN = os.environ.get("BOT_ADMIN",None)
+
 
 bot = TelegramClient("pinterestbot", APP_ID, APP_HASH).start(bot_token=BOT_TOKEN)
 
@@ -39,7 +39,7 @@ SESSION_ADI = "pinterest"
 
 class pinterest_db:
     def __init__(self):
-        client = pymongo.MongoClient(MONGO_DB)
+        client = pymongo.MongoClient(DB_URL)
         db = client["Telegram"]
         self.collection = db[SESSION_ADI]
 
