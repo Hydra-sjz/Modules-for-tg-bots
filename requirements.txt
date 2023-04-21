@@ -48,7 +48,7 @@ pymongo[srv]==3.12.3
 
 #======telethon
 telethon~=1.14.0
-cryptg~=0.2
+cryptg
 python-dotenv~=0.13.0
  
 deethon~=0.3.3
