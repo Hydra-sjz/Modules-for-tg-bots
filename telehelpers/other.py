@@ -1,5 +1,5 @@
 import requests
-from .search import shorten
+from telehelpers.search import shorten
 
 
 def conv_to_jpeg(image):
