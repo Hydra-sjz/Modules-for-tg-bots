@@ -88,6 +88,8 @@ except KeyError:
     sys.exit(1)
 
 # Optional Variable
+DEV_USERS = list(map(int, config("DEV_USERS").split()))
+DEV_USERS = list(DEV_USERS)
 SUDO_USERS = environ.get("SUDO_USERS", str(OWNER_ID)).split()
 SUDO_USERS = [int(_x) for _x in SUDO_USERS]
 if OWNER_ID not in SUDO_USERS:
