@@ -27,7 +27,7 @@ from os import environ, mkdir, path, sys
 
 from dotenv import load_dotenv
 from pyrogram import Client
-
+from decouple import config
 
 
 import time
@@ -88,7 +88,7 @@ except KeyError:
     sys.exit(1)
 
 # Optional Variable
-DEV_USERS = list(map(int, config("DEV_USERS", "5422115985").split()))
+DEV_USERS = list(map(int, config("DEV_USERS").split()))
 DEV_USERS = list(DEV_USERS)
 SUDO_USERS = environ.get("SUDO_USERS", str(OWNER_ID)).split()
 SUDO_USERS = [int(_x) for _x in SUDO_USERS]
