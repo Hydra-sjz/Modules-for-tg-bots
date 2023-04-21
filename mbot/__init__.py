@@ -61,8 +61,6 @@ botStartTime = time.time()
 load_dotenv()
 
 
-f_sub = "songdownload_group"
-
 
 # Saving user preferences locally
 users = {}
@@ -84,7 +82,6 @@ try:
     API_ID = int(environ["API_ID"])
     API_HASH = environ["API_HASH"]
     BOT_TOKEN = environ["BOT_TOKEN"]
-    DEEZER_TOKEN = os.environ["DEEZER_TOKEN"]
     OWNER_ID = int(environ["OWNER_ID"])
 except KeyError:
     LOGGER.debug("One or More ENV variable not found.")
@@ -102,61 +99,10 @@ if LOG_GROUP:
     LOG_GROUP = int(LOG_GROUP)
 
 
-deezer = deethon.Session(DEEZER_TOKEN)
 logger.debug(f'Using deethon v{deethon.__version__}')
 
 bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).start(bot_token=BOT_TOKEN)
-logger.info("DEEZER BOT STARTED BROOO")
-
-
-bot.loop.run_until_complete(
-    bot(functions.bots.SetBotCommandsRequest(
-        commands=[
-            types.BotCommand(
-                command='settings',
-                description='🎧Search Tracks'),
-            types.BotCommand(
-                command='ping',
-                description='💡Ping pong'),
-            types.BotCommand(
-                command='rank',
-                description='🏆To See Your Rank'),
-            types.BotCommand(
-                command='find',
-                description='🏝Reply to Audio File to Find Music'),
-            types.BotCommand(
-                command='lyrics',
-                description='🌟To Get Lyrics from genius Api'),
-            types.BotCommand(
-                command='mp3',
-                description='🎧To Download Music'),
-            types.BotCommand(
-                command='mp4',
-                description='📹To Download Video'),
-            types.BotCommand(
-                command='country',
-                description='🗺To Get Your Country Info'),
-            types.BotCommand(
-                command='info',
-                description='🧸To Get The Users Info'),
-            types.BotCommand(
-                command='telegraph',
-                description='📱Reply to Photo, Gif To make telegra.ph'),
-            types.BotCommand(
-                command='js',
-                description='🦄Reply to Any User, Bots To get Jason'),
-            types.BotCommand(
-                command='time',
-                description='✨To find Your Time&Date Info'),
-            types.BotCommand(
-                command='ai',
-                description='🌈Write your Question or Request '),
-            types.BotCommand(
-                command='wiki',
-                description='🎭Search Wikimedia'),
-        ]
-    ))
-)
+logger.info("TELETHON STARTED BROOO")
 
 
 class Mbot(Client):
@@ -184,8 +130,8 @@ class Mbot(Client):
                 "https://telegra.ph/file/5791b80b0c4349c85c604.jpg",
                 "**Bot Started.** 🎵",
             )
-        LOGGER.info(f"SPOTIFY BOT STARTED AS {BOT_INFO.username}\n")
+        LOGGER.info(f"PYROGRAM STARTED AS {BOT_INFO.username}\n")
 
     async def stop(self, *args):
         await super().stop()
-        LOGGER.info("BOT STOPPED, BYE BRO.")
+        LOGGER.info("PYROGRAM STOPPED BRO.")
