@@ -1,7 +1,7 @@
 import os
 import asyncio
 import requests
-from AnimeBot import AnimeBot
+from mbot import bot
 from telethon import events, Button
 from telehelpers.search import shorten, anime_query, GRAPHQL
 from telehelpers.other import format_results, conv_to_jpeg
@@ -10,10 +10,10 @@ import logging
 logging.basicConfig(format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s', level=logging.WARNING)
 
 
-@AnimeBot.on(events.NewMessage(incoming=True, pattern='/anime ?(.*)'))
+@bot.on(events.NewMessage(incoming=True, pattern='/anime ?(.*)'))
 async def anime(event):
     input_str = event.pattern_match.group(1)
-    ing = await AnimeBot.send_message(event.chat_id, f"__Searching for__ `{input_str}` __in Anilist__")
+    ing = await bot.send_message(event.chat_id, f"__Searching for__ `{input_str}` __in Anilist__")
     variables = {'search': input_str}
     json = requests.post(GRAPHQL, json={'query': anime_query, 'variables': variables}).json()['data'].get('Media', None)
     if json:
@@ -34,7 +34,7 @@ async def anime(event):
         if image:
             try:
                 namae = conv_to_jpeg(image)
-                await AnimeBot.send_file(event.chat_id, namae, caption=msg, buttons=buttons, reply_to=event.id, force_document=False)
+                await bot.send_file(event.chat_id, namae, caption=msg, buttons=buttons, reply_to=event.id, force_document=False)
                 await ing.delete()
                 os.remove(namae)
             except:
