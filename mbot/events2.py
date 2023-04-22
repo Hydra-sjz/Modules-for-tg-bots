@@ -13,7 +13,7 @@ from config import DB_URI
 from mbot import bot as telethn
 
 client = MongoClient()
-client = MongoClient(MONGO_DB_URI)
+client = MongoClient(DB_URI)
 db = client["Shikimorirobot"]
 gbanned = db.gban
 
