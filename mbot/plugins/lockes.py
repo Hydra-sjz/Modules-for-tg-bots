@@ -10,7 +10,7 @@ LOCKS_HELP = """
 """
 
 @tbot.on(events.NewMessage(pattern="^[/]lock ?(.*)"))
-@is_admin
+
 async def lock(event, perm):
     if not perm.change_info:
       await event.reply("You are missing the following rights to use this command:CanChangeInfo")
@@ -60,7 +60,7 @@ async def lock(event, perm):
 
 
 @tbot.on(events.NewMessage(pattern="^[/]unlock ?(.*)"))
-@is_admin
+
 async def unlock(event, perm):
     if not perm.change_info:
       await event.reply("You are missing the following rights to use this command:CanChangeInfo")
