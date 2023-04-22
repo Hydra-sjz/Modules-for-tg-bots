@@ -4,7 +4,7 @@
 from telethon import TelegramClient, events
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.client import bots
-from utils.weather import wtr
+from mbot.utils.weather import wtr
 from requests import get
 import os
 import requests
