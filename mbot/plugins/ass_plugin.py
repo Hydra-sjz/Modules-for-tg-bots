@@ -2,7 +2,7 @@ import os
 import time
 from PIL import Image
 from telethon import events
-from .global_functions import log, cooldown
+from mbot.global_functions import log, cooldown
 from random import randint, getrandbits
 
 
