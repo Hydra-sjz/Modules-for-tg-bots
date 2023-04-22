@@ -38,7 +38,6 @@ UNBAN_RIGHTS = ChatBannedRights(
 
 
 @tbot.on(events.NewMessage(pattern="^[/]zombies ?(.*)"))
-
 async def clean(event, perm):
     if not perm.ban_users:
       await event.reply("You don't have enough rights")
