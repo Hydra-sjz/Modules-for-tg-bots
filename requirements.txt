@@ -68,3 +68,4 @@ textblob==0.17.1
 search_engine_parser
 bs4
 bing_image_downloader
+telegraph
