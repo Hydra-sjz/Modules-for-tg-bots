@@ -20,7 +20,6 @@ async def get_pinned(event):
     await event.reply(tem, parse_mode="html", link_preview=False)
 
 @tbot.on(events.NewMessage(pattern="^[/]pin ?(.*)"))
-
 async def pin(event, perm):
     if not perm.pin_messages:
        await event.reply("You are missing the following rights to use this command:CanPinMsgs.")
@@ -36,7 +35,6 @@ async def pin(event, perm):
     await tbot.pin_message(event.chat_id, msg)   
 
 @tbot.on(events.NewMessage(pattern="^[/]unpin ?(.*)"))
-
 async def unpin(event, perm):
     if not perm.pin_messages:
        await event.reply("You are missing the following rights to use this command:CanPinMsgs.")
@@ -47,7 +45,6 @@ async def unpin(event, perm):
     await event.reply(f"Successfully unpinned [this](t.me/{event.chat.username}/{ok.id}) message.", link_preview=False)
 
 @tbot.on(events.NewMessage(pattern="^[/]permapin"))
-
 async def permapin(event, perm):
     if not perm.pin_messages:
        await event.reply("You are missing the following rights to use this command:CanPinMsgs.")
