@@ -6,7 +6,6 @@ import os
 import requests
 
 @tbot.on(events.NewMessage(pattern="[/]spam"))
-
 async def spam(event, perm):
     if not perm.ban_users:
          await event.reply("You are missing the following rights to use this command:CanBanUsers!")
