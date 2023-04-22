@@ -130,13 +130,13 @@ async def handler(event):
     await event.reply(f"You edited a message :)")
     raise events.StopPropagation
 
-# @bot.on(events.NewMessage(pattern="/weather"))
-# async def weather(event):
-#     city = event.text
-#     temp = wtr(city)
-#     print(temp)
-#     await event.reply(f"{temp}°C")
-#     raise events.StopPropagation
+@bot.on(events.NewMessage(pattern="/weather"))
+async def weather(event):
+    city = event.text
+    temp = wtr(city)
+    print(temp)
+    await event.reply(f"{temp}°C")
+    raise events.StopPropagation
 # @bot.on(events.MessageRead)
 # async def handler(event):
 #     # Log when someone reads your messages
