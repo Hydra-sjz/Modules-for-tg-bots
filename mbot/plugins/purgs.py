@@ -11,7 +11,6 @@ PR_HELP = """
 """
 
 @tbot.on(events.NewMessage(pattern=r"^[/]purge"))
-
 async def purge_messages(event, perm):
     if not perm.delete_messages:
          await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
@@ -39,7 +38,6 @@ async def purge_messages(event, perm):
     await event.respond(text, parse_mode='markdown')
 
 @tbot.on(events.NewMessage(pattern="^[/]spurge"))
-
 async def spurge(event, perm):
     if not perm.delete_messages:
          await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
@@ -64,7 +62,6 @@ async def spurge(event, perm):
     await event.client.delete_messages(event.chat_id, messages)
 
 @tbot.on(events.NewMessage(pattern="^[/]del$"))
-
 async def delete_messages(event, perm):
     if not perm.delete_messages:
        await event.reply("You are missing the following rights to use this command:CanDelMsgs!")
