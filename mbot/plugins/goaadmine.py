@@ -12,7 +12,7 @@ async def _(event):
     await event.edit(ADMIN_TEXT, buttons=[[Button.inline("Back", data="help")]])
 
 @tbot.on(events.NewMessage(pattern="^[/]promote ?(.*)"))
-@is_admin
+
 async def promote(event, perm):
     if event.is_private:
        await event.reply("This command is made to be used in groups, not in PM!")
@@ -42,7 +42,7 @@ async def promote(event, perm):
     await event.reply(f"Succesfully Promoted {input_str} in {event.chat.title}")
  
 @tbot.on(events.NewMessage(pattern="^[/]demote ?(.*)"))
-@is_admin
+
 async def promote(event, perm):
     if event.is_private:
        await event.reply("This cmd is made to be used in groups, not in PM!")
