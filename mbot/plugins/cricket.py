@@ -48,4 +48,3 @@ async def _(event):
         Sed += match.get_text() + "\n\n"
     await event.reply(
         f"<b><u>Match information gathered successfully</b></u>\n\n<code>{Sed}</code>",
-        
