@@ -5,7 +5,7 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from mbot import tbot
+from mbot import bot as tbot
 from mbot.events import register
 
 langi = "en"
