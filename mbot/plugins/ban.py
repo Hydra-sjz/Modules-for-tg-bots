@@ -17,8 +17,8 @@ BANS_TEXT = """
 ‣ `/dkick` - To delete your msg and and kicks the replied user.
 """
 
-@tbot.on(events.NewMessage(pattern="^[/]kick ?(.*)"))
-@is_admin
+@tbot.on(events.NewMessage(pattern="^[/]kick ?(.*)")) 
+
 async def kick(event, perm):
 
     if event.is_private:
@@ -55,7 +55,7 @@ async def kickme(event):
     await tbot.kick_participant(event.chat_id, event.sender_id)
 
 @tbot.on(events.NewMessage(pattern="^[/]ban ?(.*)"))
-@is_admin
+
 async def ban(event, perm):
     if event.is_private:
         await event.reply("This cmd is made to be used in groups not PM")
@@ -75,7 +75,7 @@ async def ban(event, perm):
     await event.reply(f"Succesfully Banned [{info.first_name}](tg://user?id={replied_user}) in {event.chat.title}")
 
 @tbot.on(events.NewMessage(pattern="^[/]unban ?(.*)"))
-@is_admin
+
 async def unban(event, perm):
     if event.is_private:
         await event.reply("This cmd is made to be used in groups not PM")
@@ -95,7 +95,7 @@ async def unban(event, perm):
     await event.reply(f"Succesfully Unbanned [{info.first_name}](tg://user?id={replied_user}) in {event.chat.title}")
 
 @tbot.on(events.NewMessage(pattern="^[/]skick"))
-@is_admin
+
 async def skick(event, perm):
     if not perm.ban_users:
          await event.reply("You are missing the following rights to use this command:CanBanUsers!")
@@ -114,7 +114,7 @@ async def skick(event, perm):
     await event.reply(f"Succesfully Kicked [{info.first_name}](tg://user?id={x}) from {event.chat.title}")
 
 @tbot.on(events.NewMessage(pattern="^[/]dkick"))
-@is_admin
+
 async def dkick(event, perm):
     if not perm.ban_users:
          await event.reply("You are missing the following rights to use this command:CanBanUsers!")
@@ -131,7 +131,7 @@ async def dkick(event, perm):
     await event.reply(f"Succesfully Kicked [{info.first_name}](tg://user?id={x}) from {event.chat.title}")
 
 @tbot.on(events.NewMessage(pattern="^[/]dban"))
-@is_admin
+
 async def dban(event, perm):
     if not perm.ban_users:
          await event.reply("You are missing the following rights to use this command:CanBanUsers!")
@@ -150,7 +150,7 @@ async def dban(event, perm):
     await event.reply(f"Succesfully Banned [{info.first_name}](tg://user?id={x}) from {event.chat.title}")
 
 @tbot.on(events.NewMessage(pattern="^[/]sban"))
-@is_admin
+
 async def sban(event, perm):
     if not perm.ban_users:
          await event.reply("You are missing the following rights to use this command:CanBanUsers!")
