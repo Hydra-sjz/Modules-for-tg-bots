@@ -2,7 +2,7 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 from mbot import OWNER_ID
-from mbot import bot
+from mbot import Mbot as bot
 
 
 @bot.on_message(filters.private & filters.incoming)
