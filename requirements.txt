@@ -60,5 +60,5 @@ asyncio
 hachoir
 pyquery
 urllib3
-
+gtts
 collections
