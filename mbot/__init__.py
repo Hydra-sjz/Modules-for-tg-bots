@@ -27,7 +27,7 @@ from os import environ, mkdir, path, sys
 
 from dotenv import load_dotenv
 from pyrogram import Client
-
+from telegraph import Telegraph
 
 import time
 import deethon
@@ -102,6 +102,7 @@ LOG_GROUP = environ.get("LOG_GROUP", None)
 if LOG_GROUP:
     LOG_GROUP = int(LOG_GROUP)
 
+telegraph = Telegraph()
 
 logger.debug(f'Using deethon v{deethon.__version__}')
 
