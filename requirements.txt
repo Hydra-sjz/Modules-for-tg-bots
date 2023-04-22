@@ -55,7 +55,7 @@ deethon~=0.3.3
 #aiohttp[speedups]~=3.6.2
 
 asyncio
-
+beautifulsoup4==4.11.1
 
 hachoir
 pyquery
