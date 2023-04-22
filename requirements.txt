@@ -61,7 +61,7 @@ hachoir
 pyquery
 urllib3
 gtts
-collections
+
 fontTools
 emoji==1.6.3
 textblob==0.17.1
