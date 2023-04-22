@@ -20,4 +20,3 @@ async def ud_(e):
     await e.reply(
         reply_txt,
         buttons=Button.url("🔎 ɢᴏᴏɢʟᴇ ɪᴛ!", f"https://www.google.com/search?q={text}"),
-        
