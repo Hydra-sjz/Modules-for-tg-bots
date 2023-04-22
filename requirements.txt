@@ -65,3 +65,6 @@ collections
 fontTools
 emoji==1.6.3
 textblob==0.17.1
+search_engine_parser
+bs4
+bing_image_downloader
