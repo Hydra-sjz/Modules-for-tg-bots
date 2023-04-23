@@ -35,6 +35,10 @@ from dotenv import load_dotenv
 from telethon import TelegramClient, events, functions, types
 
 
+from asyncio import get_event_loop, new_event_loop, set_event_loop
+
+
+
 formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
 
 fh = logging.FileHandler(f'{__name__}.log', 'w')
@@ -109,7 +113,7 @@ logger.debug(f'Using deethon v{deethon.__version__}')
 
 bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).start(bot_token=BOT_TOKEN)
 logger.info("TELETHON STARTED BROOO")
-
+#===================
 
 LOGGER(__name__).info("setting up event loop....")
 try:
