@@ -158,7 +158,7 @@ ____________________________________________________________________
 
 LOGGER(__name__).info("initiating the client....")
 LOGGER(__name__).info("checking MongoDb URI....")
-loop.run_until_complete(check_mongo_uri(DB_URI))
+loop.run_until_complete(check_mongo_uri(DB_URL))
 
 class Mbot(Client):
     def __init__(self):
