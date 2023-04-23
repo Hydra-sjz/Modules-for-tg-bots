@@ -5,7 +5,7 @@ from speedtest import Speedtest
 from mbot.helpers.decorators import ratelimiter, run_sync_in_thread
 from mbot.helpers.functions import get_readable_bytes
 from mbot.helpers.filters import sudo_cmd
-from mbot.logging import LOGGER
+from mbot.logging import LOG
 
 
 @run_sync_in_thread
@@ -26,7 +26,7 @@ async def speedtest(_, message: Message):
     """
     
     speed = await message.reply("Running speedtest....", quote=True)
-    LOGGER(__name__).info("Running speedtest....")
+    LOG(__name__).info("Running speedtest....")
     result = await speedtestcli()
 
     speed_string = f"""
