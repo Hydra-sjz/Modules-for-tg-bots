@@ -41,7 +41,7 @@ import time
 import uvloop 
 
 from mbot.database.MongoDb import check_mongo_uri
-from mbot.logging import LOGGER
+from mbot.logging import LOG
 from config import DB_URL
 
 
@@ -66,7 +66,7 @@ telethon_logger.addHandler(ch)
 telethon_logger.addHandler(fh)
 
 botStartTime = time.time()
-BotStartTime = time.time()
+
 
 
 load_dotenv()
@@ -122,26 +122,26 @@ logger.info("TELETHON STARTED BROOO")
 #===================
 
 uvloop.install()
-LOGGER(__name__).info("Starting TelegramBot....")
+LOG(__name__).info("Starting TelegramBot....")
 BotStartTime = time.time()
 
 
 if sys.version_info[0] < 3 or sys.version_info[1] < 7:
-    LOGGER(__name__).critical("""
+    LOG(__name__).critical("""
 =============================================================
 You MUST need to be on python 3.7 or above, shutting down the bot...
 =============================================================
 """)
     sys.exit(1)
 
-LOGGER(__name__).info("setting up event loop....")
+LOG(__name__).info("setting up event loop....")
 try:
     loop = get_event_loop()
 except RuntimeError:
     set_event_loop(new_event_loop())
     loop = get_event_loop()
 
-LOGGER(__name__).info(
+LOG(__name__).info(
     r"""
 ____________________________________________________________________
 |  _______   _                                ____        _        |
@@ -156,8 +156,8 @@ ____________________________________________________________________
 # https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 
 
-LOGGER(__name__).info("initiating the client....")
-LOGGER(__name__).info("checking MongoDb URI....")
+LOG(__name__).info("initiating the client....")
+LOG(__name__).info("checking MongoDb URI....")
 loop.run_until_complete(check_mongo_uri(DB_URL))
 
 class Mbot(Client):
