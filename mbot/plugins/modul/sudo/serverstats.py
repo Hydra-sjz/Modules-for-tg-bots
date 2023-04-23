@@ -21,8 +21,8 @@ from mbot.helpers.functions import get_readable_bytes, get_readable_time
 @ratelimiter 
 async def stats(_, message: Message):	
 	
-    image = Image.open('TelegramBot/helpers/assets/statsbg.jpg').convert('RGB')
-    IronFont = ImageFont.truetype("TelegramBot/helpers/assets/IronFont.otf", 42)
+    image = Image.open('mboy/helpers/assets/statsbg.jpg').convert('RGB')
+    IronFont = ImageFont.truetype("mbot/helpers/assets/IronFont.otf", 42)
     draw = ImageDraw.Draw(image)
     
     def draw_progressbar(coordinate, progress):
