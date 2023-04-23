@@ -5,7 +5,7 @@ from pyrogram.types import (CallbackQuery, InlineKeyboardButton,
 
 from mbot import Mbot as bot
 from mbot.helpers.start_constants import *
-from config import OWNER_USERID, SUDO_USERID
+from mbot import SUDO_USERS, OWNER_ID
 from mbot.database import database
 from mbot.helpers.decorators import ratelimiter
 
@@ -58,14 +58,14 @@ async def botCallbacks(_, CallbackQuery: CallbackQuery):
         return await CallbackQuery.answer("This command is not initiated by you.")
 
     if CallbackQuery.data == "SUDO_BUTTON":
-        if clicker_user_id not in SUDO_USERID:
+        if clicker_user_id not in SUDO_USERS:
             return await CallbackQuery.answer(
                 "You are not in the sudo user list.", show_alert=True)              
         await CallbackQuery.edit_message_text(
             SUDO_TEXT, reply_markup=InlineKeyboardMarkup(GOBACK_2_BUTTON))
             
     elif CallbackQuery.data == "DEV_BUTTON":
-        if clicker_user_id not in OWNER_USERID:
+        if clicker_user_id not in OWNER_ID:
             return await CallbackQuery.answer(
                 "This is developer restricted command.", show_alert=True)                
         await CallbackQuery.edit_message_text(
