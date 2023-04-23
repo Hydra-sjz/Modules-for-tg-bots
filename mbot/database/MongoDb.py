@@ -2,7 +2,7 @@ from sys import exit as exiter
 
 from motor.motor_asyncio import AsyncIOMotorClient
 
-from mbot.config import MONGO_URI
+from mbot.config import DB_URI
 from TelegramBot.logging import LOGGER
 
 
@@ -52,7 +52,7 @@ class MongoDb:
 
 async def check_mongo_uri(MONGO_URI: str) -> None:
     try:
-        mongo = AsyncIOMotorClient(MONGO_URI)
+        mongo = AsyncIOMotorClient(DB_URI)
         await mongo.server_info()
     except:
         LOGGER(__name__).error(
@@ -61,7 +61,7 @@ async def check_mongo_uri(MONGO_URI: str) -> None:
 
 
 # Initiating MongoDb motor client
-mongodb = AsyncIOMotorClient(MONGO_URI)
+mongodb = AsyncIOMotorClient(DB_URI)
 
 # Database Name (TelegramBot).
 database = mongodb.TelegramBot
