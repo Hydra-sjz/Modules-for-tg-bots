@@ -76,6 +76,7 @@ logging.basicConfig(
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 LOGGER = logging.getLogger(__name__)
 
+
 # Mandatory Variable
 try:
     API_ID = int(environ["API_ID"])
@@ -89,9 +90,7 @@ except KeyError:
 # Optional Variable
 
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
-
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)  # From:- https://www.remove.bg/
-
 SUDO_USERS = environ.get("SUDO_USERS", str(OWNER_ID)).split()
 SUDO_USERS = [int(_x) for _x in SUDO_USERS]
 if OWNER_ID not in SUDO_USERS:
@@ -109,6 +108,13 @@ logger.debug(f'Using deethon v{deethon.__version__}')
 bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).start(bot_token=BOT_TOKEN)
 logger.info("TELETHON STARTED BROOO")
 
+
+LOGGER(__name__).info("setting up event loop....")
+try:
+    loop = get_event_loop()
+except RuntimeError:
+    set_event_loop(new_event_loop())
+    loop = get_event_loop()
 
 class Mbot(Client):
     def __init__(self):
