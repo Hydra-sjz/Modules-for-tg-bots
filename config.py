@@ -2,6 +2,9 @@ import os
 from os import getenv
 from dotenv import load_dotenv
 from os import environ
+import json
+
+
 
 if os.path.exists("local.env"):
     load_dotenv("local.env")
@@ -20,3 +23,11 @@ BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
 
 #Port
 PORT = os.environ.get("PORT", "8080")
+
+
+OWNER_USERID = json.loads(getenv("OWNER_USERID"))
+SUDO_USERID = OWNER_USERID
+try:SUDO_USERID += json.loads(getenv("SUDO_USERID"))
+except:pass
+SUDO_USERID = list(set(SUDO_USERID))
+
