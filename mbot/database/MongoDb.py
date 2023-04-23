@@ -50,7 +50,7 @@ class MongoDb:
         return await self.collection.distinct("_id")
 
 
-async def check_mongo_uri(MONGO_URI: str) -> None:
+async def check_mongo_uri(DB_URI: str) -> None:
     try:
         mongo = AsyncIOMotorClient(DB_URI)
         await mongo.server_info()
