@@ -6,7 +6,7 @@ from io import BytesIO, StringIO
 from os import remove
 
 import aiofiles
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
