@@ -1,7 +1,7 @@
 from pyrogram.enums import ChatMemberStatus, ChatType
 from pyrogram.types import Message
 
-from config import SUDO_USERID
+from mbot import SUDO_USERS
 from typing import Union 
 
 
@@ -16,7 +16,7 @@ async def isAdmin(message: Message) -> bool:
         return
 
     user_id = message.from_user.id
-    if user_id in SUDO_USERID:
+    if user_id in SUDO_USERS:
         return True
 
     check_status = await message.chat.get_member(user_id)
