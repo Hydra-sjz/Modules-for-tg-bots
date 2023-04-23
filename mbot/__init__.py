@@ -36,6 +36,12 @@ from telethon import TelegramClient, events, functions, types
 
 
 from asyncio import get_event_loop, new_event_loop, set_event_loop
+import sys
+import time
+import uvloop 
+import config
+from mbot.database.MongoDb import check_mongo_uri
+from mbot.logging import LOGGER
 
 
 
@@ -115,12 +121,44 @@ bot = TelegramClient(__name__, API_ID, API_HASH, base_logger=telethon_logger).st
 logger.info("TELETHON STARTED BROOO")
 #===================
 
+uvloop.install()
+LOGGER(__name__).info("Starting TelegramBot....")
+BotStartTime = time.time()
+
+
+if sys.version_info[0] < 3 or sys.version_info[1] < 7:
+    LOGGER(__name__).critical("""
+=============================================================
+You MUST need to be on python 3.7 or above, shutting down the bot...
+=============================================================
+""")
+    sys.exit(1)
+
 LOGGER(__name__).info("setting up event loop....")
 try:
     loop = get_event_loop()
 except RuntimeError:
     set_event_loop(new_event_loop())
     loop = get_event_loop()
+
+LOGGER(__name__).info(
+    r"""
+____________________________________________________________________
+|  _______   _                                ____        _        |
+| |__   __| | |                              |  _ \      | |       |
+|    | | ___| | ___  __ _ _ __ __ _ _ __ ___ | |_) | ___ | |_      |
+|    | |/ _ \ |/ _ \/ _` | '__/ _` | '_ ` _ \|  _ < / _ \| __|     |
+|    | |  __/ |  __/ (_| | | | (_| | | | | | | |_) | (_) | |_      |
+|    |_|\___|_|\___|\__, |_|  \__,_|_| |_| |_|____/ \___/ \__|     |
+|                    __/ |                                         |
+|__________________________________________________________________|   
+""")
+# https://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+
+LOGGER(__name__).info("initiating the client....")
+LOGGER(__name__).info("checking MongoDb URI....")
+loop.run_until_complete(check_mongo_uri(config.DB_URI))
 
 class Mbot(Client):
     def __init__(self):
