@@ -56,6 +56,8 @@ telethon_logger.addHandler(ch)
 telethon_logger.addHandler(fh)
 
 botStartTime = time.time()
+BotStartTime = time.time()
+
 
 load_dotenv()
 
