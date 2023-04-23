@@ -3,7 +3,7 @@ from sys import exit as exiter
 from motor.motor_asyncio import AsyncIOMotorClient
 
 from config import DB_URL
-from mbot.logging import LOGGER
+from mbot.logging import LOG
 
 
 # from one string uri you can create multiple databases for different projects/bots. within each database you can store multiple collections, and within each collection you can store multiple documents.
@@ -55,7 +55,7 @@ async def check_mongo_uri(DB_URL: str) -> None:
         mongo = AsyncIOMotorClient(DB_URL)
         await mongo.server_info()
     except:
-        LOGGER(__name__).error(
+        LOG(__name__).error(
             "Error in Establishing connection with MongoDb URI. Please enter valid uri in the config section.")
         exiter(1)
 
