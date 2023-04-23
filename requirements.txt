@@ -72,3 +72,13 @@ telegraph
 CurrencyConverter
 colorama
 random2
+
+speedtest-cli
+#telegraph[aio]
+pyrate_limiter 
+cachetools 
+
+psutil
+httpx
+
+uvloop
