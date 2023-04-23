@@ -39,10 +39,10 @@ from asyncio import get_event_loop, new_event_loop, set_event_loop
 import sys
 import time
 import uvloop 
-import config
+
 from mbot.database.MongoDb import check_mongo_uri
 from mbot.logging import LOGGER
-
+from config import DB_URL
 
 
 formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
@@ -158,7 +158,7 @@ ____________________________________________________________________
 
 LOGGER(__name__).info("initiating the client....")
 LOGGER(__name__).info("checking MongoDb URI....")
-loop.run_until_complete(check_mongo_uri(config.DB_URI))
+loop.run_until_complete(check_mongo_uri(DB_URI))
 
 class Mbot(Client):
     def __init__(self):
