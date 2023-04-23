@@ -2,13 +2,13 @@ import os
 
 import aiofiles
 from pyrogram.types import Message
-from pyrogram import Client, filters
+from pyrogram import filters
 
 from mbot.helpers.decorators import ratelimiter
 from mbot.helpers.pasting_services import katbin_paste
+from mbot import Mbot
 
-
-@Client.on_message(filters.command(["paste"]))
+@Mbot.on_message(filters.command(["paste"]))
 @ratelimiter
 async def paste(_, message: Message):
     """
