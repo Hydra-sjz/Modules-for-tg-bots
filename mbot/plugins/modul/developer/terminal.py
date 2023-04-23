@@ -15,7 +15,7 @@ from pyrogram.types import (
 
 from mbot.helpers.decorators import ratelimiter
 from mbot.helpers.filters import dev_cmd
-from mbot.logging import LOGGER
+from mbot.logging import LOG
 from mbot import Mbot
 
 @Mbot.on_message(filters.command(["shell", "sh"]) & dev_cmd)
@@ -38,7 +38,7 @@ async def shell(_, message: Message):
         stdout, stderr = await shell.communicate()
         result = str(stdout.decode().strip()) + str(stderr.decode().strip())
     except Exception as error:
-        LOGGER(__name__).warning(f"{error}")
+        LOG(__name__).warning(f"{error}")
         return await shell_replymsg.edit(f"Error :-\n\n{error}")
 
     if len(result) > 4000:
