@@ -3,14 +3,14 @@ from httpx import AsyncClient
 from datetime import datetime
 
 from pyrogram.types import Message
-from pyrogram import Client, filters 
+from pyrogram import filters 
 
 from mbot import BotStartTime
 from mbot.helpers.decorators import ratelimiter
 from mbot.helpers.functions import get_readable_time
+from mbot import Mbot
 
-
-@Client.on_message(filters.command(["ping", "alive"]))
+@Mbot.on_message(filters.command(["ping", "alive"]))
 @ratelimiter
 async def ping(_, message: Message):
     """
