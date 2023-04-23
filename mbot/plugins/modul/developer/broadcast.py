@@ -6,7 +6,7 @@ from pyrogram.types import Message
 from mbot.database import MongoDb
 from mbot.helpers.decorators import ratelimiter
 from mbot.helpers.filters import dev_cmd
-from mbot.logging import LOGGER
+from mbot.logging import LOG
 from mbot import Mbot
 
 @Mbot.on_message(filters.command(["broadcast"]) & dev_cmd)
@@ -62,7 +62,7 @@ async def broadcast(_: Client, message: Message):
             # preventing flood wait
             await sleep(0.3)
         except Exception as error:
-            LOGGER(__name__).error(str(error))
+            LOG(__name__).error(str(error))
             failed += 1
 
     return await proses_msg.edit(
