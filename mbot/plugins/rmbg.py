@@ -7,9 +7,9 @@ import requests
 from telethon import types
 from telethon.tl import functions
 
-from mbot import REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY, bot as telethn
+from mbot import bot as telethn
 from mbot.events import register
-
+from config import REM_BG_API_KEY, TEMP_DOWNLOAD_DIRECTORY
 
 async def is_register_admin(chat, user):
     if isinstance(chat, (types.InputPeerChannel, types.InputChannel)):
