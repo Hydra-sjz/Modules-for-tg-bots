@@ -1,6 +1,6 @@
 from EmojiCaptcha import Captcha as emoji_captcha
 import random
-from mbot.plugins.capcha.image import ImageCaptcha
+from capcha.image import ImageCaptcha
 import uuid
 
 def emoji_() -> dict:
