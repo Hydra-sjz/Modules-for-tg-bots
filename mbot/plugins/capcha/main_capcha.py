@@ -1,5 +1,5 @@
 from mbot import SUDO_USERS
-from pyrogram import Client, filters
+from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, ChatPermissions
 import random
 import asyncio
@@ -7,7 +7,7 @@ from mbot.plugins.capcha.db import manage_db
 from pyrogram.errors import UserNotParticipant
 from mbot.plugins.capcha.markup import MakeCaptchaMarkup
 from mbot.plugins.capcha.capta_mak import number_, emoji_
-
+from mbot import Mbot as app
 
 # Local database for saving user info
 LocalDB = {}
