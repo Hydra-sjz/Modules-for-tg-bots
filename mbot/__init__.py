@@ -94,8 +94,6 @@ except KeyError:
 
 # Optional Variable
 
-TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
-REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)  # From:- https://www.remove.bg/
 SUDO_USERS = environ.get("SUDO_USERS", str(OWNER_ID)).split()
 SUDO_USERS = [int(_x) for _x in SUDO_USERS]
 if OWNER_ID not in SUDO_USERS:
