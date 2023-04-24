@@ -38,7 +38,7 @@ from telethon import TelegramClient, events, functions, types
 
 
 
-#formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
+formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
 
 fh = logging.FileHandler(f'{__name__}.log', 'w')
 fh.setFormatter(formatter)
