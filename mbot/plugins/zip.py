@@ -8,7 +8,7 @@ import zipfile
 from telethon import types
 from telethon.tl import functions
 
-from mbot import TEMP_DOWNLOAD_DIRECTORY
+from config import TEMP_DOWNLOAD_DIRECTORY
 from mbot import bot as client
 from mbot.events import register
 
