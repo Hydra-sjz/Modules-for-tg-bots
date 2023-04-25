@@ -9,7 +9,7 @@ from telethon.tl import types
 from telethon.tl.types import *
 
 from config import OPENWEATHERMAP_ID
-
+from aiohttp import ClientSession
 from mbot import app as tbot
 from mbot.events import register
 
