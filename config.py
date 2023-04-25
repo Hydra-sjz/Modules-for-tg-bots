@@ -27,3 +27,6 @@ PORT = os.environ.get("PORT", "8080")
 
 TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", "./")
 REM_BG_API_KEY = os.environ.get("REM_BG_API_KEY", None)  # From:- https://www.remove.bg/
+
+AUTO_DELETE = bool(environ.get("AUTO_DELETE", True))
+AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
