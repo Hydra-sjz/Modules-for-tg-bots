@@ -12,8 +12,8 @@ from mbot.plugins.aniplay.stats import day, over
 QUERY = '**Search Results:** `{}`'
 
 
-@app.on_message(filters.command(['search', 's']))
-async def searchCMD(_, message: Message):
+@app.on_message(filters.command(['asearch', 's']))
+async def searcdhCMD(_, message: Message):
     try:
         user = message.from_user.id
         query = ' '.join(message.command[1:])
