@@ -1,8 +1,8 @@
 from mbot.gogoanimeapi import gogoanime as anime
 from telethon import types, Button, events
-from mbot import Mbot
+from mbot import bot
 
-@Mbot.on(events.NewMessage(pattern="^/gogo ?(.*)"))
+@bot.on(events.NewMessage(pattern="^/gogo ?(.*)"))
 async def gogo(event):
  args = event.pattern_match.group(1)
  if not args:
@@ -16,7 +16,7 @@ async def gogo(event):
      break
  await event.reply("search", buttons=buttons)
 
-@Mbot.on(events.CallbackQuery(pattern="search(\_(.*))"))
+@bot.on(events.CallbackQuery(pattern="search(\_(.*))"))
 async def search(event):
  tata = event.pattern_match.group(1)
  data = tata.decode()
@@ -37,7 +37,7 @@ Summary: {}
 """
  await event.edit(text.format(result["title"], result["year"], result["type"], result["status"], result["genre"], result["episodes"], result["plot_summary"]), buttons=buttons)
 
-@Mbot.on(events.CallbackQuery(pattern="episode(\_(.*))"))
+@bot.on(events.CallbackQuery(pattern="episode(\_(.*))"))
 async def episode(event):
  tata = event.pattern_match.group(1)
  data = tata.decode()
@@ -57,7 +57,7 @@ async def episode(event):
  text = f"You selected {animeid},\n\nSelect the Episode you want :-"
  await event.edit(text, buttons=cbutton)
 
-@Mbot.on(events.CallbackQuery(pattern="download(\_(.*))"))
+@bot.on(events.CallbackQuery(pattern="download(\_(.*))"))
 async def episode(event):
  tata = event.pattern_match.group(1)
  data = tata.decode()
