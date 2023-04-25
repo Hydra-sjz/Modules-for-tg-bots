@@ -6,6 +6,8 @@ from telethon.tl.types import ChannelParticipantCreator
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.errors import UserNotParticipantError
 
+from mbot import bot
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(name)s - [%(levelname)s] - %(message)s'
@@ -15,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 spam_chats = []
 
 
-@client.on(events.NewMessage(pattern="^/mall ?(.*)"))
+@bot.on(events.NewMessage(pattern="^/mall ?(.*)"))
 async def mall(event):
   chat_id = event.chat_id
   if event.is_private:
