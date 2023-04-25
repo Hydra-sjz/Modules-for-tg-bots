@@ -6,7 +6,7 @@ from telethon.tl.types import ChannelParticipantCreator
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.errors import UserNotParticipantError
 
-from mbot import bot
+from mbot import bot as client
 
 logging.basicConfig(
     level=logging.INFO,
@@ -17,7 +17,7 @@ LOGGER = logging.getLogger(__name__)
 spam_chats = []
 
 
-@bot.on(events.NewMessage(pattern="^/mall ?(.*)"))
+@client.on(events.NewMessage(pattern="^/mall ?(.*)"))
 async def mall(event):
   chat_id = event.chat_id
   if event.is_private:
@@ -80,7 +80,7 @@ async def mall(event):
   except:
     pass
 
-@bot.on(events.NewMessage(pattern="^/cancel$"))
+@client.on(events.NewMessage(pattern="^/cancel$"))
 async def cancel_spam(event):
   if not event.chat_id in spam_chats:
     return await event.respond('__There is no proccess on going...__')
