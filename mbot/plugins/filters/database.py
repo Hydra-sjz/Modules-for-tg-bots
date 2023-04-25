@@ -1,11 +1,11 @@
 import pyrogram
 from pymongo import MongoClient
-from config import DB_URI, DB_NAME
+from config import DB_URL, DB_NAME
 
 class Database:
 
     def __init__(self):
-        self.client0 = MongoClient(DB_URI)
+        self.client0 = MongoClient(DB_URL)
         self.client0 = self.client0[DB_NAME]
         self.client1 = self.client0["FILTERS"]
         self.client2 = self.client0["CONNECTION"]
