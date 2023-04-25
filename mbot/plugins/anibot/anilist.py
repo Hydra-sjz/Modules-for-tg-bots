@@ -15,7 +15,7 @@ import re
 from pyrogram import filters, Client
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, Message
 from pyrogram.errors import UserNotParticipant
-from mbot import OWNER, TRIGGERS as trg, SUDO_USERS
+from mbot import SUDO_USERS
 from mbot.ani_utils.data_parser import (
     get_all_genres, get_all_tags, get_top_animes, get_user_activity, get_user_favourites, toggle_favourites,
     get_anime, get_airing, get_anilist, get_character, get_additional_info, get_manga,
@@ -23,7 +23,7 @@ from mbot.ani_utils.data_parser import (
 )
 from mbot.ani_utils.helper import check_user, get_btns, AUTH_USERS, rand_key, clog, control_user
 from mbot.ani_utils.db import get_collection
-from config import BOT_NAME, ANILIST_CLIENT, ANILIST_REDIRECT_URL, ANILIST_SECRET
+from config import TRIGGERS as trg, BOT_NAME, ANILIST_CLIENT, ANILIST_REDIRECT_URL, ANILIST_SECRET
 
 
 
@@ -308,7 +308,7 @@ async def auth_link_cmd(client, message: Message):
 async def sfw_cmd(client: Client, message: Message):
     user = message.from_user.id
     cid = message.chat.id
-    if user in OWNER or (await client.get_chat_member(cid, user)).status!='member':
+    if user in SUDO_USERS or (await client.get_chat_member(cid, user)).status!='member':
         text = """
 This allows you to change group settings
         
@@ -508,7 +508,7 @@ async def nsfw_toggle_btn(client, cq: CallbackQuery):
         k = await cq.message.chat.get_member(cus)
     except UserNotParticipant:
         return
-    if cus not in OWNER and str(k.status)=="member":
+    if cus not in SUDO_USERS and str(k.status)=="member":
         await cq.answer("You don't have enough permissions to change this!!!", show_alert=True)
         return
     await cq.answer()
