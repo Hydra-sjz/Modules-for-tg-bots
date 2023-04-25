@@ -43,3 +43,4 @@ TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
 
 DOWN_PATH = "anibot/downloads/"
 HELP_DICT = dict()
+plugins = dict(root="anibot/plugins")
