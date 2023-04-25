@@ -16,7 +16,7 @@ if "mbot" in _RUN(_MGCLIENT.list_database_names()):
 else:
     print("anibot Database Not Found :( => Creating New Database...")
 
-_DATABASE: AgnosticDatabase = _MGCLIENT["anibot"]
+_DATABASE: AgnosticDatabase = _MGCLIENT["mbot"]
 
 
 def get_collection(name: str) -> AgnosticCollection:
