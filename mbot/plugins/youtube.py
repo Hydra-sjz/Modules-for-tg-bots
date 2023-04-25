@@ -1,5 +1,5 @@
 from youtubesearchpython import SearchVideos, VideosSearch
-from mbot import app as tbot, CMD_HELP
+from mbot import bot as tbot, CMD_HELP
 from html import unescape
 import os
 from telethon import types, Button, custom, events
