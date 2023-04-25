@@ -1,6 +1,6 @@
  
 from mbot.events import register
-from mbot import app as tbot, OWNER_ID, CMD_HELP
+from mbot import bot as tbot, OWNER_ID, CMD_HELP
 import os
 from PIL import Image, ImageDraw, ImageFont
 
