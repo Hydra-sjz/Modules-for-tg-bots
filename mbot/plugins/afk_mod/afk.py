@@ -5,8 +5,8 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from mbot import Mbot as app, botusername
-from mbot.plugins.afk_mod.database import add_afk, is_afk, remove_afk
-from mbot.plugins.afk_mod.helpers import get_readable_time, put_cleanmode
+from mbot.database import add_afk, is_afk, remove_afk
+from mbot.helpers import get_readable_time, put_cleanmode
 
 
 @app.on_message(filters.command(["afk", f"afk@{botusername}"]) & ~filters.edited)
