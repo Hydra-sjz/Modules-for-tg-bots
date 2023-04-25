@@ -1,4 +1,4 @@
-from mbot import app as tbot
+from mbot import bot as tbot
 from datetime import datetime
 from pymongo import MongoClient
 from config import DB_URL
