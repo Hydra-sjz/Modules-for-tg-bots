@@ -34,13 +34,4 @@ AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
 OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
 
 
-BOT_NAME = os.environ.get("BOT_NAME", "@Spotifyx_dlbot")
-ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
-ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
-ANILIST_REDIRECT_URL = os.environ.get("ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin")
-LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", "-1001616139929"))
-TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
 
-DOWN_PATH = "anibot/downloads/"
-HELP_DICT = dict()
-plugins = dict(root="anibot/plugins")
