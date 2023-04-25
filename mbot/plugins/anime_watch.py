@@ -1,4 +1,4 @@
-from gogoanimeapi import gogoanime as anime
+from mbot.gogoanimeapi import gogoanime as anime
 from telethon import types, Button, events
 from mbot import Mbot
 
