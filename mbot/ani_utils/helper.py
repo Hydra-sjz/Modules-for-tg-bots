@@ -10,9 +10,9 @@ from uuid import uuid4
 from pyrogram import Client
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import InlineKeyboardButton, CallbackQuery, Message, InlineKeyboardMarkup
-from mbot import Mbot as anibot
+from mbot import Mbot as anibot, SUDO_USERS
 from mbot.ani_utils.db import get_collection
-from config import LOG_CHANNEL_ID, SUDO_USERS, DOWN_PATH
+from config import LOG_CHANNEL_ID, OWN_PATH
 
 AUTH_USERS = get_collection("AUTH_USERS")
 IGNORE = get_collection("IGNORED_USERS")
