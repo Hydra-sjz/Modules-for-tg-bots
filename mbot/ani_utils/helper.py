@@ -12,7 +12,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import InlineKeyboardButton, CallbackQuery, Message, InlineKeyboardMarkup
 from mbot import Mbot as anibot, SUDO_USERS
 from mbot.ani_utils.db import get_collection
-from config import LOG_CHANNEL_ID, OWN_PATH
+from config import LOG_CHANNEL_ID, DOWN_PATH
 
 AUTH_USERS = get_collection("AUTH_USERS")
 IGNORE = get_collection("IGNORED_USERS")
