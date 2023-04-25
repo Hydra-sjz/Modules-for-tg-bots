@@ -2,13 +2,14 @@
  
 
 import io, re, pyrogram
-from pyrogram import filters, Client, enums
+from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from mbot.plugins.filters.database import db
 from utils import get_file_id, parser, split_quotes
-from configs import ADMINS, ADD_FILTER_CMD, DELETE_FILTER_CMD, DELETE_ALL_CMD, AUTO_DELETE, AUTO_DELETE_SECOND
+from configs import OWNER_ID, , DELETE_FILTER_CMD, DELETE_ALL_CMD, AUTO_DELETE, AUTO_DELETE_SECOND
+from mbot import Mbot
 
-@Client.on_message(filters.command(ADD_FILTER_CMD) & filters.incoming)
+@Mbot.on_message(filters.command("add") & filters.incoming)
 async def addfilter(client, message):
 
     userid = message.from_user.id if message.from_user else None
@@ -43,7 +44,7 @@ async def addfilter(client, message):
     if (
         st.status != enums.ChatMemberStatus.ADMINISTRATOR
         and st.status != enums.ChatMemberStatus.OWNER
-        and str(userid) not in ADMINS
+        and str(userid) not in OWNER_ID
     ):
         return
 
@@ -108,7 +109,7 @@ async def addfilter(client, message):
 
     await message.reply_text(f"Filter for  `{text}`  added in  **{title}**", quote=True, parse_mode=enums.ParseMode.MARKDOWN)
 
-@Client.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
+@Mbot.on_message(filters.command(['viewfilters', 'filters']) & filters.incoming)
 async def get_all(client, message):
     
     chat_type = message.chat.type
@@ -167,7 +168,7 @@ async def get_all(client, message):
 
     await message.reply_text(text=filterlist, quote=True, parse_mode=enums.ParseMode.MARKDOWN)
         
-@Client.on_message(filters.command(DELETE_FILTER_CMD) & filters.incoming)
+@Mbot.on_message(filters.command("del") & filters.incoming)
 async def deletefilter(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -219,7 +220,7 @@ async def deletefilter(client, message):
     await db.delete_filter(message, query, grp_id)
         
 
-@Client.on_message(filters.command(DELETE_ALL_CMD) & filters.incoming)
+@Mbot.on_message(filters.command("delall") & filters.incoming)
 async def delallconfirm(client, message):
     userid = message.from_user.id if message.from_user else None
     if not userid:
@@ -249,7 +250,7 @@ async def delallconfirm(client, message):
 
 
     st = await client.get_chat_member(grp_id, userid)
-    if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
+    if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in OWNER_ID):
         await message.reply_text(
             f"This will delete all filters from '{title}'.\nDo you want to continue??",
             reply_markup=InlineKeyboardMarkup([
@@ -260,7 +261,7 @@ async def delallconfirm(client, message):
         )
 
 
-@Client.on_message(filters.group & filters.text)
+@Mbot.on_message(filters.group & filters.text)
 async def give_filter(client,message):
     group_id = message.chat.id
     name = message.text
