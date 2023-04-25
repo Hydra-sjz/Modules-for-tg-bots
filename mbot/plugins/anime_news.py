@@ -2,10 +2,10 @@ from pyrogram import filters
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import os
-from mbot import Mbot as bot
+from mbot import Mbot
 
 
-@bot.on_message(filters.command("animenews")
+@Mbot.on_message(filters.command("animenews")
 async def animenews(_, message): 
 
     new_page = urlopen("https://myanimelist.net/news")
