@@ -79,3 +79,4 @@ random2
 Telethroid==0.0.10
 
 html2text
+matplotlib
