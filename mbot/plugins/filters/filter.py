@@ -6,8 +6,8 @@ from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from mbot.plugins.filters.database import db
 from utils import get_file_id, parser, split_quotes
-from configs import OWNER_ID, AUTO_DELETE, AUTO_DELETE_SECOND
-from mbot import Mbot
+from configs import AUTO_DELETE, AUTO_DELETE_SECOND
+from mbot import Mbot, OWNER_ID
 
 @Mbot.on_message(filters.command("add") & filters.incoming)
 async def addfilter(client, message):
