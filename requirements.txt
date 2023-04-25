@@ -72,7 +72,7 @@ bing_image_downloader
 telegraph
 CurrencyConverter
 colorama
-random2
+random
 
 
 #filter-------
@@ -88,4 +88,4 @@ lottie
 
 
 requests_html 
-random
+
