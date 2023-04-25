@@ -12,7 +12,7 @@ from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import InlineKeyboardButton, CallbackQuery, Message, InlineKeyboardMarkup
 from mbot import Mbot as anibot
 from mbot.ani_utils.db import get_collection
-from config LOG_CHANNEL_ID, SUDO_USERS, DOWN_PATH
+from config import LOG_CHANNEL_ID, SUDO_USERS, DOWN_PATH
 
 AUTH_USERS = get_collection("AUTH_USERS")
 IGNORE = get_collection("IGNORED_USERS")
@@ -96,8 +96,8 @@ def check_user(func):
         user = c_q.from_user.id
         if await IGNORE.find_one({'_id': user}):
             return
-        if user in OWNER or user==int(c_q.data.split("_").pop()):
-            if user not in OWNER:
+        if user in SUDO_USERS or user==int(c_q.data.split("_").pop()):
+            if user not in SUDO_USERS:
                 nt = time()
                 try:
                     ot = USER_JSON[user]
