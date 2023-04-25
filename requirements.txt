@@ -80,3 +80,13 @@ Telethroid==0.0.10
 
 html2text
 matplotlib
+
+aiofiles>=0.6.0
+
+tracemoepy
+lottie
+
+
+jikanpy
+natsort
+apscheduler 
