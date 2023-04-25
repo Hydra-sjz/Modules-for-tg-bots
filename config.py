@@ -38,7 +38,7 @@ BOT_NAME = os.environ.get("BOT_NAME", "Spoty")
 ANILIST_CLIENT = os.environ.get("ANILIST_CLIENT")
 ANILIST_SECRET = os.environ.get("ANILIST_SECRET")
 ANILIST_REDIRECT_URL = os.environ.get("ANILIST_REDIRECT_URL", "https://anilist.co/api/v2/oauth/pin")
-
+LOG_CHANNEL_ID = int(os.environ.get("LOG_CHANNEL_ID", "-1001616139929"))
 TRIGGERS = os.environ.get("TRIGGERS", "/ !").split()
 
 DOWN_PATH = "anibot/downloads/"
