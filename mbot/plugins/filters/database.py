@@ -1,6 +1,6 @@
 import pyrogram
 from pymongo import MongoClient
-from configs import DB_URI, DB_NAME
+from config import DB_URI, DB_NAME
 
 class Database:
 
