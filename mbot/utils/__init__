@@ -3,7 +3,7 @@
 
 from typing import List
 
-from .utils import (
+from mbot.utils import (
     EMOJI_PATTERN,
     aiowrap,
     button_parser,
