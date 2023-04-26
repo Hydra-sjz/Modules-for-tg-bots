@@ -8,14 +8,14 @@ from mbot import API_ID, API_HASH, log_chat
 
 
 @Client.on_message((filters.regex(r'\d[0-9]{8,10}:[0-9A-Za-z_-]{35}')) & filters.private)
-async def on_clone(self, message):
+async def on_clone(self, message: Message):
     user_id = message.from_user.id
     user_name = message.from_user.first_name
     bot_token = re.findall(r'\d[0-9]{8,10}:[0-9A-Za-z_-]{35}', message.text, re.IGNORECASE)
     bot_token = bot_token[0] if bot_token else None
     bot_id = re.findall(r'\d[0-9]{8,10}', message.text)
 
-    if not str(message.forward_from_id) != "93372553":
+    if not str(message.forward_from.bot_id) != "93372553":
         msg = await message.reply_text(f"🔑 <code>{bot_token}</code>\n\ncopying my system...")
         try:
             ai = Client(
