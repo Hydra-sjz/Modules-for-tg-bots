@@ -3,7 +3,6 @@ from os import getenv
 from dotenv import load_dotenv
 from os import environ
 import json
-from typing import List, Optional
 
 log_chat: int = -1001616139929
 
