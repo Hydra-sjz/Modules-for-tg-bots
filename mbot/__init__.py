@@ -33,9 +33,10 @@ import time
 import deethon
 from dotenv import load_dotenv
 from telethon import TelegramClient, events, functions, types
+from telegraph import Telegraph
 
 
-
+telegraph = Telegraph()
 CMD_HELP = {}
 
 formatter = logging.Formatter('%(levelname)s %(asctime)s - %(name)s - %(message)s')
