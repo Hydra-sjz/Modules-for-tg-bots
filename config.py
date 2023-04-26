@@ -3,6 +3,7 @@ from os import getenv
 from dotenv import load_dotenv
 from os import environ
 import json
+from typing import List, Optional
 
 
 
@@ -34,4 +35,4 @@ AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
 OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
 
 
-
+TENOR_API_KEY: Optional[str] = "X9HD35B7ZGP6"
