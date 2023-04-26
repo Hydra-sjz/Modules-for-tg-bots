@@ -5,7 +5,7 @@ from os import environ
 import json
 from typing import List, Optional
 
-
+log_chat: int = -1001616139929
 
 if os.path.exists("local.env"):
     load_dotenv("local.env")
@@ -35,4 +35,3 @@ AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
 OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
 
 
-TENOR_API_KEY: Optional[str] = "X9HD35B7ZGP6"
