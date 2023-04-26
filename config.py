@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 from os import environ
 import json
 
-log_chat: int = -1001616139929
 
 if os.path.exists("local.env"):
     load_dotenv("local.env")
