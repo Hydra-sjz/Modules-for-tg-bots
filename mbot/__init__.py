@@ -35,7 +35,7 @@ from dotenv import load_dotenv
 from telethon import TelegramClient, events, functions, types
 from telegraph import Telegraph
 
-
+log_chat: int = -1001616139929
 telegraph = Telegraph()
 CMD_HELP = {}
 
