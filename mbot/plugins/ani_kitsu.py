@@ -42,3 +42,4 @@ async def get_anime_kitsu_cb(c: Client, cb: CallbackQuery):
             photo=photo,
             caption=msg,
             reply_to_message_id=cb.message.reply_to_message.message_id
+        ) 
