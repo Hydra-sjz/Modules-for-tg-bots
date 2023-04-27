@@ -4,7 +4,7 @@ import logging
 import pyrogram
 import PyPDF2
 import time
-from decouple import config
+#from decouple import config
 from pyrogram import Client, filters
 from pyrogram.types import ForceReply
 from pyrogram.types import User, Message, Document 
