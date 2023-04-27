@@ -1,6 +1,5 @@
-
 from pyrogram import Client, filters
-from database.kitsu_api import kitsu_get_title, kitsu_get_anime
+from mbot.kitsu_api import kitsu_get_title, kitsu_get_anime
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 
 @Client.on_message(filters.command(["kitsu"]))
