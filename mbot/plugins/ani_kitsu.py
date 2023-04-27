@@ -27,7 +27,7 @@ async def search_anime_kitsu(bot, update):
                 chat_id=update.chat.id,
                 text="<b>Select Anime to fetch details</b>",
                 reply_markup=InlineKeyboardMarkup(inline_keyboard),
-                reply_to_message_id=update.message_id
+                reply_to_message_id=update.message.id
             ) 
 
 @Client.on_callback_query(filters.regex("k_"))
@@ -40,5 +40,5 @@ async def get_anime_kitsu_cb(c: Client, cb: CallbackQuery):
             chat_id=cb.message.chat.id,
             photo=photo,
             caption=msg,
-            reply_to_message_id=cb.message.reply_to_message.message_id
+            reply_to_message_id=cb.message.reply_to_message.message.id
         ) 
