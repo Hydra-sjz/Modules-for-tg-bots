@@ -23,7 +23,7 @@ async def search_anime_mal(bot, update):
                     reply_to_message_id=update.message_id
                 )
 
-@Client.on_message(filters.command(["get_anime", f"get_anime@{BOT_USERNAME}"]))
+@Client.on_message(filters.command(["get_anime"]))
 async def get_anime_mal(bot, update):
     try:
         a_id = update.text.split(" ", maxsplit=1)[1]
