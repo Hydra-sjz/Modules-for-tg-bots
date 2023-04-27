@@ -89,3 +89,6 @@ lottie
 requests_html 
 
 pyshorteners
+imdbpy
+PyPDF2
+img2pdf
