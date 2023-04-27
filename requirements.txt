@@ -93,3 +93,4 @@ imdbpy
 PyPDF2
 img2pdf
 jikanpy
+nekos.py
