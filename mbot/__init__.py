@@ -108,7 +108,7 @@ logger.info("TELETHON STARTED BROOO")
 
 
 session = ClientSession()
-plugins = dict(root="mbot/plugins")
+
 
 class Mbot(Client):
     def __init__(self):
@@ -121,7 +121,6 @@ class Mbot(Client):
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
             sleep_threshold=30,
-            plugins=plugins
         )
 
     async def start(self):
