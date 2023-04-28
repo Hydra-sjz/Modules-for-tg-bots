@@ -36,7 +36,6 @@ ffmpeg==1.4
 ffmpeg-python==0.2.0
 ffprobe==0.5
 
-
 apscheduler
 mutagen
 bs4
@@ -67,7 +66,6 @@ fontTools
 emoji==1.6.3
 textblob==0.17.1
 search_engine_parser
-bs4
 bing_image_downloader
 telegraph
 CurrencyConverter
@@ -94,3 +92,8 @@ PyPDF2
 img2pdf
 jikanpy
 nekos.py
+
+aiohttp[speedups]>=3.7.3
+natsort
+lxml
+html5lib
