@@ -57,7 +57,7 @@ from mbot.utils2.data_parser import (
     STUDIO_DB,
     GUI
 )
-from mbot.utils.helper import (
+from mbot.utils2.helper import (
     clog,
     check_user,
     get_btns,
@@ -67,8 +67,10 @@ from mbot.utils.helper import (
     PIC_LS,
     AUTH_USERS
 )
-from mbot.utils.db import get_collection
+from mbot.utils2.db import get_collection
 from mbot import Mbot as anibot
+
+
 GROUPS = get_collection("GROUPS")
 SFW_GRPS = get_collection("SFW_GROUPS")
 DC = get_collection('DISABLED_CMDS')
