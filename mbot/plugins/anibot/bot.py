@@ -338,7 +338,7 @@ async def db_cleanup(client: Client, message: Message, mdata: dict):
 
 
 @anibot.on_message(
-    filters.command(['animestart', f'start{BOT_NAME}'], prefixes=trg)
+    filters.command(['start2', f'start{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def start_(client: Client, message: Message, mdata: dict):
@@ -463,7 +463,7 @@ ID: `{user}`""",
 
 
 @anibot.on_message(
-    filters.command(['animehelp', f'help{BOT_NAME}'], prefixes=trg)
+    filters.command(['help2', f'help{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def help_(client: Client, message: Message, mdata: dict):
@@ -904,14 +904,14 @@ async def db_cleanup_edit(client: Client, message: Message, mdata: dict):
     await db_cleanup(client, message)
 
 @anibot.on_edited_message(
-    filters.command(['start', f'start{BOT_NAME}'], prefixes=trg)
+    filters.command(['start2', f'start{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def start_edit(client: Client, message: Message, mdata: dict):
     await start_(client, message)
 
 @anibot.on_edited_message(
-    filters.command(['help', f'help{BOT_NAME}'], prefixes=trg)
+    filters.command(['help2', f'help{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def help_edit(client: Client, message: Message, mdata: dict):
@@ -942,7 +942,7 @@ async def stats_edit(client: Client, message: Message, mdata: dict):
     await stats_(client, message)
 
 @anibot.on_edited_message(
-    filters.command(['ping', f'ping{BOT_NAME}'], prefixes=trg)
+    filters.command(['ping2', f'ping{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def pong_edit(client: Client, message: Message, mdata: dict):
