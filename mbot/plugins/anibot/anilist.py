@@ -23,13 +23,16 @@ from pyrogram.types import (
     Message
 )
 from pyrogram.errors import UserNotParticipant, WebpageCurlFailed, WebpageMediaEmpty
-from config import (
+
+
+from mbot import (
     ANILIST_CLIENT,
     ANILIST_REDIRECT_URL,
     ANILIST_SECRET,
     OWNER,
     TRIGGERS as trg,
     BOT_NAME,
+    Mbot as anibot
 )
 from mbot.utils2.data_parser import (
     get_all_genres,
@@ -68,7 +71,7 @@ from mbot.utils2.helper import (
     AUTH_USERS
 )
 from mbot.utils2.db import get_collection
-from mbot import Mbot as anibot
+
 
 
 GROUPS = get_collection("GROUPS")
