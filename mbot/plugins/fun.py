@@ -53,7 +53,7 @@ TRY_YOUR_LUCK = "🎰"
 )
 async def luck_cownd(client, message):
     """ /luck an @animatedluck """
-    rep_mesg_id = message.message_id
+    rep_mesg_id = message.id
     if message.reply_to_message:
         rep_mesg_id = message.reply_to_message.message_id
     await client.send_dice(
@@ -74,7 +74,7 @@ GOAL_E_MOJI = "⚽"
 )
 async def roll_shoot(client, message):
     """ @Goal """
-    rep_mesg_id = message.message_id
+    rep_mesg_id = message.id
     if message.reply_to_message:
         rep_mesg_id = message.reply_to_message.message_id
     await client.send_dice(
@@ -95,7 +95,7 @@ PONG_E_MOJI = "🎳"
 )
 async def pog_ping(client, message):
     """ @pog """
-    rep_mesg_id = message.message_id
+    rep_mesg_id = message.id
     if message.reply_to_message:
         rep_mesg_id = message.reply_to_message.message_id
     await client.send_dice(
@@ -116,7 +116,7 @@ BALL_E_MOJI = "🏀"
 )
 async def ball_shoot(client, message):
     """ @ball """
-    rep_mesg_id = message.message_id
+    rep_mesg_id = message.id
     if message.reply_to_message:
         rep_mesg_id = message.reply_to_message.message_id
     await client.send_dice(
@@ -137,7 +137,7 @@ ROLL_E_MOJI = "🎲"
 )
 async def roll_dice(client, message):
     """ @roll """
-    rep_mesg_id = message.message_id
+    rep_mesg_id = message.id
     if message.reply_to_message:
         rep_mesg_id = message.reply_to_message.message_id
     await client.send_dice(
