@@ -338,7 +338,7 @@ async def db_cleanup(client: Client, message: Message, mdata: dict):
 
 
 @anibot.on_message(
-    filters.command(['start', f'start{BOT_NAME}'], prefixes=trg)
+    filters.command(['animestart', f'start{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def start_(client: Client, message: Message, mdata: dict):
@@ -463,7 +463,7 @@ ID: `{user}`""",
 
 
 @anibot.on_message(
-    filters.command(['help', f'help{BOT_NAME}'], prefixes=trg)
+    filters.command(['animehelp', f'help{BOT_NAME}'], prefixes=trg)
 )
 @control_user
 async def help_(client: Client, message: Message, mdata: dict):
@@ -705,7 +705,7 @@ Stats:-
     )
 
 
-@anibot.on_message(filters.command(['ping', f'ping{BOT_NAME}'], prefixes=trg))
+@anibot.on_message(filters.command(['ping2', f'ping{BOT_NAME}'], prefixes=trg))
 @control_user
 async def pong_(client: Client, message: Message, mdata: dict):
     find_gc = await DC.find_one({'_id': mdata['chat']['id']})
