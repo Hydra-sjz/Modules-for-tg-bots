@@ -156,4 +156,3 @@ __help__ = """
  ❍ /app <appname>*:* Searches for an app in Play Store and returns its details.
  ❍ /reverse |pp |grs: Does a reverse image search of the media which it was replied to.
 """
-FallenRobot-1/google.py at master · NandhaxD/FallenRobot-1 · GitHub
