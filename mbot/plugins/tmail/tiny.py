@@ -1,7 +1,7 @@
 import os
 import cv2
 from PIL import Image
-from mbot import telethn as tbot
+from mbot import bot as tbot
 from mbot.events import register
 @register(pattern="^/tiny ?(.*)")
 async def _(event):
