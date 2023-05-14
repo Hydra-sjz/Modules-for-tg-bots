@@ -3,7 +3,6 @@ from telethon import functions, types
 from telethon.tl.types import ChatBannedRights
 
 
-from config import BOT_NAME
 from mbot import bot as tbot
 from mbot.events import register
 from mbot.modules.sql.night_mode_sql import (
@@ -97,7 +96,7 @@ async def job_close():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"**Night Mode Started**\n\n`Group Is Closing Till 6 Am, Only admins can messages in this chat.`\n\n__Powered By {BOT_NAME}__",
+                f"**Night Mode Started**\n\n`Group Is Closing Till 6 Am, Only admins can messages in this chat.`\n\n__Powered By @Spotifyx_dlbot__",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
@@ -118,7 +117,7 @@ async def job_open():
         try:
             await tbot.send_message(
                 int(warner.chat_id),
-                f"**Night Mode Ended**\n\n`Group is opening again now everyone can send messages in this chat.`\n__Powered By {BOT_NAME}__",
+                f"**Night Mode Ended**\n\n`Group is opening again now everyone can send messages in this chat.`\n__Powered By @Spotifyx_dlbot__",
             )
             await tbot(
                 functions.messages.EditChatDefaultBannedRightsRequest(
