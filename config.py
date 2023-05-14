@@ -20,6 +20,9 @@ DB_URL = os.environ.get("DB_URL", "")
 DB_NAME = os.environ.get("DB_NAME", "")
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
 
+#postgresql
+DB_URI = os.environ.get("DB_URl", "")
+
 #Port
 PORT = os.environ.get("PORT", "8080")
 
