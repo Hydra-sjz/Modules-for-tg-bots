@@ -97,3 +97,4 @@ aiohttp[speedups]>=3.7.3
 natsort
 lxml
 html5lib
+apscheduler==3.10.1
