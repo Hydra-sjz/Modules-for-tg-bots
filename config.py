@@ -34,5 +34,5 @@ AUTO_DELETE = bool(environ.get("AUTO_DELETE", True))
 AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
 
 OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
-
+CURRENCY_API = environ.get("CURRENCY_API", None)
 
