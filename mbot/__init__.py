@@ -106,7 +106,7 @@ logger.info("TELETHON STARTED BROOO")
 #========lol===========
 
 
-
+aiohttpsession = ClientSession()
 session = ClientSession()
 
 
