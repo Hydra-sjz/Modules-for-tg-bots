@@ -36,3 +36,6 @@ AUTO_DELETE_SECOND = int(environ.get("AUTO_DELETE_SECOND", 300))
 OPENWEATHERMAP_ID = os.environ.get("OPENWEATHERMAP_ID", None)
 CURRENCY_API = environ.get("CURRENCY_API", None)
 
+SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", None)
+START_IMG = os.environ.get("START_IMG", "https://telegra.ph/file/8be5b452a11964129d60b.jpg")
+OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
