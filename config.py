@@ -22,7 +22,8 @@ BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", True))
 
 ## A sql database url from elephantsql.com
 DB_URI = os.environ.get("DB_URl", "")
-
+#PostgreSQL
+PDB_URL = os.environ.get("PDB_URL", "")
 #Port
 PORT = os.environ.get("PORT", "8080")
 
