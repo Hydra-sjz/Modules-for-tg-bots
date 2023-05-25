@@ -1,9 +1,9 @@
 from datetime import datetime
 from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from config import OWNER_ID, OWNER_USERNAME as uWu, START_IMG, SUPPORT_CHAT
+from config import OWNER_USERNAME as uWu, START_IMG, SUPPORT_CHAT
 
-from mbot import Mbot as  pbot
+from mbot import Mbot as  pbot, OWNER_ID
 from mbot.utils.errors import capture_err
 def content(msg: Message) -> [None, str]:
     text_to_return = msg.text
