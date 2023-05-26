@@ -23,7 +23,7 @@ async def currency(self: Client, ctx: Message):
     currency_from = teks[2]
     currency_to = teks[3]
     if amount.isdigit() or (amount.replace('.','',1).isdigit() and amount.count('.') < 2):
-        url = f"https://v6.exchangerate-api.com/v6/{CURRENCY_API}/" {currency_from}/{currency_to}/{amount}"
+        url = f"https://v6.exchangerate-api.com/v6/{CURRENCY_API}/{currency_from}/{currency_to}/{amount}"
         try:
             res = await http.get(url)
             data = res.json()
