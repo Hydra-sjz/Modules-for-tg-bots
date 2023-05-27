@@ -100,3 +100,4 @@ html5lib
 apscheduler==3.10.1
 
 faker
+pyrate_limiter
