@@ -71,8 +71,6 @@ telegraph
 CurrencyConverter
 colorama
 
-
-
 #filter-------
 Telethroid==0.0.10
 
@@ -102,3 +100,4 @@ apscheduler==3.10.1
 faker
 pyrate_limiter
 openai
+cachetools
