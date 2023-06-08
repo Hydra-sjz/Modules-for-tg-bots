@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen
 import os
 from mbot import Mbot as app
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
 @app.on_message(filters.private & filters.command("animenews")) 
